@@ -3,7 +3,7 @@ global $config;
 $config["mysql"] = array(
 "host" => "localhost",
 "user" => "root",
-"password" => "",
+"password" => "root",
 "database" => "condivino2");
 $config["smarty"] = array(
 "template_dir" => "./templates/main/template/",
