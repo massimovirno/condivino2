@@ -1,0 +1,15 @@
+<?php
+/*
+ * Effettuo il redirect a main/index.php
+ */
+require_once 'includes/autoload.inc.php';
+require_once 'includes/config.inc.php';
+
+if (file_exists("installer.class.php"))
+    header("location: installer.class.php");
+
+// Se non è presente l'installer instanziamo un oggetto della classe CHome
+$CHome=USingleton::getInstance('CHome');
+$CHome->impostaPagina();
+
+?>
