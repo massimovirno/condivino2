@@ -65,7 +65,7 @@ class FPartecipante extends FDatabase{
       * @param int $num_evento 
       * @return array 
       */
-    public function loadPasseggeri($num_evento){
+    public function loadPartecipante($num_evento){
         $query="SELECT * FROM `partecipante` WHERE `num_evento`='$num_evento'";
         $this->query($query);
         $array_partecipanti=$this->getResultAssoc();
@@ -127,7 +127,7 @@ class FPartecipante extends FDatabase{
       * @param int $num_evento 
       * @param array $array_partecipanti
       */
-    public function eliminaTuttiPasseggeri($num_evento,$array_partecipanti){
+    public function eliminaTuttiPartecipanti($num_evento,$array_partecipanti){
         for( $i=0; $i<count($array_partecipanti); $i++){
             $query= "DELETE FROM `partecipante` WHERE `num_evento`='$num_evento' AND `username_partecipante`='$array_partecipanti[$i]['username']'";
         }

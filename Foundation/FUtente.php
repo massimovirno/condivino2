@@ -8,6 +8,73 @@ class FUtente extends FDatabase{
     }
 
 /**
+ * Metodo per ottenere la media dei voti di un oste
+ * @param string $username
+ * @return array
+ */    
+public function getMediaOste($username){
+     $query="SELECT `num_voti`,`voto_totale` FROM `oste` WHERE `username_oste`='$username'";
+     $this->query($query);
+     $array=$this->getResultAssoc();
+     $somma_media=0;
+     $tot_viaggi=0;
+     for( $i=0; $i<count($array); $i++){
+            if(($array[$i]['num_voti'])!=0){
+            $somma_media=$somma_media + $array[$i]['voto_totale']/$array[$i]['num_voti'];
+            $tot_viaggi++;
+            }
+        }
+     if (count($array)!=0 && $tot_viaggi !=0){
+     $media_oste=$somma_media/$tot_viaggi;}
+     else
+      {$media_oste=0;}
+     $dati= array( "$media_oste", "$tot_viaggi");
+     return $dati;
+ }
+ 
+ /**
+ * Metodo per ottenere i dati da oste per calcolare la media dei voti del oste stesso relativo a un determinato viaggio
+ * @param string $username
+ * @return array
+ */
+ public function getArrayFeedbackOste($username){
+	$query="SELECT `num_viaggio`, `voto_totale`,`num_voti`, `commento` FROM `oste` WHERE `username_oste`='$username'";
+	$this->query($query);
+	$array=$this->getResultAssoc();
+	return $array;
+ }
+  public function getNumVotiPasseggero($username){
+	$query="SELECT COUNT(*) AS `num` FROM `partecipante` WHERE `username_partecipante`='$username' AND NOT`feedback_guid`=0" ;
+	$this->query($query);
+	$array=$this->getResult();
+	return $array['num'];
+ }
+ 
+ /**
+ * Metodo per ottenere i dati relativi alla valutazione di un partecipante 
+ * @param string $username
+ * @return array
+ */
+ public function getArrayFeedbackPartecipante($username){
+	$query="SELECT `num_viaggio`, `commento_guid`, `feedback_guid`, `votato` FROM `partecipante` WHERE `username_partecipante`='$username'";
+	$this->query($query);
+	$array=$this->getResultAssoc();
+	return $array;
+ }	
+
+/**
+ * Metodo per ottenere la media dei voti di un partecipante
+ * @param string $username
+ * @return array
+ */
+public function getMediaPartecipante($username){
+     $query="SELECT AVG(`feedback_guid`)as 'media' FROM `partecipante` WHERE `username_partecipante`='$username' AND NOT `feedback_guid`=0";
+     $this->query($query);
+     $array=$this->getResultAssoc();
+     return $array[0]['media'];
+}
+
+/**
  * Metodo per verificare se un utente è amministratore
  * @param string $username
  * @return array
