@@ -1,5 +1,5 @@
 <?php
-class FEventio extends FDatabase{
+class FEvento extends FDatabase{
     public function __construct() {
         $this->_table='evento';
         $this->_key='num_evento';
@@ -53,19 +53,19 @@ class FEventio extends FDatabase{
      * @return array 
      */
     public function ultimiEventi(){
-        $query="SELECT `num_evento`,`citta_partenza`,`citta_arrivo`,`data_partenza`,`costo`,`posti_disponibili` FROM `evento` WHERE `data_partenza`>=CURRENT_DATE() ORDER BY `num_evento` DESC";
+        $query="SELECT `num_evento`,`nome_evento`,`data_evento`,`vino_evento`,`costo`,`posti_disponibili` FROM `evento` WHERE `data_evento`>=CURRENT_DATE() ORDER BY `num_evento` DESC";
         $this->query($query);
         $array=$this->getResultAssoc();
         return $array;
     }
     
     /**
-     * Metodo per ottenere la lista dei eventi organizzati dall'utente come guidatore
+     * Metodo per ottenere la lista dei eventi organizzati dall'utente come oste
      * @param string $username
      * @return array 
      */
     public function EventiPersonali($username){
-        $query="SELECT * FROM evento, guidatore WHERE username_guidatore = '$username' AND evento.num_evento = guidatore.num_evento";
+        $query="SELECT * FROM evento, oste WHERE username_oste = '$username' AND evento.num_evento = oste.num_evento";
         $this->query($query);
         $array_eventi=$this->getResultAssoc();
         return $array_eventi;
@@ -76,7 +76,7 @@ class FEventio extends FDatabase{
      * @param string $username
      * @return array 
      */
-    public function EventiPasseggero($username){
+    public function EventiPartecipante($username){
         $query="SELECT * FROM evento, partecipante WHERE username_partecipante = '$username' AND evento.num_evento = partecipante.num_evento";
         $this->query($query);
         $array_partecipante=$this->getResultAssoc();
