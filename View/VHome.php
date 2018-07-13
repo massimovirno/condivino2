@@ -1,0 +1,110 @@
+<?php
+/**
+ * File VHome.php contenente la classe VHome
+ *
+ * @package view
+ */
+/**
+ * Classe VHome, estende la classe view e gestisce la visualizzazione e formattazione del sito, inoltre imposta i principali contenuti della pagina, suddivisi in contenuti principali (main_content) e contenuti della barra laterale (side_content)
+ *
+ * @package View
+ */
+class VHome extends View {
+    /**
+     * @var string $_main_content
+     */
+    private $corpo_centrale;
+    /**
+     * @var array $_main_button
+     */
+    private $pulsante_menu=array();
+    /**
+     * @var string $_side_content
+     */
+    private $colonna_laterale;
+    /**
+     * @var array $_side_button
+     */
+    private $menu_laterale;
+    /**
+     * @var string $_layout
+     */
+    private $_layout='default';
+    /**
+     * Aggiunge il modulo di login nella pagina principale, per gli utenti non autenticato
+     */
+    public function aggiungiModuloLogin() {
+        $VRegistrazione=USingleton::getInstance('VRegistrazione');
+        $VRegistrazione->setLayout('default');
+        $modulo_login=$VRegistrazione->processaTemplate();
+        $this->colonna_laterale.=$modulo_login;
+    }
+    /**
+     * Assegna il contenuto al template e lo manda in output
+     */
+    public function mostraPagina() {
+        $this->assign('colonna_laterale',$this->colonna_laterale);
+        $this->assign('menu_laterale',$this->menu_laterale);
+        $this->display('index_'.$this->_layout.'.tpl');
+    }
+    public function mostraPaginaParziale($template)
+    {
+        $this->display($template);
+    }
+    /**
+     * imposta il contenuto principale alla variabile privata della classe
+     */
+    public function impostaContenuto($contenuto) {
+        $this->corpo_centrale=$contenuto;
+    }
+    /**
+     * Restituisce il controller passato tramite richiesta GET o POST
+     *
+     * @return mixed
+     */
+    public function getController() {
+        if (isset($_REQUEST['controller']))
+            return $_REQUEST['controller'];
+        else
+            return false;
+    }
+    /**
+     * Imposta la pagina per gli utenti registrati/autenticati
+     */
+    public function impostaPaginaRegistrato() {
+        $session=USingleton::getInstance('USession');
+        $username=$session->leggi_valore('username');
+        $amministratore=$session->leggi_valore('amministratore');
+        //$FUtente=new FUtente();
+        //$amministratore=$FUtente->isAmministratore($username);
+        //$this->colonna_laterale.="Benvenuto, $username!";
+        $this->assign('corpo_centrale',$this->corpo_centrale);
+        $this->assign('registrato',true);
+        $this->assign('amministratore',$amministratore);
+        $this->aggiungiTastoLogout($username);    
+    }
+    /*
+     * imposta la pagina per gli utenti non registrati/autenticati
+     */
+    public function impostaPaginaVisitatore() {
+        $this->assign('titolo_principale','');
+        $this->assign('corpo_centrale',$this->corpo_centrale);
+        $this->assign('registrato',false);
+        $this->aggiungiModuloLogin();
+    }
+    /**
+     * aggiunge il tasto logout al menu laterale
+     */
+    public function aggiungiTastoLogout($username) {
+	$FUtente=new FUtente();
+        $utente=$FUtente->load($username);
+	$img_profilo=$utente->immagine_profilo;
+        $VRegistrazione=USingleton::getInstance('VRegistrazione');
+	$VRegistrazione->impostaDati('username',$username);
+	$VRegistrazione->impostaDati('immagine_profilo',$img_profilo);
+        $VRegistrazione->setLayout('logout');
+        $tasto_logout=$VRegistrazione->processaTemplate();
+        $this->menu_laterale.=$tasto_logout;
+    }
+}
+?>
