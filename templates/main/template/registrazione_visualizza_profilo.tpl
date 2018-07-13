@@ -11,7 +11,7 @@
 		
         <p><img src={$immagine_profilo} alt="Image description" height="200" width="200"/></p>
         <p>Valutazione guidatore:
-		{section name=i loop=$media_feedback_guidatore} 
+		{section name=i loop=$media_feedback_oste} 
 		 <img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
 		{/section}({$num_viaggi_guid} viaggi)</p>
         <p>Valutazione passeggero: {section name=i loop=$media_feedback_passeggero} 
@@ -101,16 +101,16 @@
                         <tr class="riepilogo_viaggio pulsante" value="{$array_commenti_passeggero[nr].num_viaggio}"> 
                             <td width="35%">
 								<div>
-								{if $array_commenti_passeggero[nr].feedback_guid !=0}
-									{$array_commenti_passeggero[nr].commento_guid}
+								{if $array_commenti_passeggero[nr].feedback_oste !=0}
+									{$array_commenti_passeggero[nr].commento_oste}
 								{else}
 									[Nessun commento]
 								{/if}
                             </td>
                             <td width="25%">
                                 <div>
-								{if $array_commenti_passeggero[nr].feedback_guid !=0}
-									{section name=i loop=$array_commenti_passeggero[nr].feedback_guid} 
+								{if $array_commenti_passeggero[nr].feedback_oste !=0}
+									{section name=i loop=$array_commenti_passeggero[nr].feedback_oste} 
 										<img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
 									{/section}
 								{else}

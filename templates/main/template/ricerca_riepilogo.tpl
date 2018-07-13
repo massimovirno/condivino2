@@ -70,7 +70,7 @@
                 {section name=nr loop=$array_passeggeri}
                     <div>
                         <br>
-			<p><a class="visualizza_utente"  name="{$partecipa}" value="{$array_passeggeri[nr].username_passeggero}"><label class="left pulsante">{$array_passeggeri[nr].username_passeggero} </label></a> {if ($array_passeggeri[nr].feedback_guid==0)  && $isGuidatore}<input type="button"  class="feedback_passeggero button_left" name1="{$array_passeggeri[nr].username_passeggero}" name2="{$num_viaggio}" value="Feedback" tabindex="1" />{if $passato==false}<input type="button"  class="elimina_passeggero button_left" name1="{$array_passeggeri[nr].username_passeggero}" name2="{$num_viaggio}" value="Elimina" tabindex="2" />{/if}<br>{else}<br>{/if}</p>
+			<p><a class="visualizza_utente"  name="{$partecipa}" value="{$array_passeggeri[nr].username_passeggero}"><label class="left pulsante">{$array_passeggeri[nr].username_passeggero} </label></a> {if ($array_passeggeri[nr].feedback_oste==0)  && $isGuidatore}<input type="button"  class="feedback_passeggero button_left" name1="{$array_passeggeri[nr].username_passeggero}" name2="{$num_viaggio}" value="Feedback" tabindex="1" />{if $passato==false}<input type="button"  class="elimina_passeggero button_left" name1="{$array_passeggeri[nr].username_passeggero}" name2="{$num_viaggio}" value="Elimina" tabindex="2" />{/if}<br>{else}<br>{/if}</p>
                     </div>  
                 <hr>
                 <br>

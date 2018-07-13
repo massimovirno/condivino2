@@ -54,7 +54,7 @@ class FPartecipante extends FDatabase{
     
     
     public function votoPartecipante($num_evento,$username){
-        $query="SELECT `feedback_guid` FROM `partecipante` WHERE `num_evento`='$num_evento' AND `username_partecipante`='$username'";
+        $query="SELECT `feedback_oste` FROM `partecipante` WHERE `num_evento`='$num_evento' AND `username_partecipante`='$username'";
         $this->query($query);
         $array=$this->getResult();
         return $array;
@@ -91,7 +91,7 @@ class FPartecipante extends FDatabase{
       */
     public function votaPartecipante($num_evento, $username, $feedback, $commento){
 		$commento1=mysql_real_escape_string($commento);
-        $query="UPDATE `partecipante` SET `feedback_guid`='$feedback', `commento_guid`='$commento1' WHERE `num_evento`='$num_evento' AND `username_partecipante`='$username'";
+        $query="UPDATE `partecipante` SET `feedback_oste`='$feedback', `commento_oste`='$commento1' WHERE `num_evento`='$num_evento' AND `username_partecipante`='$username'";
         return $this->query($query);
     }
     

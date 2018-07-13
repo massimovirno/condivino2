@@ -52,7 +52,7 @@ $('#submit_ricerca').on("click",function(){
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'invio_ricerca', citta_partenza:$('#citta_partenza').val(), citta_arrivo:$('#citta_arrivo').val(), data_partenza:$('#data_partenza_ric').val()},
+            data:{controller:'ricerca', task:'invio_ricerca', nome_evento: 'nome_evento',
             success:ricerca_avanzata
         });    
     });

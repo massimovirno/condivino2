@@ -170,7 +170,7 @@ class CRegistrazione {
         $session->cancella_valore('username');
         $session->cancella_valore('nome_cognome');
         $session->cancella_valore('amministratore');
-        return $this->ultimiViaggi(); 
+        return $this->ultimiEventi(); 
     }
         
     public function errore_aggiornamento(){
@@ -181,26 +181,26 @@ class CRegistrazione {
     }
     
     /**
-    * Funzione che mostra gli ultimi viaggi inseriti caricando l'intera pagina
+    * Funzione che mostra gli ultimi eventi inseriti caricando l'intera pagina
     * @return mixed
     */
-    public function ultimiViaggi(){
+    public function ultimiEventi(){
         $view=USingleton::getInstance('VRicerca');
-        $FViaggio=new FViaggio();
-        $viaggi=$FViaggio->ultimiViaggi();
-        $view->mostraListaUltimiViaggi($viaggi);
+        $FEvento=new FEvento();
+        $eventi=$FEvento->ultimiEventi();
+        $view->mostraListaUltimiEventi($eventi);
         return $view->processaTemplate();
     }
     
     /**
-    * Funzione che mostra gli ultimi viaggi inseriti mediante una chiamata ajax
+    * Funzione che mostra gli ultimi eventi inseriti mediante una chiamata ajax
     * @return mixed
     */
-    public function ultimiViaggiParziale(){
+    public function ultimiEventiParziale(){
         $view=USingleton::getInstance('VRicerca');
-        $FViaggio=new FViaggio();
-        $viaggi=$FViaggio->ultimiViaggi();
-        $view->mostraListaUltimiViaggi($viaggi);
+        $FEvento=new FEvento();
+        $eventi=$FEvento->ultimiEventi();
+        $view->mostraListaUltimiEventi($eventi);
         return $view->processaTemplateParziale();
     }
     
@@ -225,17 +225,17 @@ class CRegistrazione {
             $view->impostaDati('citta_nascita',$utente->citta_nascita);
             $view->impostaDati('email',$utente->email);
             $view->impostaDati('num_telefono',$utente->num_telefono);
-            $dati_guidatore= $FUtente->getMediaGuidatore($username);
-            $dati_passeggero= $FUtente->getMediaPasseggero($username);
-	    $num_voti_passeggero= $FUtente->getNumVotiPasseggero($username);
-	    $view->impostaDati('num_voti_pass', $num_voti_passeggero);
-            $view->impostaDati('media_feedback_guidatore',ceil($dati_guidatore[0]));
-            $view->impostaDati('num_viaggi_guid',$dati_guidatore[1]);
-            $view->impostaDati('media_feedback_passeggero',ceil($dati_passeggero));
-	    $commenti_guidatore=$FUtente->getArrayFeedbackGuidatore($username);
-            $commenti_passeggero=$FUtente->getArrayFeedbackPasseggero($username);
-	    $view->impostaDati('array_commenti_passeggero',$commenti_passeggero);
-	    $view->impostaDati('array_commenti_guidatore',$commenti_guidatore);
+            $dati_oste= $FUtente->getMediaOste($username);
+            $dati_partecipante= $FUtente->getMediaPartecipante($username);
+	    $num_voti_partecipante= $FUtente->getNumVotiPartecipante($username);
+	    $view->impostaDati('num_voti_pass', $num_voti_partecipante);
+            $view->impostaDati('media_feedback_oste',ceil($dati_oste[0]));
+            $view->impostaDati('num_eventi_guid',$dati_oste[1]);
+            $view->impostaDati('media_feedback_partecipante',ceil($dati_partecipante));
+	    $commenti_oste=$FUtente->getArrayFeedbackOste($username);
+            $commenti_partecipante=$FUtente->getArrayFeedbackPartecipante($username);
+	    $view->impostaDati('array_commenti_partecipante',$commenti_partecipante);
+	    $view->impostaDati('array_commenti_oste',$commenti_oste);
             return $view->processaTemplateParziale();
         }
         else $this->errore_aggiornamento();
@@ -262,19 +262,19 @@ class CRegistrazione {
         $view->impostaDati('email',$utente->email);
         $view->impostaDati('num_telefono',$utente->num_telefono);
         $view->impostaDati('amministratore',$utente->amministratore);
-        $dati_guidatore= $FUtente->getMediaGuidatore($username);
-        $dati_passeggero= $FUtente->getMediaPasseggero($username);
-        $view->impostaDati('media_feedback_guidatore',ceil($dati_guidatore[0]));
-        $view->impostaDati('num_viaggi_guid',$dati_guidatore[1]);
-	$num_voti_passeggero= $FUtente->getNumVotiPasseggero($username);
-	$view->impostaDati('num_voti_pass', $num_voti_passeggero);
-        $view->impostaDati('media_feedback_passeggero',ceil($dati_passeggero));
+        $dati_oste= $FUtente->getMediaOste($username);
+        $dati_partecipante= $FUtente->getMediaPartecipante($username);
+        $view->impostaDati('media_feedback_oste',ceil($dati_oste[0]));
+        $view->impostaDati('num_eventi_guid',$dati_oste[1]);
+	$num_voti_partecipante= $FUtente->getNumVotiPartecipante($username);
+	$view->impostaDati('num_voti_pass', $num_voti_partecipante);
+        $view->impostaDati('media_feedback_partecipante',ceil($dati_partecipante));
         $view->impostaDati('loggato_amministratore',$loggato_amministratore);
         $view->impostaDati('partecipa',$view->isPartecipante());
-	$commenti_guidatore=$FUtente->getArrayFeedbackGuidatore($username);
-        $commenti_passeggero=$FUtente->getArrayFeedbackPasseggero($username);
-	$view->impostaDati('array_commenti_passeggero',$commenti_passeggero);
-	$view->impostaDati('array_commenti_guidatore',$commenti_guidatore);
+	$commenti_oste=$FUtente->getArrayFeedbackOste($username);
+        $commenti_partecipante=$FUtente->getArrayFeedbackPartecipante($username);
+	$view->impostaDati('array_commenti_partecipante',$commenti_partecipante);
+	$view->impostaDati('array_commenti_oste',$commenti_oste);
         $view->processaTemplateParziale();
     }
     
@@ -309,7 +309,7 @@ class CRegistrazione {
     public function confermaLogin() {
         if ($this->_autenticato) { 
             $controller=USingleton::getInstance('CRicerca');
-            return $controller->ultimiViaggi(); }
+            return $controller->ultimiEventi(); }
         else {
             $view=USingleton::getInstance('VRegistrazione');
             $view->setLayout('problemi');
@@ -318,21 +318,21 @@ class CRegistrazione {
     }
     
     /**
-    * Funzione che gestisce i viaggi offerti dall'utente e i viaggi a cui ha partecipato
+    * Funzione che gestisce i eventi offerti dall'utente e i eventi a cui ha partecipato
     * @return mixed 
     */
-    public function gestisciViaggi(){
+    public function gestisciEventi(){
         $session = USingleton::getInstance('USession');
         $username=$session->leggi_valore('username');
         if ($username!=false) {
             $view=Usingleton::getInstance('VRegistrazione');
-            $FViaggio= new FViaggio();
-            $array_viaggi= $FViaggio->ViaggiPersonali($username);
-            $array_passeggero= $FViaggio->ViaggiPasseggero($username);
+            $FEvento= new FEvento();
+            $array_eventi= $FEvento->EventiPersonali($username);
+            $array_partecipante= $FEvento->EventiPartecipante($username);
             $view->impostaDati('username', $username);
-            $view->impostaDati('array_passeggero', $array_passeggero);
-            $view->impostaDati('array_viaggi',$array_viaggi);
-            $view->setLayout('gestisci_viaggi');
+            $view->impostaDati('array_partecipante', $array_partecipante);
+            $view->impostaDati('array_eventi',$array_eventi);
+            $view->setLayout('gestisci_eventi');
             return $view->processaTemplateParziale();
         }
         else $this->errore_aggiornamento();
@@ -506,7 +506,7 @@ class CRegistrazione {
             $FUtente->impostaPassword($username, $password);
             $this->inviaMailPassword($email, $username, $password);
         }
-        return $this->ultimiViaggiParziale();
+        return $this->ultimiEventiParziale();
     }
 
     /**
@@ -601,8 +601,8 @@ class CRegistrazione {
                 return $this->visualizzaProfilo();
             case 'gestisci_profilo':
                 return $this->gestisciProfilo();
-            case 'gestisci_viaggi':
-                return $this->gestisciViaggi();
+            case 'gestisci_eventi':
+                return $this->gestisciEventi();
             case 'autentica':
                 return $this->confermaLogin();
             case 'esci':

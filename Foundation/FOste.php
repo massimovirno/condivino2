@@ -1,9 +1,5 @@
 <?php
 
-include_once 'Foundation/FDatabase.php';
-include_once 'Utility/USingleton.php';
-require_once 'includes/config.inc.php';
-
 class FOste extends FDatabase{
     public function __construct() {
         $this->_table='oste';

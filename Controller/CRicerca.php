@@ -31,9 +31,9 @@ class CRicerca {
             $targa_presa=$view->getTarga();
             $posti= $FVino->getPostiVino($targa_presa);
             $EEvento=new EEvento();
-            $EEvento->citta_partenza=$view->getCittaPartenza();
-            $EEvento->citta_arrivo=$view->getCittaArrivo();
-            $EEvento->data_partenza=$view->getDataPartenza();
+            $EEvento->citta_partenza=$view->getNomeEvento();
+            $EEvento->citta_arrivo=$view->getVinoEvento();
+            $EEvento->data_partenza=$view->getDataEvento();
             $EEvento->note=$view->getNote();
             $EEvento->costo=$view->getCosto();
             $EEvento->posti_disponibili=$posti['num_posti']-1;
@@ -95,9 +95,9 @@ class CRicerca {
                 $view->setLayout('vino');
                 $da=$view->getDa();
                 $view->impostaDati('da',$da);
-                $view->impostaDati('citta_partenza',$view->getCittaPartenza());
-                $view->impostaDati('citta_arrivo',$view->getCittaArrivo());
-                $view->impostaDati('data_partenza',$view->getDataPartenza());
+                $view->impostaDati('nome_evento',$view->getNomeEvento());
+                $view->impostaDati('vino_evento',$view->getVinoEvento());
+                $view->impostaDati('data_evento',$view->getDataEvento());
                 $view->processaTemplateParziale();
             }
             else $this->errore_aggiornamento();
@@ -276,11 +276,11 @@ class CRicerca {
     public function invioRicerca() {
             $view=USingleton::getInstance('VRicerca');
             $view->setLayout('elenco');
-            $citta_partenza=$view->getCittaPartenza();
-            $citta_arrivo=$view->getCittaArrivo();
-            $data_partenza=$view->getDataPartenza();
+            $nome_evento=$view->getNomeEvento();
+            $vino_evento=$view->getVinoEvento();
+            $data_partenza=$view->getDataEvento();
             $eventi=NULL;
-            if ($citta_partenza OR $citta_arrivo OR $data_partenza) {
+            if ($nome_evento OR $vino_evento OR $data_partenza) {
                 $FEvento=new FEvento();
                 $eventi=$FEvento->cercaEvento($citta_partenza,$citta_arrivo,$data_partenza);
             }
@@ -352,8 +352,8 @@ class CRicerca {
             $FPartecipante= new FPartecipante();
             $array= $FPartecipante->oggettoPartecipante($num_evento, $username);
             $EPartecipante= new EPartecipante();
-            $EPartecipante->commento_guid= $array[0]['commento_guid'];
-            $EPartecipante->feedback_guid= $array[0]['feedback_guid'];
+            $EPartecipante->commento_oste= $array[0]['commento_oste'];
+            $EPartecipante->feedback_oste= $array[0]['feedback_oste'];
             $EPartecipante->num_evento= $array[0]['num_evento'];
             $EPartecipante->username_partecipante= $array[0]['username_partecipante'];
             $EPartecipante->votato= 1;
@@ -599,7 +599,7 @@ class CRicerca {
             case 'ricerca_utenti':
                 return $this->ricercaUtenti($view->getUsernameRicerca(),$view->getCognomeRicerca(),$view->getCittaRicerca());
             case 'ricerca_eventi':
-                return $this->ricercaEventi($view->getCittaPartenzaRicerca(),$view->getCittaArrivoRicerca(),$view->getDataPartenzaRicerca());
+                return $this->ricercaEventi($view->getDataEventoRicerca(),$view->getVinoEventoRicerca(),$view->getDataEventoRicerca());
             case 'verifica_targa':
                 return $this->verificaTarga($view->getTarga());
         }

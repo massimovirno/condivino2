@@ -1,5 +1,5 @@
 <?php
-class FEvento extends FDatabase{
+class FEvento    extends FDatabase{
     public function __construct() {
         $this->_table='evento';
         $this->_key='num_evento';
@@ -12,7 +12,7 @@ class FEvento extends FDatabase{
      * Metodo per ottenere il numero dell'ultimo evento
      * @return array 
      */
-    public function getUltimoNumEventio(){
+    public function getUltimoNumEvento(){
         $query="SELECT `num_evento` FROM `evento` WHERE `num_evento`=(SELECT max(`num_evento`) FROM `evento`) ORDER BY `num_evento`";
         $this->query($query);
         $array=$this->getResultAssoc();
@@ -26,23 +26,19 @@ class FEvento extends FDatabase{
      * @param date $data_partenza
      * @return array 
      */
-    public function cercaEvento($citta_partenza,$citta_arrivo,$data_partenza){
-		$citta_partenza1=mysql_real_escape_string($citta_partenza);
-		$citta_arrivo1=mysql_real_escape_string($citta_arrivo);
+    public function cercaEvento($nome_evento,$vino_evento,$data_evento){
+		$nome_evento1=mysql_real_escape_string($nome_evento);
+		$vino_evento1=mysql_real_escape_string($vino_evento);
         $query="SELECT * FROM `evento` WHERE";
-        if ($citta_partenza)
-            $query.=" `citta_partenza`='$citta_partenza1'";
-        if ($citta_arrivo) {
-            if ($citta_partenza)
+        if ($nome_evento)
+            $query.=" `nome_evento`='$nome_evento1'";
+        if ($nome_evento) {
+            if ($vino_evento)
                 $query.=" AND";
-            $query.=" `citta_arrivo`='$citta_arrivo1'";
+            $query.=" `vino_evento`='$vino_evento1'";
         }
-        if ($data_partenza) {
-            if ($citta_partenza OR $citta_arrivo)
-                $query.=" AND";
-            $query.=" `data_partenza`='$data_partenza'";
-        }
-        $query.=" AND `data_partenza`>CURRENT_DATE()"; // Per estrarre solo eventi con data successiva ad oggi
+        $query.=" AND `data_evento`>CURRENT_DATE()"; // Per estrarre solo eventi con data successiva ad oggi
+        print($query);
         $this->query($query);
         $array=$this->getResultAssoc();
         return $array;

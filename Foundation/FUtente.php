@@ -43,8 +43,8 @@ public function getMediaOste($username){
 	$array=$this->getResultAssoc();
 	return $array;
  }
-  public function getNumVotiPasseggero($username){
-	$query="SELECT COUNT(*) AS `num` FROM `partecipante` WHERE `username_partecipante`='$username' AND NOT`feedback_guid`=0" ;
+  public function getNumVotiPartecipante($username){
+	$query="SELECT COUNT(*) AS `num` FROM `partecipante` WHERE `username_partecipante`='$username' AND NOT`feedback_oste`=0" ;
 	$this->query($query);
 	$array=$this->getResult();
 	return $array['num'];
@@ -56,7 +56,7 @@ public function getMediaOste($username){
  * @return array
  */
  public function getArrayFeedbackPartecipante($username){
-	$query="SELECT `num_viaggio`, `commento_guid`, `feedback_guid`, `votato` FROM `partecipante` WHERE `username_partecipante`='$username'";
+	$query="SELECT `num_viaggio`, `commento_oste`, `feedback_oste`, `votato` FROM `partecipante` WHERE `username_partecipante`='$username'";
 	$this->query($query);
 	$array=$this->getResultAssoc();
 	return $array;
@@ -68,7 +68,7 @@ public function getMediaOste($username){
  * @return array
  */
 public function getMediaPartecipante($username){
-     $query="SELECT AVG(`feedback_guid`)as 'media' FROM `partecipante` WHERE `username_partecipante`='$username' AND NOT `feedback_guid`=0";
+     $query="SELECT AVG(`feedback_oste`)as 'media' FROM `partecipante` WHERE `username_partecipante`='$username' AND NOT `feedback_oste`=0";
      $this->query($query);
      $array=$this->getResultAssoc();
      return $array[0]['media'];
