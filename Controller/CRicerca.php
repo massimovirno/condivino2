@@ -52,7 +52,7 @@ class CRicerca {
     }
     
 /**
- * Aggiunge un vino inserito dall'utente ai suoi veicoli
+ * Aggiunge un vino inserito dall'utente ai suoi vino
  * @return mixed
  */
     public function aggiungiVino(){
@@ -71,8 +71,8 @@ class CRicerca {
                 $FVino->store($EVino);
                 if($_REQUEST['da']=='inserisci'){
                     $FVino=new FVino();
-                    $veicoli=$FVino->getVeicoli($username);
-                    $view->impostaDati('veicoli',$veicoli);
+                    $vino=$FVino->getVino($username);
+                    $view->impostaDati('vino',$vino);
                     $view->setLayout('menu_vino');
                     $view->processaTemplateParziale();
                 }else{
@@ -222,18 +222,18 @@ class CRicerca {
      }
     
 /**
- * Aggiorna la lista dei veicoli disponibili per l'utente in inserimento evento 
+ * Aggiorna la lista dei vino disponibili per l'utente in inserimento evento 
  * @return mixed
  */
-    public function ricarica_veicoli() {
+    public function ricarica_vino() {
         $session=USingleton::getInstance('USession');
         $username=$session->leggi_valore('username');
         if ($username!=false) {
             $view=USingleton::getInstance('VRicerca');
             $view->setLayout('menu_vino');
             $FVino=new FVino();
-            $veicoli=$FVino->getVeicoli($username);
-            $view->impostaDati('veicoli',$veicoli);
+            $vino=$FVino->getVino($username);
+            $view->impostaDati('vino',$vino);
             return $view->processaTemplateParziale();
         }
         else $this->errore_aggiornamento();
@@ -250,8 +250,8 @@ class CRicerca {
             $view=USingleton::getInstance('VRicerca');
             $view->setLayout('inserisci');
             $FVino=new FVino();
-            $veicoli=$FVino->getVeicoli($username);
-            $view->impostaDati('veicoli',$veicoli);
+            $vino=$FVino->getVino($username);
+            $view->impostaDati('vino',$vino);
         }
         else {
             $view=USingleton::getInstance('VRicerca');
