@@ -11,6 +11,7 @@ if (file_exists("installer.class.php"))
 // $CHome=USingleton::getInstance('CHome');
 // $CHome->impostaPagina();
 
+/*
 include_once 'Foundation/FOste.php';
 
 $oste = new FOste;
@@ -22,4 +23,18 @@ var_dump($username_oste);
 
 $username_oste=$oste->eliminaOste(4,'massimovirno');
 var_dump($username_oste);
+
+*/
+
+
+include_once 'Foundation/FDatabase.php';
+include_once 'Utility/USingleton.php';
+require_once 'includes/config.inc.php';
+
+include_once 'Foundation/FEvento.php';
+
+$oste = new FEvento;
+$test=$oste->cercaEvento('cena','sursur','');
+var_dump($test);
+
 ?>

@@ -192,24 +192,24 @@ class VRegistrazione extends View {
             return 0;
     } 
     /*
-    * Restituisce la citta di partenza di ricerca
+    * Restituisce il nome evnto di ricerca
     *
     * @return mixed
     */
-    public function getCittaPartenzaRicerca() {
-        if (isset($_REQUEST['citta_partenza_ricerca'])) {
-            return $_REQUEST['citta_partenza_ricerca'];
+    public function getNomeEventoRicerca() {
+        if (isset($_REQUEST['nome_evento_ricerca'])) {
+            return $_REQUEST['nome_evento_ricerca'];
         } else
             return 0;
     }
     /*
-    * Restituisce la citta di arrivo di ricerca
+    * Restituisce il vino di ricerca
     *
     * @return mixed
     */
-    public function getCittaArrivoRicerca() {
-        if (isset($_REQUEST['citta_arrivo_ricerca'])) {
-            return $_REQUEST['citta_arrivo_ricerca'];
+    public function getVinoEventoRicerca() {
+        if (isset($_REQUEST['vino_evento_ricerca'])) {
+            return $_REQUEST['vino_evento_ricerca'];
         } else
             return 0;
     }
@@ -218,9 +218,9 @@ class VRegistrazione extends View {
     *
     * @return mixed
     */
-    public function getDataPartenzaRicerca() {
-        if (isset($_REQUEST['data_partenza_ricerca'])) {
-            return $_REQUEST['data_partenza_ricerca'];
+    public function getDataEvento() {
+        if (isset($_REQUEST['data_evento_ricerca'])) {
+            return $_REQUEST['data_evento_ricerca'];
         } else
             return 0;
     }

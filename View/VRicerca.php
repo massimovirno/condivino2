@@ -18,9 +18,9 @@ class VRicerca extends View {
      * restituisce la citta di partenza passata per GET o POST
      * @return mixed
      */
-    public function getCittaPartenza() {
-        if (isset($_REQUEST['citta_partenza'])) {
-            return $_REQUEST['citta_partenza'];
+    public function getNomeEvento() {
+        if (isset($_REQUEST['nome_evento'])) {
+            return $_REQUEST['nome_evento'];
         } else
             return 0;
     }
@@ -48,9 +48,9 @@ class VRicerca extends View {
      * restituisce la citta di arrivo
      * @return mixed
      */
-    public function getCittaArrivo() {
-        if (isset($_REQUEST['citta_arrivo'])) {
-            return $_REQUEST['citta_arrivo'];
+    public function getVinoEvento() {
+        if (isset($_REQUEST['vino_evento'])) {
+            return $_REQUEST['vino_evento'];
         } else
             return 0;
     }
@@ -58,9 +58,9 @@ class VRicerca extends View {
      * restituisce la data di partenza
      * @return mixed
      */
-    public function getDataPartenza() {
-        if (isset($_REQUEST['data_partenza'])) {
-            return $_REQUEST['data_partenza'];
+    public function getDataEvento() {
+        if (isset($_REQUEST['data_evento'])) {
+            return $_REQUEST['data_evento'];
         } else
             return 0;
     }
