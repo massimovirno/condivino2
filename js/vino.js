@@ -103,7 +103,7 @@ function check_esiste(data) {
 
 function vino_aggiunto(data){
     $('#form_vino').hide('slow');
-    $('#menu_veicoli').html(data).show('slow');
+    $('#menu_vini').html(data).show('slow');
     $('#pagina_parziale').show('slow');
 }
 

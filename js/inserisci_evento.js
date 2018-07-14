@@ -37,13 +37,13 @@ $(document).ready(function(){
     
     $('#inserimento').validate({
         rules: {
-            citta_partenza: {
+            nome_evento: {
                 required: true
             },
-            citta_arrivo: {
+            vino_evento: {
                 required: true
             },
-            data_partenza: {
+            data_evento: {
                 required: true
             },
             costo: {
@@ -60,7 +60,7 @@ $(document).ready(function(){
       
      
     // Inserisco il calendario di jQuery UI
-    $("#data_partenza_ins").datepicker({
+    $("#data_evento_ins").datepicker({
         showOn: "button",
         buttonImage: "templates/main/template/img/calendario.gif",
         buttonImageOnly: true,
@@ -87,7 +87,12 @@ $('#submit_offri').on("click",function(){
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'inserisci', citta_partenza:$('#citta_partenza').val(), citta_arrivo:$('#citta_arrivo').val(), data_partenza:$('#data_partenza_ins').val(), costo:$('#costo').val(), note:$('#note').val(), nome_vino:$('.veicoli').val()},
+            data:{controller:'ricerca', task:'inserisci', 
+            vino_evento:$('#vino_evento').val(), 
+            data_evento:$('#data_evento_ins').val(), 
+            costo:$('#costo').val(), 
+            note:$('#note').val(), 
+            nome_vino:$('.vini').val()},
             success:smista
         });    
     });
@@ -102,6 +107,6 @@ function aggiungi_vino(data){
 function smista(data){
     $('#pagina_parziale').html(data).show('slow');
     $('#ricerca_utenti').hide();
-    $('#ricerca_viaggi').hide('slow');
+    $('#ricerca_eventi').hide('slow');
     $('#form_vino').hide();
 }
