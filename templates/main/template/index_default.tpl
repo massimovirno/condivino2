@@ -24,7 +24,7 @@
   <link rel="stylesheet" type="text/css" media="screen,projection,print" href="templates/main/template/css/jquery-ui-1.10.3.custom.min.css" />
   <link rel="stylesheet" type="text/css" media="screen,projection,print" href="templates/main/template/css/jquery-ui-1.10.3.custom.css" />
   <link rel="icon" type="image/x-icon" href="./templates/main/template/img/favicon.ico" />
-  <title>CarPooling</title>
+  <title>CondiVino</title>
   <script src="js/jquery-1.10.2.min.js"></script>
   <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
   <script src="js/jqxcore.js"></script>
@@ -51,7 +51,7 @@
         
         <!-- Sitelogo and sitename -->
         <div class="sitename">
-          <h1>CondiVino2</h1>
+          <h1>CondiVino</h1>
         </div>
     
        
@@ -78,8 +78,8 @@
           <!-- Navigation item -->
           <ul>
             <li><a href="index.php?controller=&task=" >Home</a></li>
-            <li><a id="cerca" class="pulsante">Cerca un passaggio</a></li>
-            <li><a id="offri" class="pulsante">Offri un passaggio</a></li>
+            <li><a id="cerca" class="pulsante">Cerca un evento</a></li>
+            <li><a id="offri" class="pulsante">Crea un evento</a></li>
             <li id="prova">{if (!$registrato)}
                 <a href="?controller=registrazione&task=registra">Registrati</a></li>
                 {else}
@@ -87,13 +87,13 @@
                  <ul id="menu_account">
                     <li><a class="visualizza pulsante">Profilo</a></li>
                     <li><a class="gestisci pulsante">Gestisci</a></li>
-                    <li><a class="gestisci_viaggi_personali pulsante">I miei viaggi</a></li>
+                    <li><a class="gestisci_eventi_personali pulsante">I miei eventi</a></li>
                  </ul> 
                 {/if}
                 {if ($amministratore)}
                 <li><a id="amministra" class="pulsante">Amministra</a>
                     <ul id="menu_amministrazione">
-                        <li><a id="amm_viaggi" class="pulsante">Viaggi</a></li>
+                        <li><a id="amm_eventi" class="pulsante">Eventi</a></li>
                         <li><a id="amm_utenti" class="pulsante">Utenti</a></li>
                     </ul>
                 {/if}
@@ -118,9 +118,9 @@
       <!-- B.1 MAIN CONTENT -->
       <div class="main-content" >
           <div id="pagina_parziale">{$corpo_centrale}</div>
-          <div id="form_veicolo"></div>
+          <div id="form_vino"></div>
           <div id="ricerca_utenti"></div>
-          <div id="ricerca_viaggi"></div>
+          <div id="ricerca_eventi"></div>
       </div> 
         <!-- Content unit - Two columns -->
 

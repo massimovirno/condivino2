@@ -13,7 +13,6 @@ class CRicerca {
         $view=USingleton::getInstance('VRicerca');
         
         $FEvento=new FEvento();
-        var_dump($FEvento);
         $eventi=$FEvento->ultimiEventi();
         $view->mostraListaUltimiEventi($eventi);
         return $view->processaTemplate();
@@ -222,7 +221,7 @@ class CRicerca {
      }
     
 /**
- * Aggiorna la lista dei vino disponibili per l'utente in inserimento evento 
+ * Aggiorna la lista dei vini disponibili per l'utente in inserimento evento 
  * @return mixed
  */
     public function ricarica_vino() {
@@ -232,8 +231,8 @@ class CRicerca {
             $view=USingleton::getInstance('VRicerca');
             $view->setLayout('menu_vino');
             $FVino=new FVino();
-            $vino=$FVino->getVino($username);
-            $view->impostaDati('vino',$vino);
+            //$vino=$FVino->getVino($username);
+            //$view->impostaDati('vino',$vino);
             return $view->processaTemplateParziale();
         }
         else $this->errore_aggiornamento();

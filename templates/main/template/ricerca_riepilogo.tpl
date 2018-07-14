@@ -27,7 +27,7 @@
 			<td colspan="2"><h2>{$citta_arrivo}</h2></td>
 			</tr>
 			<tr class="normale">
-			<th class="top">Tipo di veicolo:</th>
+			<th class="top">Tipo di vino:</th>
 			<td width="220"><h2>{$tipo}</h2></td>
 			<th class="top">Posti disponibili:</th>
 			<td width="220"><h2>{$posti_disponibili}</h2></td>
@@ -54,7 +54,7 @@
 			
             </div>
 			</div>
-    <h1 class="block">Informazioni veicolo</h1>
+    <h1 class="block">Informazioni vino</h1>
         <div class="contactform">
             <p><label class="left">Targa:</label><label class="left">&nbsp<b>{$targa}</label></b><br></p>
             <p><label class="left">Tipo:</label><label class="left">&nbsp<b>{$tipo}</b></label><br></p>

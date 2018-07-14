@@ -72,13 +72,13 @@ $(document).ready(function(){
         defaultDate: "2000/01/01"
     });
     
-    $('#submit_veicolo_da_inserisci').on("click",function(){
+    $('#submit_vino_da_inserisci').on("click",function(){
         $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'inserimento_veicolo',  da:'inserisci' },
-            success:aggiungi_veicolo
+            data:{controller:'ricerca', task:'inserimento_vino',  da:'inserisci' },
+            success:aggiungi_vino
         });    
     });
 
@@ -94,14 +94,14 @@ $('#submit_offri').on("click",function(){
 
 });
 
-function aggiungi_veicolo(data){
+function aggiungi_vino(data){
     $('#pagina_parziale').hide('slow');
-    $('#form_veicolo').html(data).show('slow');
+    $('#form_vino').html(data).show('slow');
 }
 
 function smista(data){
     $('#pagina_parziale').html(data).show('slow');
     $('#ricerca_utenti').hide();
     $('#ricerca_viaggi').hide('slow');
-    $('#form_veicolo').hide();
+    $('#form_vino').hide();
 }

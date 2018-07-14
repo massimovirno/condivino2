@@ -9,23 +9,23 @@ $('#modifica_password').on("click",function(){
         });
     });
 
-$('.riepilogo_veicolo').on("click",function(){
-    var targa_veicolo=$(this).attr('value');
+$('.riepilogo_vino').on("click",function(){
+    var targa_vino=$(this).attr('value');
         $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'riepilogo_veicolo', targa:targa_veicolo},
+            data:{controller:'ricerca', task:'riepilogo_vino', targa:targa_vino},
             success:smista
         });    
     });
 
-$('#submit_veicolo_da_profilo').on("click",function(){
+$('#submit_vino_da_profilo').on("click",function(){
         $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'inserimento_veicolo',  da:'profilo'},
+            data:{controller:'ricerca', task:'inserimento_vino',  da:'profilo'},
             success:smista
         });    
     });
@@ -36,5 +36,5 @@ $('#submit_veicolo_da_profilo').on("click",function(){
     $('#pagina_parziale').html(data).show('slow');
     $('#ricerca_utenti').hide();
     $('#ricerca_viaggi').hide();
-    $('#form_veicolo').hide();
+    $('#form_vino').hide();
 }

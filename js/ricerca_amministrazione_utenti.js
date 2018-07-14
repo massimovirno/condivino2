@@ -55,7 +55,7 @@ function smista(data){
     $('#ricerca_utenti').hide('slow');
     $('#ricerca_viaggi').hide();
     $('.mostra_ricerca').hide('slow');
-    $('#form_veicolo').hide();
+    $('#form_vino').hide();
     $('.mostra_avanzata').hide('slow');
 }
 

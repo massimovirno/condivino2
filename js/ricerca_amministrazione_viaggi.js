@@ -105,7 +105,7 @@ function smista(data){
     $('#ricerca_viaggi').hide('slow');
     $('.mostra_ricerca').hide('slow');
     $('.mostra_avanzata').hide('slow');
-    $('#form_veicolo').hide();
+    $('#form_vino').hide();
 }
 
 function mostra_avanzata(){

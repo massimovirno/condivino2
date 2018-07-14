@@ -8,6 +8,6 @@ class EVino {
     public $descrizione;
     public $immagine_vino;
 
-    public $_num_viaggi=array();  //array di viaggi relativi a un veicolo   
+    // public $_num_viaggi=array();  //array di viaggi relativi a un vino   
 }
 ?>

@@ -105,7 +105,7 @@ class VRicerca extends View {
             return 0;
     }
    /**
-     * restituisce il tipo di veicolo
+     * restituisce il tipo di vino
      * @return mixed
      */
     public function getTipo() {
@@ -115,7 +115,7 @@ class VRicerca extends View {
             return 0;
     }
     /**
-     * restituisce il numero dei posti disponibili per un veicolo
+     * restituisce il numero dei posti disponibili per un vino
      * @return mixed
      */
     public function getNumPosti() {
@@ -125,7 +125,7 @@ class VRicerca extends View {
             return 0;
     }
     /**
-     * restituisce il tipo di carburante del veicolo
+     * restituisce il tipo di carburante del vino
      * @return mixed
      */
     public function getCarburante() {
@@ -135,7 +135,7 @@ class VRicerca extends View {
             return 0;
     }
     /**
-     * restituisce il consumo medio del veicolo
+     * restituisce il consumo medio del vino
      * @return mixed
      */
     public function getConsumoMedio() {

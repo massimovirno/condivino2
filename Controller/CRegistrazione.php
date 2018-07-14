@@ -294,8 +294,8 @@ class CRegistrazione {
             $view->impostaDati('nome', $utente->nome);
             $view->impostaDati('cognome', $utente->cognome);
             $view->impostaDati('immagine_profilo',$utente->immagine_profilo);
-            $FVeicolo = new FVeicolo();
-            $array= $FVeicolo->getVeicoli($username);
+            $FVino = new FVino();
+            $array= $FVino->getVini($username);
             $view->impostaDati('array',$array);
             return $view->processaTemplateParziale();
         }

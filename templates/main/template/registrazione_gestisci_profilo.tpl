@@ -35,7 +35,7 @@
                             </th>
                             </tr>
                     {section name=nr loop=$array}     
-                        <tr class="riepilogo_veicolo pulsante" value="{$array[nr].targa}">
+                        <tr class="riepilogo_vino pulsante" value="{$array[nr].targa}">
                             <td>
                                 <div>{$array[nr].targa}</div>
                             </td>
@@ -48,7 +48,7 @@
                 {else}
                     <p class="center"><label class="center-title"> Non ci sono veicoli!</label></p>  
                 {/if}
-                <p class="center"><input type="button" id="submit_veicolo_da_profilo" class="button_center" value="Aggiungi un veicolo" tabindex="5" /></p>
+                <p class="center"><input type="button" id="submit_vino_da_profilo" class="button_center" value="Aggiungi un vino" tabindex="5" /></p>
                 <br><br><br>
             </div>
         </div>

@@ -101,7 +101,7 @@ function smista(data){
     $('#pagina_parziale').html(data).show('slow');
     $('#ricerca_utenti').hide();
     $('#ricerca_viaggi').hide();
-    $('#form_veicolo').hide();
+    $('#form_vino').hide();
 }
 
 function amm_utenti(data){
@@ -111,7 +111,7 @@ function amm_utenti(data){
     $('.mostra_avanzata').hide();
     $('.nascondi_avanzata').show();
     $('.mostra_ricerca').hide();
-    $('#form_veicolo').hide();
+    $('#form_vino').hide();
 }
 
 function amm_viaggi(data){
@@ -121,12 +121,12 @@ function amm_viaggi(data){
     $('.mostra_avanzata').hide();
     $('.nascondi_avanzata').show();
     $('.mostra_ricerca').hide();
-    $('#form_veicolo').hide();
+    $('#form_vino').hide();
 }
 
 function indietro_admin(){
     $('#ricerca_viaggi').show('slow');
-    $('#form_veicolo').hide();
+    $('#form_vino').hide();
     $('#ricerca_utenti').hide();
     $('#pagina_parziale').hide('slow');
     $('.mostra_avanzata').show('slow');
@@ -140,5 +140,5 @@ function ricerca(data){
     $('#ricerca').hide();
     $('.mostra_ricerca').show('slow');
     $('#ricerca_viaggi').html(data).show('slow');
-    $('#form_veicolo').hide();
+    $('#form_vino').hide();
 }
