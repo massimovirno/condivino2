@@ -35,3 +35,6 @@ nome_vino
 
 getTarga
 getNomeVino
+
+getTipo
+getProduttore

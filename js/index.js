@@ -1,12 +1,12 @@
  $(document).ready(function(){
-$('.riepilogo_viaggio').on("click",function(){
-    var viaggio=$(this).attr('value');
+$('.riepilogo_evento').on("click",function(){
+    var evento=$(this).attr('value');
     var indietro=$(this).attr('name'); //se vero appare il tasto indietro
     $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'riepilogo_viaggio', ricerca:indietro, num_viaggio:viaggio},
+            data:{controller:'ricerca', task:'riepilogo_evento', ricerca:indietro, num_evento:evento},
             success:smista
         });
     });
@@ -20,13 +20,13 @@ $('.indietro').on("click",function(){
         });
     });
 
-$('#amm_viaggi').on("click",function(){
+$('#amm_eventi').on("click",function(){
     $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'amministra_viaggi', ordinamento:'num_viaggio'},
-            success:amm_viaggi
+            data:{controller:'ricerca', task:'amministra_eventi', ordinamento:'num_evento'},
+            success:amm_eventi
         });
     });
     
@@ -80,12 +80,12 @@ $('.gestisci').on("click",function(){
         });    
     });
 
-$('.gestisci_viaggi_personali').on("click",function(){
+$('.gestisci_eventi_personali').on("click",function(){
         $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'registrazione', task:'gestisci_viaggi'},
+            data:{controller:'registrazione', task:'gestisci_eventi'},
             success:smista
         });    
     });
@@ -100,13 +100,13 @@ if (!navigator.cookieEnabled) {
 function smista(data){
     $('#pagina_parziale').html(data).show('slow');
     $('#ricerca_utenti').hide();
-    $('#ricerca_viaggi').hide();
+    $('#ricerca_eventi').hide();
     $('#form_vino').hide();
 }
 
 function amm_utenti(data){
     $('#pagina_parziale').hide('slow');
-    $('#ricerca_viaggi').hide('slow');
+    $('#ricerca_eventi').hide('slow');
     $('#ricerca_utenti').html(data).show('slow');
     $('.mostra_avanzata').hide();
     $('.nascondi_avanzata').show();
@@ -114,10 +114,10 @@ function amm_utenti(data){
     $('#form_vino').hide();
 }
 
-function amm_viaggi(data){
+function amm_eventi(data){
     $('#pagina_parziale').hide('slow');
     $('#ricerca_utenti').hide('slow');
-    $('#ricerca_viaggi').html(data).show('slow');
+    $('#ricerca_eventi').html(data).show('slow');
     $('.mostra_avanzata').hide();
     $('.nascondi_avanzata').show();
     $('.mostra_ricerca').hide();
@@ -125,7 +125,7 @@ function amm_viaggi(data){
 }
 
 function indietro_admin(){
-    $('#ricerca_viaggi').show('slow');
+    $('#ricerca_eventi').show('slow');
     $('#form_vino').hide();
     $('#ricerca_utenti').hide();
     $('#pagina_parziale').hide('slow');
@@ -139,6 +139,6 @@ function ricerca(data){
     $('#ricerca_utenti').hide();
     $('#ricerca').hide();
     $('.mostra_ricerca').show('slow');
-    $('#ricerca_viaggi').html(data).show('slow');
+    $('#ricerca_eventi').html(data).show('slow');
     $('#form_vino').hide();
 }

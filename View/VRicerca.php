@@ -105,42 +105,62 @@ class VRicerca extends View {
             return 0;
     }
    /**
-     * restituisce il tipo di vino
+     * restituisce il produttore del vino
      * @return mixed
      */
-    public function getTipo() {
-        if (isset($_REQUEST['tipo'])) {
-            return $_REQUEST['tipo'];
+    public function getProduttore() {
+        if (isset($_REQUEST['produttore'])) {
+            return $_REQUEST['produttore'];
         } else
             return 0;
     }
     /**
-     * restituisce il numero dei posti disponibili per un vino
+     * restituisce la denominazione del vino
      * @return mixed
      */
-    public function getNumPosti() {
-        if (isset($_REQUEST['num_posti'])) {
-            return $_REQUEST['num_posti'];
+    public function getDenominazione() {
+        if (isset($_REQUEST['denominazione'])) {
+            return $_REQUEST['denominazione'];
         } else
             return 0;
     }
     /**
-     * restituisce il tipo di carburante del vino
+     * restituisce il nome vitigno per un vino
      * @return mixed
      */
-    public function getCarburante() {
-        if (isset($_REQUEST['carburante'])) {
-            return $_REQUEST['carburante'];
+    public function getVitigno() {
+        if (isset($_REQUEST['vitigno'])) {
+            return $_REQUEST['vitigno'];
         } else
             return 0;
     }
     /**
-     * restituisce il consumo medio del vino
+     * restituisce l'anno del vino
      * @return mixed
      */
-    public function getConsumoMedio() {
-        if (isset($_REQUEST['consumo_medio'])) {
-            return $_REQUEST['consumo_medio'];
+    public function getAnno() {
+        if (isset($_REQUEST['anno'])) {
+            return $_REQUEST['anno'];
+        } else
+            return 0;
+    }
+    /**
+     * restituisce la descrizione del vino
+     * @return mixed
+     */
+    public function getDescrizione() {
+        if (isset($_REQUEST['descrizione'])) {
+            return $_REQUEST['descrizione'];
+        } else
+            return 0;
+    }
+    /**
+     * restituisce il persorso della foto etichetta vino
+     * @return mixed
+     */
+    public function getImmagine_vino() {
+        if (isset($_REQUEST['immagine_vino'])) {
+            return $_REQUEST['immagine_vino'];
         } else
             return 0;
     }

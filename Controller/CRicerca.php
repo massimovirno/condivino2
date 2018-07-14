@@ -59,18 +59,22 @@ class CRicerca {
             if ($username!=false) {
                 $view=USingleton::getInstance('VRicerca');
                 $EVino=new EVino();
+
                 $EVino->nome_vino=$view->getNomeVino();
-                $EVino->username_proprietario=$username;
-                $EVino->tipo=$view->getTipo();
-                $EVino->num_posti=$view->getNumPosti();
-                $EVino->carburante=$view->getCarburante();
-                $EVino->consumo_medio=$view->getConsumoMedio();
+                $EVino->produttore=$view->getProduttore();
+                $EVino->denominazione=$view->getDenominazione();
+                $EVino->vitigno=$view->getVitigno();
+                $EVino->anno=$view->getAnno();
+                $EVino->descrizione=$view->getDescrizione();
+                $EVino->immagine_vino=$view->getImmagine_vino(); // MAX modificare per mostrare etichetta
+
                 $FVino=new FVino();
                 $FVino->store($EVino);
                 if($_REQUEST['da']=='inserisci'){
                     $FVino=new FVino();
-                    $vino=$FVino->getVino($username);
-                    $view->impostaDati('vino',$vino);
+                    // MAX
+                    //$vino=$FVino->getVino($username);
+                    //$view->impostaDati('vino',$vino);
                     $view->setLayout('menu_vino');
                     $view->processaTemplateParziale();
                 }else{

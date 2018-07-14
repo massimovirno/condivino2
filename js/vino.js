@@ -4,7 +4,14 @@ $('#submit_aggiungi_da_inserisci').on("click",function(){
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'aggiungi_vino', da:'inserisci', nome_vino:$('#nome_vino').val(), tipo:$('#tipo').val(), num_posti:$('#num_posti').val(), carburante:$('#carburante').val(), consumo_medio:$('#consumo_medio').val()}, 
+            data:{controller:'ricerca', task:'aggiungi_vino', da:'inserisci', 
+            nome_vino:$('#nome_vino').val(), 
+            produttore:$('#produttore').val(), 
+            denominazione:$('#denominazione').val(), 
+            vitigno:$('#vitigno').val(), 
+            anno:$('#anno').val(), 
+            descrizione:$('#descrizione').val(), 
+            immagine_vino:$('#immagine_vino').val()}, 
             success:vino_aggiunto
         });    
     });

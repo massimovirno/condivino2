@@ -1,13 +1,13 @@
 <br>
-<script src="js/gestisci_viaggi.js"></script>
-<h1 class="pagetitle">Gestisci viaggi</h1>
+<script src="js/gestisci_eventi.js"></script>
+<h1 class="pagetitle">Gestisci eventi</h1>
 
         <!-- Content unit - One column -->
-		<h1 class="block">Viaggi inseriti da {$username}</h1>        
+		<h1 class="block">Eventi inseriti da {$username}</h1>        
         <div class="column1-unit">
           <div class="contactform" >
             
-            {if $array_viaggi}
+            {if $array_eventi}
                <table width:650px;>
 			<th class="mini">
                             <div>ID  </div>
