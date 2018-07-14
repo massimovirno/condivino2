@@ -28,25 +28,25 @@
                     <table>
                         <tr>
                             <th class="mini">
-                                <div>Targa</div>
+                                <div>Nome vino</div>
                             </th>
                             <th class="mini">
-                                <div>Tipo</div>
+                                <div>Denominazione</div>
                             </th>
                             </tr>
                     {section name=nr loop=$array}     
-                        <tr class="riepilogo_vino pulsante" value="{$array[nr].targa}">
+                        <tr class="riepilogo_vino pulsante" value="{$array[nr].nome_vino}">
                             <td>
-                                <div>{$array[nr].targa}</div>
+                                <div>{$array[nr].nome_vino}</div>
                             </td>
                             <td>
-                                <div><b>{$array[nr].tipo}</b></div>
+                                <div><b>{$array[nr].denominazione}</b></div>
                             </td>
                         </tr>
                     {/section}
                     </table>
                 {else}
-                    <p class="center"><label class="center-title"> Non ci sono veicoli!</label></p>  
+                    <p class="center"><label class="center-title"> Non ci sono vini!</label></p>  
                 {/if}
                 <p class="center"><input type="button" id="submit_vino_da_profilo" class="button_center" value="Aggiungi un vino" tabindex="5" /></p>
                 <br><br><br>

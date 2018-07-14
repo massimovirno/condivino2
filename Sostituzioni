@@ -32,3 +32,6 @@ templates/main/template/css/layout3_text.css
 
 targa
 nome_vino
+
+getTarga
+getNomeVino

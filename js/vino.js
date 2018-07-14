@@ -81,13 +81,13 @@ $('#nome_vino').on('focusout', function(){
 
 function check_esiste(data) {
     if(data.unique === true){
-        // Targa Libera
+        // Nome vino libero
         $('#errore_nome_vino').hide('normal');
         nome_vino_libera=true;
         $('#nome_vino').removeClass('error');
     }
     else
-    {   // Targa utilizzata
+    {   // Nome vino utilizzato
         $('#errore_nome_vino').show('normal');
         $('#nome_vino').addClass('error');
         nome_vino_libera=false;

@@ -78,7 +78,7 @@ class VRegistrazione extends View {
     }
     
     /*
-    * restituisce la targa
+    * restituisce la vino
     *
     * @return mixed
     */

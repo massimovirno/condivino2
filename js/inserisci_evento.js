@@ -87,7 +87,7 @@ $('#submit_offri').on("click",function(){
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'inserisci', citta_partenza:$('#citta_partenza').val(), citta_arrivo:$('#citta_arrivo').val(), data_partenza:$('#data_partenza_ins').val(), costo:$('#costo').val(), note:$('#note').val(), targa:$('.veicoli').val()},
+            data:{controller:'ricerca', task:'inserisci', citta_partenza:$('#citta_partenza').val(), citta_arrivo:$('#citta_arrivo').val(), data_partenza:$('#data_partenza_ins').val(), costo:$('#costo').val(), note:$('#note').val(), nome_vino:$('.veicoli').val()},
             success:smista
         });    
     });

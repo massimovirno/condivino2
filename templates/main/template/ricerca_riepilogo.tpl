@@ -56,11 +56,13 @@
 			</div>
     <h1 class="block">Informazioni vino</h1>
         <div class="contactform">
-            <p><label class="left">Targa:</label><label class="left">&nbsp<b>{$targa}</label></b><br></p>
-            <p><label class="left">Tipo:</label><label class="left">&nbsp<b>{$tipo}</b></label><br></p>
-            <p><label class="left">Posti:</label><label class="left">&nbsp<b>{$num_posti}</b><br></label><br></p>
-            <p><label class="left">Carburante:</label><label class="left">&nbsp<b>{$carburante}</b></label><br></p>
-            <p><label class="left">Consumo medio:</label><label class="left">&nbsp<b>{$consumo_medio}</b>&nbsp (Km con 1 litro)</label><br></p>
+            <p><label class="left">Nome vino:</label><label class="left">&nbsp<b>{$nome_vino}</label></b><br></p>
+            <p><label class="left">Produttore:</label><label class="left">&nbsp<b>{$produttore}</b></label><br></p>
+            <p><label class="left">Denominazione:</label><label class="left">&nbsp<b>{$denominazione}</b><br></label><br></p>
+            <p><label class="left">Vitigno:</label><label class="left">&nbsp<b>{$vitigno}</b></label><br></p>
+            <p><label class="left">Anno:</label><label class="left">&nbsp<b>{$anno}</b></label><br></p>
+            <p><label class="left">Descrizione:</label><label class="left">&nbsp<b>{$descrizione}</b></label><br></p>
+            <p><label class="left">Etichetta:</label><label class="left">&nbsp<b>{$immagine_vino}</b></label><br></p>
         <br>
         </div>
     <h1 class="block">Passeggeri partecipanti</h1>

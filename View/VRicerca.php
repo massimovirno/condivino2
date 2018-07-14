@@ -95,12 +95,12 @@ class VRicerca extends View {
             return 0;
     }
     /**
-     * restituisce la targa
+     * restituisce la nome vino
      * @return mixed
      */
-    public function getTarga() {
-        if (isset($_REQUEST['targa'])) {
-            return $_REQUEST['targa'];
+    public function getNomeVino() {
+        if (isset($_REQUEST['nome_vino'])) {
+            return $_REQUEST['nome_vino'];
         } else
             return 0;
     }

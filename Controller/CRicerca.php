@@ -27,7 +27,7 @@ class CRicerca {
         if ($username!=false) {
             $view=Usingleton::getInstance('VRicerca');
             $FVino= new FVino();
-            $targa_presa=$view->getTarga();
+            $nome_vino=$view->getNomeVino();
             $posti= $FVino->getPostiVino($targa_presa);
             $EEvento=new EEvento();
             $EEvento->citta_partenza=$view->getNomeEvento();
@@ -42,7 +42,6 @@ class CRicerca {
             $EOste=new EOste();
             $EOste->username_oste=$username;
             $EOste->num_evento=$num_evento;
-            $EOste->targa=$view->getTarga();
             $FOste=new FOste();
             $FOste->store($EOste);
             $this->riepilogoEvento($num_evento);
@@ -60,7 +59,7 @@ class CRicerca {
             if ($username!=false) {
                 $view=USingleton::getInstance('VRicerca');
                 $EVino=new EVino();
-                $EVino->targa=$view->getTarga();
+                $EVino->nome_vino=$view->getNomeVino();
                 $EVino->username_proprietario=$username;
                 $EVino->tipo=$view->getTipo();
                 $EVino->num_posti=$view->getNumPosti();
@@ -541,11 +540,11 @@ class CRicerca {
     * Funzione che verifica lato client se una targa esiste gia o meno
     * @param string
     */
-    public function verificaTarga($targa) {
+    public function verificaNomeVino($nome_vino) {
         $FVino=new FVino();
-        $verifica=$FVino->verificaTarga($targa);
+        $verifica=$FVino->verificaNomeVino($nome_vino);
         $esistente=true;
-        if(isset($verifica['targa'])){
+        if(isset($verifica['nome_vino'])){
             $esistente=false;
         }
         $controllo=array(
@@ -588,9 +587,9 @@ class CRicerca {
             case 'elimina_evento':
                 return $this->eliminaEvento($view->getNumevento());
             case 'riepilogo_vino':
-                return $this->riepilogoVino($view->getTarga());
+                return $this->riepilogoVino($view->getNomeVino());
             case 'elimina_vino':
-                return $this->eliminaVino($view->getTarga());
+                return $this->eliminaVino($view->getNomeVino());
             case 'amministra_utenti':
                 return $this->amministraUtenti($view->getOrdinamento());
             case 'amministra_eventi':
@@ -599,8 +598,8 @@ class CRicerca {
                 return $this->ricercaUtenti($view->getUsernameRicerca(),$view->getCognomeRicerca(),$view->getCittaRicerca());
             case 'ricerca_eventi':
                 return $this->ricercaEventi($view->getDataEventoRicerca(),$view->getVinoEventoRicerca(),$view->getDataEventoRicerca());
-            case 'verifica_targa':
-                return $this->verificaTarga($view->getTarga());
+            case 'verifica_nome_vino':
+                return $this->verificaNomeVino($view->getNomeVino());
         }
     }
 }

@@ -10,12 +10,12 @@ $('#modifica_password').on("click",function(){
     });
 
 $('.riepilogo_vino').on("click",function(){
-    var targa_vino=$(this).attr('value');
+    var nome_vino_vino=$(this).attr('value');
         $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'riepilogo_vino', targa:targa_vino},
+            data:{controller:'ricerca', task:'riepilogo_vino', nome_vino:nome_vino_vino},
             success:smista
         });    
     });
