@@ -6,13 +6,13 @@
     <h1 class="block">Riepilogo del viaggio &nbsp{$num_viaggio}</h1>
     <div class="column1-unit">
         <div class="contactform">
-            {if ($isPasseggero || $isGuidatore)}
+            {if ($isPartecipante || $isGuidatore)}
                 <p class="center"><label class="center-title">Partecipi a questo viaggio!</p>
             {/if}
-			 {if $posti_disponibili<1 && !$isPasseggero}
+			 {if $posti_disponibili<1 && !$isPartecipante}
                 <p class="center"><label class="center-title">Non ci sono più posti disponibili!</label></p>
              {/if}
-            <p class="center"><b>organizzato da:</b>&nbsp<label class="center pulsante"><a class="visualizza_utente"  name="{$partecipa}" value="{$username_guidatore}">{$username_guidatore}</a></label>{if ($isPasseggero && !$votato)}<input type="button" id="feedback" class="button_center" name="{$num_viaggio}" value="Feedback" tabindex="1" />{/if}</p>
+            <p class="center"><b>organizzato da:</b>&nbsp<label class="center pulsante"><a class="visualizza_utente"  name="{$partecipa}" value="{$username_guidatore}">{$username_guidatore}</a></label>{if ($isPartecipante && !$votato)}<input type="button" id="feedback" class="button_center" name="{$num_viaggio}" value="Feedback" tabindex="1" />{/if}</p>
            <table>
 		   <tr class="normale">
 			<th class="top">Data di partenza:</th>
@@ -42,13 +42,13 @@
 			</tr>
 		   </table>
 		   
-			{if ($loggato && !$isPasseggero && !$isGuidatore && $posti_disponibili>0)}
+			{if ($loggato && !$isPartecipante && !$isGuidatore && $posti_disponibili>0)}
 			
                 <p class="center"><input type="button" id="partecipa" class="button_center" name="{$num_viaggio}" value="Partecipa" tabindex="1" /></p>
                 
             {/if}
-            {if $isPasseggero}
-                <p class="center"><input type="button" id="cancellami" class="button_center" name1="{$num_viaggio}" name2="{$username_passeggero}" value="Cancellami" tabindex="1" /></p>
+            {if $isPartecipante}
+                <p class="center"><input type="button" id="cancellami" class="button_center" name1="{$num_viaggio}" name2="{$username_partecipante}" value="Cancellami" tabindex="1" /></p>
 			
 			{/if}
 			
@@ -72,7 +72,7 @@
                 {section name=nr loop=$array_passeggeri}
                     <div>
                         <br>
-			<p><a class="visualizza_utente"  name="{$partecipa}" value="{$array_passeggeri[nr].username_passeggero}"><label class="left pulsante">{$array_passeggeri[nr].username_passeggero} </label></a> {if ($array_passeggeri[nr].feedback_oste==0)  && $isGuidatore}<input type="button"  class="feedback_passeggero button_left" name1="{$array_passeggeri[nr].username_passeggero}" name2="{$num_viaggio}" value="Feedback" tabindex="1" />{if $passato==false}<input type="button"  class="elimina_passeggero button_left" name1="{$array_passeggeri[nr].username_passeggero}" name2="{$num_viaggio}" value="Elimina" tabindex="2" />{/if}<br>{else}<br>{/if}</p>
+			<p><a class="visualizza_utente"  name="{$partecipa}" value="{$array_passeggeri[nr].username_partecipante}"><label class="left pulsante">{$array_passeggeri[nr].username_partecipante} </label></a> {if ($array_passeggeri[nr].feedback_oste==0)  && $isGuidatore}<input type="button"  class="feedback_partecipante button_left" name1="{$array_passeggeri[nr].username_partecipante}" name2="{$num_viaggio}" value="Feedback" tabindex="1" />{if $passato==false}<input type="button"  class="elimina_partecipante button_left" name1="{$array_passeggeri[nr].username_partecipante}" name2="{$num_viaggio}" value="Elimina" tabindex="2" />{/if}<br>{else}<br>{/if}</p>
                     </div>  
                 <hr>
                 <br>

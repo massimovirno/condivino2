@@ -14,7 +14,7 @@
 		{section name=i loop=$media_feedback_oste} 
 		 <img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
 		{/section}({$num_viaggi_guid} viaggi)</p>
-        <p>Valutazione passeggero: {section name=i loop=$media_feedback_passeggero} 
+        <p>Valutazione partecipante: {section name=i loop=$media_feedback_partecipante} 
 		 <img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
 		{/section}({$num_voti_pass} voti)</p>
 	    <p>Email:<b>&nbsp{$email}</b></p>
@@ -78,10 +78,10 @@
 	</div>
 	</div>
 	</div>
-	<h1 class="block">Feedback ricevuti da {$username} come passeggero </h1>
+	<h1 class="block">Feedback ricevuti da {$username} come partecipante </h1>
 	<div class="column1-unit">
 	<div class="contactform">
-		{if $array_commenti_passeggero}
+		{if $array_commenti_partecipante}
 		   <table>
 			<th class="top">
                             <div>Commento </div>
@@ -97,20 +97,20 @@
 			<div class="contenitore">
 			<table>
 				
-                    {section name=nr loop=$array_commenti_passeggero}
-                        <tr class="riepilogo_viaggio pulsante" value="{$array_commenti_passeggero[nr].num_viaggio}"> 
+                    {section name=nr loop=$array_commenti_partecipante}
+                        <tr class="riepilogo_viaggio pulsante" value="{$array_commenti_partecipante[nr].num_viaggio}"> 
                             <td width="35%">
 								<div>
-								{if $array_commenti_passeggero[nr].feedback_oste !=0}
-									{$array_commenti_passeggero[nr].commento_oste}
+								{if $array_commenti_partecipante[nr].feedback_oste !=0}
+									{$array_commenti_partecipante[nr].commento_oste}
 								{else}
 									[Nessun commento]
 								{/if}
                             </td>
                             <td width="25%">
                                 <div>
-								{if $array_commenti_passeggero[nr].feedback_oste !=0}
-									{section name=i loop=$array_commenti_passeggero[nr].feedback_oste} 
+								{if $array_commenti_partecipante[nr].feedback_oste !=0}
+									{section name=i loop=$array_commenti_partecipante[nr].feedback_oste} 
 										<img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
 									{/section}
 								{else}
@@ -120,7 +120,7 @@
                             </td>
                              <td width="25%">
                                 <div>
-									{$array_commenti_passeggero[nr].num_viaggio}
+									{$array_commenti_partecipante[nr].num_viaggio}
 								</div>
 								
                             </td>

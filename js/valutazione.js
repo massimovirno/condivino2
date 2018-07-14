@@ -14,7 +14,7 @@ $('.valuta_pass').on("click",function(){
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'verifica_valutazione_guidatore',username_passeggero:username, num_viaggio:viaggio, valutazione:rating, commento:$('.commento').val()},
+            data:{controller:'ricerca', task:'verifica_valutazione_guidatore',username_partecipante:username, num_viaggio:viaggio, valutazione:rating, commento:$('.commento').val()},
             success:smista
         });    
     });

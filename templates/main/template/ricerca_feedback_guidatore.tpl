@@ -1,6 +1,6 @@
 <script src="js/valutazione.js"></script>
 <br>
-<h1 class="pagetitle">Rilascia un feedback a {$username_passeggero}</h1>
+<h1 class="pagetitle">Rilascia un feedback a {$username_partecipante}</h1>
 <!-- Content unit - One column -->
 <div> 
     <h1 class="block">Viaggio: &nbsp{$num_viaggio} da: {$citta_partenza} a: {$citta_arrivo} del {$data_partenza}</h1>
@@ -27,7 +27,7 @@
 			 
         
 
-            <p class="center"><input type="button" class="valuta_pass button_center" name1="{$username_passeggero}" name2="{$num_viaggio}" value="Valuta" tabindex="3" /></p>
+            <p class="center"><input type="button" class="valuta_pass button_center" name1="{$username_partecipante}" name2="{$num_viaggio}" value="Valuta" tabindex="3" /></p>
             <br>              
         </div>              
     </div>

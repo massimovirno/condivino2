@@ -58,7 +58,7 @@
 		 <div class="column1-unit">
           <div class="contactform" >
             
-            {if $array_passeggero}
+            {if $array_partecipante}
                <table width:650px;>
                     <tr>
                         <th class="mini">
@@ -81,22 +81,22 @@
 			<div class="contenitore">
 			<table width:650px>
 				
-                    {section name=nr loop=$array_passeggero}
-                        <tr  class="riepilogo_viaggio pulsante" value="{$array_passeggero[nr].num_viaggio}"> 
+                    {section name=nr loop=$array_partecipante}
+                        <tr  class="riepilogo_viaggio pulsante" value="{$array_partecipante[nr].num_viaggio}"> 
                             <td width="87">
-                                <div>{$array_passeggero[nr].num_viaggio}</div>
+                                <div>{$array_partecipante[nr].num_viaggio}</div>
                             </td>
                             <td width="87">
-                                <div><b>{$array_passeggero[nr].data_partenza}</b></div>
+                                <div><b>{$array_partecipante[nr].data_partenza}</b></div>
                             </td>
                             <td>
-                                <div><b>{$array_passeggero[nr].citta_partenza}</b></div>
+                                <div><b>{$array_partecipante[nr].citta_partenza}</b></div>
                             </td>
                             <td>
-                                <div><b>{$array_passeggero[nr].citta_arrivo}</b></div>
+                                <div><b>{$array_partecipante[nr].citta_arrivo}</b></div>
                             </td>
                             <td width="87">
-                                <div>{$array_passeggero[nr].costo}&nbsp €</div>
+                                <div>{$array_partecipante[nr].costo}&nbsp €</div>
                             </td>
 			</tr>
                     {/section}

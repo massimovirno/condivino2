@@ -29,31 +29,31 @@ $('#cancellami').on("click",function(){
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'cancella_passeggero', num_viaggio:viaggio, username_passeggero:username},
+            data:{controller:'ricerca', task:'cancella_partecipante', num_viaggio:viaggio, username_partecipante:username},
             success:smista
         });    
     });
 
-$('.feedback_passeggero').on("click",function(){
+$('.feedback_partecipante').on("click",function(){
     var username=$(this).attr('name1');
     var viaggio=$(this).attr('name2');
         $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'inserisci_feedback',username_passeggero:username, num_viaggio:viaggio},
+            data:{controller:'ricerca', task:'inserisci_feedback',username_partecipante:username, num_viaggio:viaggio},
             success:smista
         });    
     });
 
-$('.elimina_passeggero').on("click",function(){
+$('.elimina_partecipante').on("click",function(){
     var username=$(this).attr('name1');
     var viaggio=$(this).attr('name2');
         $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'cancella_passeggero', username_passeggero:username, num_viaggio:viaggio},
+            data:{controller:'ricerca', task:'cancella_partecipante', username_partecipante:username, num_viaggio:viaggio},
             success:smista
         });    
     });
