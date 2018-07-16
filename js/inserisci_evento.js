@@ -88,11 +88,15 @@ $('#submit_offri').on("click",function(){
             dataType:'html',
             type:'GET',
             data:{controller:'ricerca', task:'inserisci', 
+            nome_evento:$('#nome_evento').val(),
             vino_evento:$('#vino_evento').val(), 
             data_evento:$('#data_evento_ins').val(), 
             costo:$('#costo').val(), 
             note:$('#note').val(), 
-            nome_vino:$('.vini').val()},
+            immagine_evento:$('#immagine_evento').val(),
+            //nome_vino:$('.vini').val()
+            
+            },
             success:smista
         });    
     });

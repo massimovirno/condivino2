@@ -21,7 +21,12 @@ $('#submit_aggiungi_da_profilo').on("click",function(){
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'aggiungi_vino', da:'profilo', nome_vino:$('#nome_vino').val(), tipo:$('#tipo').val(), num_posti:$('#num_posti').val(), carburante:$('#carburante').val(), consumo_medio:$('#consumo_medio').val()}, 
+            data:{controller:'ricerca', task:'aggiungi_vino', da:'profilo', 
+            nome_vino:$('#nome_vino').val(), 
+            tipo:$('#tipo').val(), 
+            num_posti:$('#num_posti').val(), 
+            carburante:$('#carburante').val(), 
+            consumo_medio:$('#consumo_medio').val()}, 
             success:smista
         });    
     });
