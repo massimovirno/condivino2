@@ -65,7 +65,7 @@ class FPartecipante extends FDatabase{
       * @param int $num_evento 
       * @return array 
       */
-    public function loadPartecipante($num_evento){
+    public function loadPartecipanti($num_evento){
         $query="SELECT * FROM `partecipante` WHERE `num_evento`='$num_evento'";
         $this->query($query);
         $array_partecipanti=$this->getResultAssoc();

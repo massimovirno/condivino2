@@ -27,23 +27,24 @@ class CRicerca {
         if ($username!=false) {
             $view=Usingleton::getInstance('VRicerca');
             $FVino= new FVino();
-            $nome_vino=$view->getNomeVino();
-            //$posti= $FVino->getPostiVino($targa_presa);
             $EEvento=new EEvento();
             $EEvento->nome_evento=$view->getNomeEvento();
             $EEvento->vino_evento=$view->getVinoEvento();
             $EEvento->data_evento=$view->getDataEvento();
+            $EEvento->data_evento=$view->getNomeVino();
             $EEvento->costo=$view->getCosto();
-            // MAX aggiungere campo posti disponibili
+            $EEvento->posti_disponibili=$view->getPostiEvento();
             $EEvento->note=$view->getNote();
             
-            $EEvento->posti_disponibili=$posti['num_posti']-1;
+
+            //$EEvento->posti_disponibili=$posti['num_posti']-1;
             $FEvento=new FEvento();
             $FEvento->store($EEvento);
             $num_evento=$FEvento->getUltimoNumEvento();
             $EOste=new EOste();
             $EOste->username_oste=$username;
             $EOste->num_evento=$num_evento;
+            
             $FOste=new FOste();
             $FOste->store($EOste);
             $this->riepilogoEvento($num_evento);
@@ -117,25 +118,26 @@ class CRicerca {
             $evento=$FEvento->load($num_evento);
             $view=USingleton::getInstance('VRicerca');
             $view->impostaDati('num_evento',$evento->num_evento);
-            $view->impostaDati('citta_partenza',$evento->citta_partenza);
-            $view->impostaDati('citta_arrivo',$evento->citta_arrivo);
-            $view->impostaDati('data_partenza',$evento->data_partenza);
+            $view->impostaDati('nome_evento',$evento->nome_evento);
+            $view->impostaDati('data_evento',$evento->data_evento);
+            // MAX 
+            $view->impostaDati('vino_evento',$evento->vino_evento);
             $view->impostaDati('costo',$evento->costo);
             $view->impostaDati('note',$evento->note);
             $view->impostaDati('posti_disponibili',$evento->posti_disponibili);
             $data_attuale=date('Y-m-d');
             $passato=false;
-            if(strtotime($data_attuale)>strtotime($evento->data_partenza))
+            if(strtotime($data_attuale)>strtotime($evento->data_evento))
                 $passato=true;
             $view->impostaDati('passato',$passato);
-            $FVino= new FVino();
-            $array= $FVino->getVino($num_evento);
-            $vino= $FVino->load($array[0]['targa']);
-            $view->impostaDati('targa',$vino->targa);
-            $view->impostaDati('tipo',$vino->tipo);
-            $view->impostaDati('num_posti',$vino->num_posti);
-            $view->impostaDati('carburante',$vino->carburante);
-            $view->impostaDati('consumo_medio',$vino->consumo_medio);
+            //$FVino= new FVino();
+            //$array= $FVino->getVino($vino_evento);
+            //$vino= $FVino->load($array[0]['nome_vino']);
+            //$view->impostaDati('nome_vino',$vino->nome_vino);
+            //$view->impostaDati('tipo',$vino->tipo);
+            //$view->impostaDati('num_posti',$vino->num_posti);
+            //$view->impostaDati('carburante',$vino->carburante);
+            //$view->impostaDati('consumo_medio',$vino->consumo_medio);
             $FOste= new FOste();
             $username_oste= $FOste->getOste($num_evento);
             $view->impostaDati('username_oste',$username_oste['username_oste']);
@@ -149,8 +151,8 @@ class CRicerca {
             $FPartecipante= new FPartecipante();
             $isPartecipante= $FPartecipante->verificaPartecipante($num_evento,$username);
             $view->impostaDati('isPartecipante',$isPartecipante);
-            $array_passeggeri= $FPartecipante->loadPasseggeri($num_evento);
-            $view->impostaDati('array_passeggeri',$array_passeggeri);
+            $array_partecipanti= $FPartecipante->loadPartecipanti($num_evento);
+            $view->impostaDati('array_partecipanti',$array_partecipanti);
             $votato= $FPartecipante->eventoVotato($num_evento,$username);
             $view->impostaDati('votato',$votato);
             $isOste= $FOste->verificaOste($num_evento,$username);
@@ -302,7 +304,7 @@ class CRicerca {
             if ($username!=false) {
                 $FPartecipante= new FPartecipante();
                 $array= $FPartecipante->loadPartecipante($num_evento, $username);
-                //$array_passeggeri= $FPartecipante->loadPasseggeri($num_evento);
+                //$array_partecipanti= $FPartecipante->loadPartecipanti($num_evento);
                 $FOste= new FOste();
                 $EOste= $FOste->getOste($num_evento);
                 $FEvento= new FEvento();
@@ -389,21 +391,23 @@ class CRicerca {
     
 /**
  * Riepilogo dei dati relativi ad uno specifico vino
- * @param $targa string
+ * @param $nome_vino string
  * @return mixed
  */
-    public function riepilogoVino($targa){
+    public function riepilogoVino($nome_vino){
             $session=USingleton::getInstance('USession');
             $username=$session->leggi_valore('username');
             if ($username!=false) {
                 $FVino=new FVino();
-                $EVino=$FVino->load($targa);
+                $EVino=$FVino->load($nome_vino);
                 $view=Usingleton::getInstance('VRicerca');
-                $view->impostaDati('targa',$targa);
-                $view->impostaDati('tipo',$EVino->tipo);
-                $view->impostaDati('num_posti',$EVino->num_posti);
-                $view->impostaDati('carburante',$EVino->carburante);
-                $view->impostaDati('consumo_medio',$EVino->consumo_medio);
+                $view->impostaDati('nome_vino',$nome_vino);
+                $view->impostaDati('produttore',$produttore);
+                $view->impostaDati('denominazione',$denominazione);
+                $view->impostaDati('vitigno',$vitigno);
+                $view->impostaDati('anno',$anno);
+                $view->impostaDati('descrizione',$descrizione);
+                $view->impostaDati('immagine_vino',$immagine_vino);
                 $view->setLayout('riepilogo_vino');
                 $view->processaTemplateParziale();
             }
@@ -430,15 +434,15 @@ class CRicerca {
     
 /**
  * Elimina un vino
- * @param $targa string
+ * @param $nome_vino string
  * @return mixed
  */
-    public function eliminaVino($targa){
+    public function eliminaVino($nome_vino){
             $session=USingleton::getInstance('USession');
             $username=$session->leggi_valore('username');
             if ($username!=false) {
                 $FVino=new FVino();
-                $FVino->eliminaVino($targa);
+                $FVino->eliminaVino($nome_vino);
                 $view=Usingleton::getInstance('VRicerca');
                 $view->setLayout('vino_eliminato');
                 $view->processaTemplateParziale();
@@ -543,7 +547,7 @@ class CRicerca {
     }
     
     /**
-    * Funzione che verifica lato client se una targa esiste gia o meno
+    * Funzione che verifica lato client se una nome_vino esiste gia o meno
     * @param string
     */
     public function verificaNomeVino($nome_vino) {

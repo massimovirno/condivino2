@@ -91,9 +91,10 @@ $('#submit_offri').on("click",function(){
             nome_evento:$('#nome_evento').val(),
             vino_evento:$('#vino_evento').val(), 
             data_evento:$('#data_evento_ins').val(), 
+            posti_disponibili:$('#posti_disponibili').val(), 
             costo:$('#costo').val(), 
             note:$('#note').val(), 
-            immagine_evento:$('#immagine_evento').val(),
+            immagine_evento:$('#immagine_evento').val()
             //nome_vino:$('.vini').val()
             
             },
