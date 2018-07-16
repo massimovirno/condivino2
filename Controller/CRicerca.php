@@ -28,13 +28,15 @@ class CRicerca {
             $view=Usingleton::getInstance('VRicerca');
             $FVino= new FVino();
             $nome_vino=$view->getNomeVino();
-            $posti= $FVino->getPostiVino($targa_presa);
+            //$posti= $FVino->getPostiVino($targa_presa);
             $EEvento=new EEvento();
-            $EEvento->citta_partenza=$view->getNomeEvento();
-            $EEvento->citta_arrivo=$view->getVinoEvento();
-            $EEvento->data_partenza=$view->getDataEvento();
-            $EEvento->note=$view->getNote();
+            $EEvento->nome_evento=$view->getNomeEvento();
+            $EEvento->vino_evento=$view->getVinoEvento();
+            $EEvento->data_evento=$view->getDataEvento();
             $EEvento->costo=$view->getCosto();
+            // MAX aggiungere campo posti disponibili
+            $EEvento->note=$view->getNote();
+            
             $EEvento->posti_disponibili=$posti['num_posti']-1;
             $FEvento=new FEvento();
             $FEvento->store($EEvento);
