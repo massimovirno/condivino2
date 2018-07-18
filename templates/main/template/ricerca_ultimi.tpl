@@ -28,7 +28,7 @@
 			<table width:650px>
 				
                     {section name=nr loop=$eventi}
-                        <tr  class="riepilogo_eventi pulsante" value="{$eventi[nr].num_eventi}"> 
+                        <tr  class="riepilogo_eventi pulsante" value="{$eventi[nr].num_evento}"> 
                             <td width="87">
                                 <div>{$eventi[nr].num_evento}</div>
                             </td>
