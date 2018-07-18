@@ -115,6 +115,6 @@ function vino_aggiunto(data){
 function smista(data){
     $('#pagina_parziale').html(data).show('slow');
     $('#ricerca_utenti').hide();
-    $('#ricerca_viaggi').hide();
+    $('#ricerca_eventi').hide();
     $('#form_vino').hide();
 }
