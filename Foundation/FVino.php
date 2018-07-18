@@ -24,7 +24,7 @@ class FVino extends FDatabase{
    * @return array 
    */ 
  public function getVini($username){
-     $query="SELECT `nome_vino`, `produttore` FROM `vino` WHERE `attuale`=1";
+     $query="SELECT `nome_vino`,`tipo` FROM `vino` WHERE `username_proprietario` = '$username' AND `attuale`=1";
      $this->query($query);
      $array=$this->getResultAssoc();
      return $array;
