@@ -46,19 +46,7 @@ class CRicerca {
             $EOste->num_evento=$num_evento;
             $FOste=new FOste();
             $FOste->store($EOste);
-            $this->riepilogoEvento($num_evento);
-
-            
-
-            $EGuidatore=new EGuidatore();
-            $EGuidatore->username_guidatore=$username;
-            $EGuidatore->num_viaggio=$num_viaggio;
-            $EGuidatore->targa=$view->getTarga();
-            $FGuidatore=new FGuidatore();
-            $FGuidatore->store($EGuidatore);
-            $this->riepilogoViaggio($num_viaggio);
-            
-            
+            $this->riepilogoEvento($num_evento);            
         }
         else $this->errore_aggiornamento();
     }
