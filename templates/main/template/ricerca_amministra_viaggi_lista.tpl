@@ -1,13 +1,13 @@
-<script src="js/ricerca_amministrazione_viaggi.js"></script>
+<script src="js/ricerca_amministrazione_eventi.js"></script>
 <div class="column1-unit">
     <div> 
-        {if $viaggi}
-            <h1> Lista viaggi cercati </h1>
+        {if $eventi}
+            <h1> Lista eventi cercati </h1>
                 <div style="width:650px;height:800px;overflow-y: scroll; border:1px solid white;">
                     <table width:650px;>
                     <tr>
                         <th class="mini">
-                            <div name="num_viaggio">ID ▼</div>
+                            <div name="num_evento">ID ▼</div>
                         </th>
                         <th class="top">
                             <div name="citta_partenza">Citta Partenza  </div>
@@ -18,20 +18,20 @@
                             <div name="data-partenza">Data Partenza  </div>
                         </th>
                      </tr>   
-                {section name=nr loop=$viaggi}
-                     <tr class="riepilogo_viaggio pulsante" value="{$viaggi[nr].num_viaggio}" name="true">
+                {section name=nr loop=$eventi}
+                     <tr class="riepilogo_evento pulsante" value="{$eventi[nr].num_evento}" name="true">
                         <div> 
                            <td>
-                                <div>{$viaggi[nr].num_viaggio}</div>
+                                <div>{$eventi[nr].num_evento}</div>
                            </td>
                            <td>
-                                <div>{$viaggi[nr].citta_partenza}</div>
+                                <div>{$eventi[nr].citta_partenza}</div>
                            </td>
                            <td>
-                                <div>{$viaggi[nr].citta_arrivo}</div>
+                                <div>{$eventi[nr].citta_arrivo}</div>
                            </td>
                            <td>
-                                <div>{$viaggi[nr].data_partenza}</div>
+                                <div>{$eventi[nr].data_partenza}</div>
                            </td>     
                          </div> 
                     </tr>
@@ -40,7 +40,7 @@
                 </div>
         {else}
             <div class="contactform">
-            <p class="center"><label class="center-title"> Nessun viaggio trovato!</label></p>
+            <p class="center"><label class="center-title"> Nessun evento trovato!</label></p>
             </div>    
         {/if}
     </div>

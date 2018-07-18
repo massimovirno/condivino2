@@ -8,6 +8,7 @@ class EVino {
     public $descrizione;
     public $immagine_vino;
 
-    // public $_num_viaggi=array();  //array di viaggi relativi a un vino   
+    // MAX  verificare non serve
+    // public $_num_eventi=array();  //array di eventi relativi a un vino   
 }
 ?>

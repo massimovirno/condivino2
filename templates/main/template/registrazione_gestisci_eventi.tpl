@@ -26,19 +26,19 @@
 			<div class="contenitore">
 			<table width:650px>
 				
-                    {section name=nr loop=$array_viaggi}
-                        <tr class="riepilogo_viaggio pulsante" value="{$array_viaggi[nr].num_viaggio}"> 
+                    {section name=nr loop=$array_eventi}
+                        <tr class="riepilogo_evento pulsante" value="{$array_eventi[nr].num_evento}"> 
                             <td width="108">
-                                <div>{$array_viaggi[nr].num_viaggio}</div>
+                                <div>{$array_eventi[nr].num_evento}</div>
                             </td>
                             <td width="108">
-                                <div><b>{$array_viaggi[nr].data_partenza}</b></div>
+                                <div><b>{$array_eventi[nr].data_partenza}</b></div>
                             </td>
                              <td width="108">
-                                <div><b>{$array_viaggi[nr].citta_partenza}</b></div>
+                                <div><b>{$array_eventi[nr].citta_partenza}</b></div>
                             </td>
                             <td width="108">
-                                <div><b>{$array_viaggi[nr].citta_arrivo}</b></div>
+                                <div><b>{$array_eventi[nr].citta_arrivo}</b></div>
                             </td>
 			</tr>
                     {/section}
@@ -47,14 +47,14 @@
                 </table>
             </div>
         {else}
-                <p class="center"><label class="center-title"> Non hai inserito viaggi!</label></p>     
+                <p class="center"><label class="center-title"> Non hai inserito eventi!</label></p>     
         {/if}
         </div>
 		</div>
 		
 
            
-      <h1 class="block">Viaggi a cui partecipi </h1>        
+      <h1 class="block">Eventi a cui partecipi </h1>        
 		 <div class="column1-unit">
           <div class="contactform" >
             
@@ -82,9 +82,9 @@
 			<table width:650px>
 				
                     {section name=nr loop=$array_partecipante}
-                        <tr  class="riepilogo_viaggio pulsante" value="{$array_partecipante[nr].num_viaggio}"> 
+                        <tr  class="riepilogo_evento pulsante" value="{$array_partecipante[nr].num_evento}"> 
                             <td width="87">
-                                <div>{$array_partecipante[nr].num_viaggio}</div>
+                                <div>{$array_partecipante[nr].num_evento}</div>
                             </td>
                             <td width="87">
                                 <div><b>{$array_partecipante[nr].data_partenza}</b></div>
@@ -104,7 +104,7 @@
                 
                 </table>
             {else}
-                    <p class="center"><label class="center-title"> Non partecipi a nessun viaggio!</label></p>    
+                    <p class="center"><label class="center-title"> Non partecipi a nessun evento!</label></p>    
             {/if}
            </div>              
         </div>

@@ -3,7 +3,7 @@
 <h1 class="pagetitle">Rilascia un feedback a {$username_guidatore}</h1>
 <!-- Content unit - One column -->
 <div> 
-    <h1 class="block">Viaggio: &nbsp{$num_viaggio} da: {$citta_partenza} a: {$citta_arrivo} del {$data_partenza}</h1>
+    <h1 class="block">Evento: &nbsp{$num_evento} da: {$citta_partenza} a: {$citta_arrivo} del {$data_partenza}</h1>
     <div class="column1-unit">
         <div class="contactform">
            <table>
@@ -27,7 +27,7 @@
 			 
         
 
-            <p class="center"><input type="button" id="valuta" class="button_center" name="{$num_viaggio}" value="Valuta" tabindex="3" /></p>
+            <p class="center"><input type="button" id="valuta" class="button_center" name="{$num_evento}" value="Valuta" tabindex="3" /></p>
             <br>           
             <br>
         </div>              

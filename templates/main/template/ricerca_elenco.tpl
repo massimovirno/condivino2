@@ -1,11 +1,11 @@
 <br>
-<h1 class="pagetitle">Elenco Viaggi</h1>
+<h1 class="pagetitle">Elenco Eventi</h1>
 <!-- Content unit - One column -->
-<h1 class="block">Dati viaggi</h1>
+<h1 class="block">Dati eventi</h1>
 <script src="js/ricerca_elenco.js"></script>         
 <div class="column1-unit">
     <div class="contactform" >
-        {if $viaggi}
+        {if $eventi}
             <div style="width:650px;height:500px;overflow-y: scroll; border:1px ">
                 <table width:650px;>
                     <tr>
@@ -25,22 +25,22 @@
                             <div>Costo  </div>
 			</th>
                     </tr>
-                    {section name=nr loop=$viaggi}     
-                    <tr class="riepilogo_viaggio pulsante" value="{$viaggi[nr].num_viaggio}" name="true">
+                    {section name=nr loop=$eventi}     
+                    <tr class="riepilogo_evento pulsante" value="{$eventi[nr].num_evento}" name="true">
                         <td>
-                            <div>{$viaggi[nr].num_viaggio}</div>
+                            <div>{$eventi[nr].num_evento}</div>
 			</td>
 			<td>
-                            <div><b>{$viaggi[nr].data_partenza}</b></div>
+                            <div><b>{$eventi[nr].data_partenza}</b></div>
 			</td>
                         <td>
-                            <div><b>{$viaggi[nr].citta_partenza}</b></div>
+                            <div><b>{$eventi[nr].citta_partenza}</b></div>
 			</td>
                         <td>
-                            <div><b>{$viaggi[nr].citta_arrivo}</b></div>
+                            <div><b>{$eventi[nr].citta_arrivo}</b></div>
 			</td>
 			<td>
-                            <div>{$viaggi[nr].costo}&nbsp €</div>
+                            <div>{$eventi[nr].costo}&nbsp €</div>
 			</td>
                     </tr>
                     {/section}

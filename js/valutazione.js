@@ -8,25 +8,25 @@ $("#jqxRating").on('change', function (event) {
 
 $('.valuta_pass').on("click",function(){
     var username=$(this).attr('name1');
-    var viaggio=$(this).attr('name2');
+    var evento=$(this).attr('name2');
     var rating=$('.val_guid').attr('name');
         $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'verifica_valutazione_guidatore',username_partecipante:username, num_viaggio:viaggio, valutazione:rating, commento:$('.commento').val()},
+            data:{controller:'ricerca', task:'verifica_valutazione_guidatore',username_partecipante:username, num_evento:evento, valutazione:rating, commento:$('.commento').val()},
             success:smista
         });    
     });
 
 $('#valuta').on("click",function(){
-    var viaggio=$(this).attr('name');
+    var evento=$(this).attr('name');
     var rating=$('.val_guid').attr('name');
         $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'conferma_valutazione', num_viaggio:viaggio, valutazione:rating, commento:$('.commento').val()},
+            data:{controller:'ricerca', task:'conferma_valutazione', num_evento:evento, valutazione:rating, commento:$('.commento').val()},
             success:smista
         });    
     });
@@ -35,6 +35,6 @@ $('#valuta').on("click",function(){
 function smista(data){
     $('#pagina_parziale').html(data).show('slow');
     $('#ricerca_utenti').hide();
-    $('#ricerca_viaggi').hide();
+    $('#ricerca_eventi').hide();
     $('#form_vino').hide();
 }

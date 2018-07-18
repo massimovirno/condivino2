@@ -53,7 +53,7 @@ $('.ordina_utenti').on("click",function(){
 function smista(data){
     $('#pagina_parziale').html(data).show('slow');
     $('#ricerca_utenti').hide('slow');
-    $('#ricerca_viaggi').hide();
+    $('#ricerca_eventi').hide();
     $('.mostra_ricerca').hide('slow');
     $('#form_vino').hide();
     $('.mostra_avanzata').hide('slow');
@@ -83,6 +83,6 @@ function ricerca_utenti(data){
 function amministrazione(data){
     $('#pagina_parziale').html(data).show('slow');
     $('#ricerca_utenti').hide('slow');
-    $('#ricerca_viaggi').hide();
+    $('#ricerca_eventi').hide();
     $('#nascondi_amministrazione').hide();
 }

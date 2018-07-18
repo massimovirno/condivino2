@@ -1,4 +1,4 @@
-<!-- RICERCA VIAGGI --> 
+<!-- RICERCA EVENTI --> 
 		<br>
 <script src="js/ricerca_eventi.js"></script>
 <h1 class="pagetitle">Cerca un evento</h1>

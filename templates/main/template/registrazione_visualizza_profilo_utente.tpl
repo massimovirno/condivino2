@@ -11,7 +11,7 @@
         <p><img src={$immagine_profilo} alt="Image description" width="200" height="200"/></p>
         <p>Valutazione guidatore: {section name=i loop=$media_feedback_oste} 
 		 <img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
-		{/section}({$num_viaggi_guid} voti)</p>
+		{/section}({$num_eventi_guid} voti)</p>
         <p>Valutazione partecipante:{section name=i loop=$media_feedback_partecipante} 
 		 <img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
 		{/section}({$num_voti_pass} voti)</p>
@@ -49,7 +49,7 @@
 			<table>
 				
                     {section name=nr loop=$array_commenti_guidatore}
-                        <tr class="riepilogo_viaggio pulsante" value="{$array_commenti_guidatore[nr].num_viaggio}"> 
+                        <tr class="riepilogo_evento pulsante" value="{$array_commenti_guidatore[nr].num_evento}"> 
                             <td width="35%">
 								<div>
 								{if $array_commenti_guidatore[nr].num_voti>0}
@@ -71,7 +71,7 @@
                             </td>
                              <td width="25%">
                                 <div>
-									{$array_commenti_guidatore[nr].num_viaggio}
+									{$array_commenti_guidatore[nr].num_evento}
 								</div>
 								
                             </td>
@@ -79,7 +79,7 @@
                     {/section}
 			</table>
 		{else}
-		<p class="center"><label class="center-title"> Nessun viaggio presente!</label></p>
+		<p class="center"><label class="center-title"> Nessun evento presente!</label></p>
 		{/if}
 	</div>
 	</div>
@@ -104,7 +104,7 @@
 			<table>
 				
                     {section name=nr loop=$array_commenti_partecipante}
-                        <tr class="riepilogo_viaggio pulsante" value="{$array_commenti_partecipante[nr].num_viaggio}"> 
+                        <tr class="riepilogo_evento pulsante" value="{$array_commenti_partecipante[nr].num_evento}"> 
                             <td width="35%">
 								<div>
 								{if $array_commenti_partecipante[nr].feedback_oste !=0}
@@ -126,14 +126,14 @@
                             </td>
                              <td width="25%">
                                 <div>
-									{$array_commenti_partecipante[nr].num_viaggio}
+									{$array_commenti_partecipante[nr].num_evento}
 								</div>
 								
                             </td>
 			</tr>
                     {/section}
 		{else}
-		<p class="center"><label class="center-title"> Nessun viaggio presente!</label></p>
+		<p class="center"><label class="center-title"> Nessun evento presente!</label></p>
 		{/if}
 	</div>
 	</div>

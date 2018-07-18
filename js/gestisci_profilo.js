@@ -35,6 +35,6 @@ $('#submit_vino_da_profilo').on("click",function(){
     function smista(data){
     $('#pagina_parziale').html(data).show('slow');
     $('#ricerca_utenti').hide();
-    $('#ricerca_viaggi').hide();
+    $('#ricerca_eventi').hide();
     $('#form_vino').hide();
 }

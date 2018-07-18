@@ -17,28 +17,28 @@ public function getMediaOste($username){
      $this->query($query);
      $array=$this->getResultAssoc();
      $somma_media=0;
-     $tot_viaggi=0;
+     $tot_eventi=0;
      for( $i=0; $i<count($array); $i++){
             if(($array[$i]['num_voti'])!=0){
             $somma_media=$somma_media + $array[$i]['voto_totale']/$array[$i]['num_voti'];
-            $tot_viaggi++;
+            $tot_eventi++;
             }
         }
-     if (count($array)!=0 && $tot_viaggi !=0){
-     $media_oste=$somma_media/$tot_viaggi;}
+     if (count($array)!=0 && $tot_eventi !=0){
+     $media_oste=$somma_media/$tot_eventi;}
      else
       {$media_oste=0;}
-     $dati= array( "$media_oste", "$tot_viaggi");
+     $dati= array( "$media_oste", "$tot_eventi");
      return $dati;
  }
  
  /**
- * Metodo per ottenere i dati da oste per calcolare la media dei voti del oste stesso relativo a un determinato viaggio
+ * Metodo per ottenere i dati da oste per calcolare la media dei voti del oste stesso relativo a un determinato evento
  * @param string $username
  * @return array
  */
  public function getArrayFeedbackOste($username){
-	$query="SELECT `num_viaggio`, `voto_totale`,`num_voti`, `commento` FROM `oste` WHERE `username_oste`='$username'";
+	$query="SELECT `num_evento`, `voto_totale`,`num_voti`, `commento` FROM `oste` WHERE `username_oste`='$username'";
 	$this->query($query);
 	$array=$this->getResultAssoc();
 	return $array;
@@ -56,7 +56,7 @@ public function getMediaOste($username){
  * @return array
  */
  public function getArrayFeedbackPartecipante($username){
-	$query="SELECT `num_viaggio`, `commento_oste`, `feedback_oste`, `votato` FROM `partecipante` WHERE `username_partecipante`='$username'";
+	$query="SELECT `num_evento`, `commento_oste`, `feedback_oste`, `votato` FROM `partecipante` WHERE `username_partecipante`='$username'";
 	$this->query($query);
 	$array=$this->getResultAssoc();
 	return $array;
