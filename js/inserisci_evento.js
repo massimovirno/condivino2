@@ -95,6 +95,7 @@ $('#submit_offri').on("click",function(){
             costo:$('#costo').val(), 
             note:$('#note').val(), 
             immagine_evento:$('#immagine_evento').val()
+            // MAX prende codice vino da combo
             //nome_vino:$('.vini').val()
             
             },
