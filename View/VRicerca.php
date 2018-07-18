@@ -45,7 +45,7 @@ class VRicerca extends View {
             return false;
     }
     /**
-     * restituisce la citta di arrivo
+     * restituisce il vino dell'evento
      * @return mixed
      */
     public function getVinoEvento() {
@@ -55,7 +55,7 @@ class VRicerca extends View {
             return 0;
     }
     /**
-     * restituisce la data di partenza
+     * restituisce la data evento
      * @return mixed
      */
     public function getDataEvento() {
@@ -75,7 +75,7 @@ class VRicerca extends View {
             return 0;
     }
     /**
-     * restituisce il costo
+     * restituisce il costo evento
      * @return mixed
      */
     public function getCosto() {
@@ -135,7 +135,7 @@ class VRicerca extends View {
             return 0;
     }
     /**
-     * restituisce il nome vitigno per un vino
+     * restituisce il nome vitigno del vino
      * @return mixed
      */
     public function getVitigno() {

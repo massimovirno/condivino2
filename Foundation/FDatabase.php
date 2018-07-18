@@ -166,6 +166,8 @@ class FDatabase {
             }
         }
         $query='INSERT INTO '.$this->_table.' ('.$fields.') VALUES ('.$values.')';
+        //MAX
+        print($query);
         $return = $this->query($query);
         if ($this->_auto_increment) {
             $query='SELECT LAST_INSERT_ID() AS `id`';

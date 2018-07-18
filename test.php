@@ -7,13 +7,20 @@
 if (file_exists("installer.class.php"))
     header("location: installer.class.php");
 
-// Se non è presente l'installer instanziamo un oggetto della classe CHome
+// Se non ï¿½ presente l'installer instanziamo un oggetto della classe CHome
 // $CHome=USingleton::getInstance('CHome');
 // $CHome->impostaPagina();
+include_once 'includes/config.inc.php';
+include_once 'Utility/USingleton.php';
+
+include_once 'Foundation/FDatabase.php';
+include_once 'Foundation/FUtente.php';
+include_once 'Foundation/FOste.php';
+include_once 'Foundation/FPartecipante.php';
+include_once 'Foundation/FEvento.php';
+include_once 'Foundation/FVino.php';
 
 /*
-include_once 'Foundation/FOste.php';
-
 $oste = new FOste;
 $username_oste=$oste->getOste(1);
 var_dump($username_oste);
@@ -24,17 +31,14 @@ var_dump($username_oste);
 $username_oste=$oste->eliminaOste(4,'massimovirno');
 var_dump($username_oste);
 
+$evento = new FEvento;
+$test=$evento->getEventi('nome_evento');
+var_dump($test);
+
 */
 
-
-include_once 'Foundation/FDatabase.php';
-include_once 'Utility/USingleton.php';
-require_once 'includes/config.inc.php';
-
-include_once 'Foundation/FEvento.php';
-
-$oste = new FEvento;
-$test=$oste->cercaEvento('cena','sursur','');
+$vino = new FVino();
+$test=$vino->getVino('');
 var_dump($test);
 
 ?>
