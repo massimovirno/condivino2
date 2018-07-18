@@ -10,7 +10,7 @@
 		
 		
         <p><img src={$immagine_profilo} alt="Image description" height="200" width="200"/></p>
-        <p>Valutazione oste:
+        <p>Valutazione guidatore:
 		{section name=i loop=$media_feedback_oste} 
 		 <img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
 		{/section}({$num_viaggi_guid} viaggi)</p>
@@ -26,10 +26,10 @@
 	<h1 class="block">Feedback ricevuti da {$username} per i passaggi offerti</h1>
 <div class="column1-unit">
 	<div class="contactform">
-		{if $array_commenti_oste}
+		{if $array_commenti_guidatore}
 		   <table>
 			<th class="top">
-                            <div>Commento dei partecipanti</div>
+                            <div>Commento dei passeggeri</div>
 			</th>
 			<th class="mini">
                             <div>Media voto </div>
@@ -42,20 +42,20 @@
 			<div class="contenitore">
 			<table>
 				
-                    {section name=nr loop=$array_commenti_oste}
-                        <tr class="riepilogo_viaggio pulsante" value="{$array_commenti_oste[nr].num_viaggio}"> 
+                    {section name=nr loop=$array_commenti_guidatore}
+                        <tr class="riepilogo_viaggio pulsante" value="{$array_commenti_guidatore[nr].num_viaggio}"> 
                             <td width="35%">
 								<div>
-								{if $array_commenti_oste[nr].num_voti>0}
-									{$array_commenti_oste[nr].commento}
+								{if $array_commenti_guidatore[nr].num_voti>0}
+									{$array_commenti_guidatore[nr].commento}
 								{else}
 									[Nessun commento]
 								{/if}
                             </td>
                             <td width="25%">
                                 <div>
-								{if $array_commenti_oste[nr].num_voti>0}
-								{section name=i loop=$array_commenti_oste[nr].voto_totale/$array_commenti_oste[nr].num_voti} 
+								{if $array_commenti_guidatore[nr].num_voti>0}
+								{section name=i loop=$array_commenti_guidatore[nr].voto_totale/$array_commenti_guidatore[nr].num_voti} 
 										<img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
 								{/section}
 								{else}
@@ -65,7 +65,7 @@
                             </td>
                              <td width="25%">
                                 <div>
-									{$array_commenti_oste[nr].num_viaggio}
+									{$array_commenti_guidatore[nr].num_viaggio}
 								</div>
 								
                             </td>

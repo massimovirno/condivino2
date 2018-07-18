@@ -1,11 +1,11 @@
 $(document).ready(function(){
 $('#partecipa').on("click",function(){
-    var evento=$(this).attr('name');
+    var viaggio=$(this).attr('name');
         $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'partecipa_evento', num_evento:evento},
+            data:{controller:'ricerca', task:'partecipa_viaggio', num_viaggio:viaggio},
             success:smista
         });    
     });
@@ -23,59 +23,59 @@ $('.visualizza_utente').on("click",function(){
     });
 
 $('#cancellami').on("click",function(){
-    var evento=$(this).attr('name1');
+    var viaggio=$(this).attr('name1');
     var username=$(this).attr('name2');
         $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'cancella_partecipante', num_evento:evento, username_partecipante:username},
+            data:{controller:'ricerca', task:'cancella_partecipante', num_viaggio:viaggio, username_partecipante:username},
             success:smista
         });    
     });
 
 $('.feedback_partecipante').on("click",function(){
     var username=$(this).attr('name1');
-    var evento=$(this).attr('name2');
+    var viaggio=$(this).attr('name2');
         $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'inserisci_feedback',username_partecipante:username, num_evento:evento},
+            data:{controller:'ricerca', task:'inserisci_feedback',username_partecipante:username, num_viaggio:viaggio},
             success:smista
         });    
     });
 
 $('.elimina_partecipante').on("click",function(){
     var username=$(this).attr('name1');
-    var evento=$(this).attr('name2');
+    var viaggio=$(this).attr('name2');
         $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'cancella_partecipante', username_partecipante:username, num_evento:evento},
+            data:{controller:'ricerca', task:'cancella_partecipante', username_partecipante:username, num_viaggio:viaggio},
             success:smista
         });    
     });
 
-$('.elimina_evento').on("click",function(){
-    var evento=$(this).attr('name');
+$('.elimina_viaggio').on("click",function(){
+    var viaggio=$(this).attr('name');
         $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'elimina_evento', num_evento:evento},
+            data:{controller:'ricerca', task:'elimina_viaggio', num_viaggio:viaggio},
             success:smista
         });    
     });
 
 $('#feedback').on("click",function(){
-    var evento=$(this).attr('name');
+    var viaggio=$(this).attr('name');
         $.ajax({
             url:'index.php',
             dataType:'html',
             type:'GET',
-            data:{controller:'ricerca', task:'inserisci_feedback', num_evento:evento},
+            data:{controller:'ricerca', task:'inserisci_feedback', num_viaggio:viaggio},
             success:smista
         });    
     });
@@ -93,7 +93,7 @@ $('.indietro').on("click",function(){
 function smista(data){
     $('#pagina_parziale').html(data).show('slow');
     $('#ricerca_utenti').hide();
-    $('#ricerca_eventi').hide();
+    $('#ricerca_viaggi').hide();
     $('#form_vino').hide();
 }
 
@@ -105,7 +105,7 @@ function utente(data){
 }
 
 function indietro(){
-    $('#ricerca_eventi').show('slow');
+    $('#ricerca_viaggi').show('slow');
     $('#pagina_parziale').hide('slow');
     $('.mostra_avanzata').show('slow');
     $('.nascondi_avanzata').hide('slow');

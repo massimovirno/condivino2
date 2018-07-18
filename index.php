@@ -12,5 +12,4 @@ if (file_exists("installer.class.php"))
 $CHome=USingleton::getInstance('CHome');
 $CHome->impostaPagina();
 
- // $smarty->debugging = true;
 ?>

@@ -91,11 +91,14 @@ $('#submit_offri').on("click",function(){
             nome_evento:$('#nome_evento').val(),
             vino_evento:$('#vino_evento').val(), 
             data_evento:$('#data_evento_ins').val(), 
-            posti_disponibili:$('#posti_disponibili').val(), 
             costo:$('#costo').val(), 
             note:$('#note').val(), 
+<<<<<<< HEAD
             immagine_evento:$('#immagine_evento').val()
             // MAX prende codice vino da combo
+=======
+            immagine_evento:$('#immagine_evento').val(),
+>>>>>>> parent of a5fcff4... Inserimento evento altre modifiche
             //nome_vino:$('.vini').val()
             
             },

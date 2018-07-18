@@ -75,17 +75,6 @@ class VRicerca extends View {
             return 0;
     }
     /**
-     * restituisce il numero posti disponibili
-     * @return mixed
-     */
-    public function getPostiEvento() {
-        if (isset($_REQUEST['costo'])) {
-            return $_REQUEST['costo'];
-        } else
-            return 0;
-    }
-
-    /**
      * restituisce il costo
      * @return mixed
      */

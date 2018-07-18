@@ -24,14 +24,12 @@
                 <p><label for="aggiungi_vino" class="left">Oppure:</label>
                     <input type="button" name="aggiungi_vino" id="submit_vino_da_inserisci" class="button_left" value="Aggiungi vino" tabindex="4" /></p>
                 <br><br>
-                <p><label for="posti_disponibili" class="left">Posti disponibili:</label>
-                   <input type="text" name="posti_disponibili" id="posti_disponibili" class="field" value="" tabindex="5"  /></p>
                 <p><label for="costo" class="left">Costo:</label>
-                    <input type="text" name="costo" id="costo" class="mini field" value="" tabindex="6"  />&nbsp € (a persona)</p>
+                    <input type="text" name="costo" id="costo" class="mini field" value="" tabindex="5"  />&nbsp € (a persona)</p>
                 <p><label for="note" class="left">Note evento:</label>
-                   <textarea name="note" maxlength="300" id="note" cols="45" rows="7" tabindex="7"></textarea></p>
+                   <textarea name="note" maxlength="300" id="note" cols="45" rows="7" tabindex="6"></textarea></p>
                 <div class="nascosto"><br>
-                    <p><input type="button" id="submit_offri" class="button" disabled value="Inserisci evento" tabindex="8" /></p><br><br>
+                    <p><input type="button" id="submit_offri" class="button" disabled value="Inserisci evento" tabindex="7" /></p><br><br>
                 </div>
 		</fieldset>
             </form>
