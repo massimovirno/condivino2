@@ -2,7 +2,7 @@
 class EVino {
     public $nome_vino;
     public $produttore;
-    public $denominzione;
+    public $denominazione;
     public $vitigno;
     public $anno;
     public $descrizione;
