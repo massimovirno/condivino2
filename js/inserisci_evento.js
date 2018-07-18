@@ -86,13 +86,12 @@ $('#submit_offri').on("click",function(){
             type:'GET',
             data:{controller:'ricerca', task:'inserisci', 
             nome_evento:$('#nome_evento').val(),
-            //vino_evento:$('#vino_evento').val(), 
             data_evento:$('#data_evento_ins').val(), 
+            vino_evento:$('.vini').val(),
             costo:$('#costo').val(), 
+            posti_disponibili:$('#posti_disponibili').val(), 
             note:$('#note').val(), 
             immagine_evento:$('#immagine_evento').val()
-            // MAX prende codice vino da combo
-            vino_evento:$('.vini').val()
             },
             success:smista
         });    

@@ -85,6 +85,16 @@ class VRicerca extends View {
             return 0;
     }
     /**
+     * restituisce i posti disponibili
+     * @return mixed
+     */
+    public function getPostiDisponibili() {
+        if (isset($_REQUEST['posti_disponibili'])) {
+            return $_REQUEST['posti_disponibili'];
+        } else
+            return 0;
+    }
+    /**
      * restituisce le note
      * @return mixed
      */
@@ -95,12 +105,12 @@ class VRicerca extends View {
             return 0;
     }
     /**
-     * restituisce la nome vino
+     * restituisce il percorso della foto evento
      * @return mixed
      */
-    public function getNomeVino() {
-        if (isset($_REQUEST['nome_vino'])) {
-            return $_REQUEST['nome_vino'];
+    public function getImmagineEvento() {
+        if (isset($_REQUEST['immagine_evento'])) {
+            return $_REQUEST['immagine_evento'];
         } else
             return 0;
     }
@@ -158,7 +168,7 @@ class VRicerca extends View {
      * restituisce il persorso della foto etichetta vino
      * @return mixed
      */
-    public function getImmagine_vino() {
+    public function getImmagineVino() {
         if (isset($_REQUEST['immagine_vino'])) {
             return $_REQUEST['immagine_vino'];
         } else

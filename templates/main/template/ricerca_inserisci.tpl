@@ -26,10 +26,14 @@
                 <br><br>
                 <p><label for="costo" class="left">Costo:</label>
                     <input type="text" name="costo" id="costo" class="mini field" value="" tabindex="5"  />&nbsp € (a persona)</p>
+                <p><label for="posti_disponibili" class="left">Posti disponibili:</label>
+                   <input type="text" name="posti_disponibili" id="posti_disponibili" class="mini field" value="" tabindex="6"  /></p>
                 <p><label for="note" class="left">Note evento:</label>
-                   <textarea name="note" maxlength="300" id="note" cols="45" rows="7" tabindex="6"></textarea></p>
+                   <textarea name="note" maxlength="300" id="note" cols="45" rows="7" tabindex="7"></textarea></p>
+                <p><label for="immagine_evento" class="left">Foto evento:</label>
+                   <input type="text" name="immagine_evento" id="immagine_evento" class="field" value=" img/" tabindex="8" /></p>
                 <div class="nascosto"><br>
-                    <p><input type="button" id="submit_offri" class="button" disabled value="Inserisci evento" tabindex="7" /></p><br><br>
+                    <p><input type="button" id="submit_offri" class="button" disabled value="Inserisci evento" tabindex="9" /></p><br><br>
                 </div>
 		</fieldset>
             </form>
