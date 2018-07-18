@@ -74,11 +74,10 @@ class CRicerca {
                 $FVino->store($EVino);
                 if($_REQUEST['da']=='inserisci'){
                     $FVino=new FVino();
-                    // MAX
-                    //$vino=$FVino->getVino($username);
-                    //$view->impostaDati('vino',$vino);
+                    $vini=$FVino->getVini($username);
+                    $view->impostaDati('vini',$vini);
                     $view->setLayout('menu_vino');
-                    $view->processaTemplateParziale();
+                    $view->processaTemplateParziale();             
                 }else{
                     $CRegistrazione=USingleton::getInstance('CRegistrazione');
                     $CRegistrazione->gestisciProfilo();
@@ -236,8 +235,8 @@ class CRicerca {
             $view=USingleton::getInstance('VRicerca');
             $view->setLayout('menu_vino');
             $FVino=new FVino();
-            $vino=$FVino->getVino($username);
-            $view->impostaDati('vino',$vino);
+            $vini=$FVino->getVini($username);
+            $view->impostaDati('vini',$vini);
             return $view->processaTemplateParziale();
         }
         else $this->errore_aggiornamento();
@@ -254,8 +253,8 @@ class CRicerca {
             $view=USingleton::getInstance('VRicerca');
             $view->setLayout('inserisci');
             $FVino=new FVino();
-            $vino=$FVino->getVino($username);
-            $view->impostaDati('vino',$vino);
+            $vini=$FVino->getVini($username);
+            $view->impostaDati('vini',$vini);
         }
         else {
             $view=USingleton::getInstance('VRicerca');
