@@ -129,14 +129,6 @@ class CRicerca {
             if(strtotime($data_attuale)>strtotime($evento->data_evento))
                 $passato=true;
             $view->impostaDati('passato',$passato);
-            
-            
-            // MAX
-            //print "Vino Evento=\n";
-            //print('$vino_evento');
-            // $vino=$FVino->load($evento->$vino_evento); 
-            
-            
             $FVino= new FVino();
             $array= $FVino->getVino($evento->vino_evento);
             $vino= $FVino->load($array[0]['nome_vino']);

@@ -1,6 +1,6 @@
 <script src="js/valutazione.js"></script>
 <br>
-<h1 class="pagetitle">Rilascia un feedback a {$username_guidatore}</h1>
+<h1 class="pagetitle">Rilascia un feedback a {$username_oste}</h1>
 <!-- Content unit - One column -->
 <div> 
     <h1 class="block">Evento: &nbsp{$num_evento} da: {$citta_partenza} a: {$citta_arrivo} del {$data_partenza}</h1>

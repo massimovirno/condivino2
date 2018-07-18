@@ -73,7 +73,7 @@ class FPartecipante extends FDatabase{
     }
     
     /**
-      * Metodo che conferma la votazione effettuata da un partecipante nei confronti di un guidatore per un determinato evento
+      * Metodo che conferma la votazione effettuata da un partecipante nei confronti di un oste per un determinato evento
       * @param int $num_evento 
       * @param string $username
       */
@@ -83,7 +83,7 @@ class FPartecipante extends FDatabase{
     }
     
     /**
-      * Metodo che aggiorna il feedback e i commenti rilasciati dal guidatore al partecipante
+      * Metodo che aggiorna il feedback e i commenti rilasciati dal oste al partecipante
       * @param int $num_evento 
       * @param string $username
       * @param string $feedback
@@ -96,7 +96,7 @@ class FPartecipante extends FDatabase{
     }
     
     /**
-      * Metodo che verifica se un partecipante ha gia votato il guidatore di un determinato evento
+      * Metodo che verifica se un partecipante ha gia votato il oste di un determinato evento
       * @param int $num_evento 
       * @param string $username
       * @return boolean

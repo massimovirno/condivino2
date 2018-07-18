@@ -9,7 +9,7 @@
         <h1><b>{$nome}&nbsp{$cognome}</b></h1>
         <h3>{$citta_residenza}</h3>                    
         <p><img src={$immagine_profilo} alt="Image description" width="200" height="200"/></p>
-        <p>Valutazione guidatore: {section name=i loop=$media_feedback_oste} 
+        <p>Valutazione oste: {section name=i loop=$media_feedback_oste} 
 		 <img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
 		{/section}({$num_eventi_guid} voti)</p>
         <p>Valutazione partecipante:{section name=i loop=$media_feedback_partecipante} 
@@ -32,7 +32,7 @@
 <h1 class="block">Feedback ricevuti da {$username} per i passaggi offerti</h1>
 <div class="column1-unit">
 	<div class="contactform">
-		{if $array_commenti_guidatore}
+		{if $array_commenti_oste}
 		   <table>
 			<th class="top">
                             <div>Commento dei passeggeri</div>
@@ -48,20 +48,20 @@
 			<div class="contenitore">
 			<table>
 				
-                    {section name=nr loop=$array_commenti_guidatore}
-                        <tr class="riepilogo_evento pulsante" value="{$array_commenti_guidatore[nr].num_evento}"> 
+                    {section name=nr loop=$array_commenti_oste}
+                        <tr class="riepilogo_evento pulsante" value="{$array_commenti_oste[nr].num_evento}"> 
                             <td width="35%">
 								<div>
-								{if $array_commenti_guidatore[nr].num_voti>0}
-									{$array_commenti_guidatore[nr].commento}
+								{if $array_commenti_oste[nr].num_voti>0}
+									{$array_commenti_oste[nr].commento}
 								{else}
 									[Nessun commento]
 								{/if}
                             </td>
                             <td width="25%">
                                 <div>
-								{if $array_commenti_guidatore[nr].num_voti>0}
-									{section name=i loop=$array_commenti_guidatore[nr].voto_totale/$array_commenti_guidatore[nr].num_voti} 
+								{if $array_commenti_oste[nr].num_voti>0}
+									{section name=i loop=$array_commenti_oste[nr].voto_totale/$array_commenti_oste[nr].num_voti} 
 										<img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
 									{/section}
 								{else}
@@ -71,7 +71,7 @@
                             </td>
                              <td width="25%">
                                 <div>
-									{$array_commenti_guidatore[nr].num_evento}
+									{$array_commenti_oste[nr].num_evento}
 								</div>
 								
                             </td>
