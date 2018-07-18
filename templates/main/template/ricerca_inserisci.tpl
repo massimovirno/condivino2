@@ -14,8 +14,8 @@
                 <p><label for="data_evento" class="left">Data evento:</label>
                    <input type="text" name="data_evento" id="data_evento_ins" class="field" value="" tabindex="2" /></p>
 		        <div id="menu_vini">
-                    <p><label for="vino" class="left">Scegli un vino:</label>
-                    <select name="vino" class="vino combo"> 
+                    <p><label for="vino_evento" class="left1">Scegli un vino:</label>
+                    <select name="vino_evento" id="vino_evento" class="vini combo"> 
                         {section name=nr loop=$vini}
                             <option value="{$vini[nr].nome_vino}"><h5>{$vini[nr].nome_vino}</h5></option>
                         {/section}

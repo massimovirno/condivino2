@@ -87,7 +87,7 @@ $('#submit_offri').on("click",function(){
             data:{controller:'ricerca', task:'inserisci', 
             nome_evento:$('#nome_evento').val(),
             data_evento:$('#data_evento_ins').val(),
-            vino:$('.vini').val(),
+            vino_evento:$('#vino_evento').val(),
             costo:$('#costo').val(), 
             posti_disponibili:$('#posti_disponibili').val(), 
             note:$('#note').val(), 

@@ -30,10 +30,9 @@
 				   </select>
 				   </p>
                 <p><label for="descrizione" class="left">Descrizione:</label>
-                   <input type="text" name="descrizione" id="descrizione" class="field" value="" tabindex="6" maxlength="100" /></p>
-                
+                   <textarea name="descrizione" maxlength="300" id="note" cols="45" rows="" tabindex="6"></textarea></p>
                 <p><label for="immagine_vino" class="left">Immagine etichetta:</label>
-                   <input type="text" name="immagine_vino" id="immagine_vino" class="field" value="" tabindex="7" maxlength="100" /></p>
+                   <input type="text" name="immagine_vino" id="immagine_vino" class="field" value="img/" tabindex="7" maxlength="100" /></p>
                 
                 {if ($da=='inserisci')}
                     <div class="nascosto"><br>

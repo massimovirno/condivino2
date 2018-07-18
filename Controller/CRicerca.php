@@ -37,8 +37,8 @@ class CRicerca {
             $EEvento->posti_disponibili=$view->getPostiDisponibili();
             $EEvento->note=$view->getNote();
             $EEvento->immagine_evento=$view->getImmagineEvento();
-            
             $FEvento=new FEvento();
+            
             $FEvento->store($EEvento);
             $num_evento=$FEvento->getUltimoNumEvento();
             $EOste=new EOste();
@@ -47,6 +47,18 @@ class CRicerca {
             $FOste=new FOste();
             $FOste->store($EOste);
             $this->riepilogoEvento($num_evento);
+
+            
+
+            $EGuidatore=new EGuidatore();
+            $EGuidatore->username_guidatore=$username;
+            $EGuidatore->num_viaggio=$num_viaggio;
+            $EGuidatore->targa=$view->getTarga();
+            $FGuidatore=new FGuidatore();
+            $FGuidatore->store($EGuidatore);
+            $this->riepilogoViaggio($num_viaggio);
+            
+            
         }
         else $this->errore_aggiornamento();
     }
@@ -72,13 +84,14 @@ class CRicerca {
 
                 $FVino=new FVino();
                 $FVino->store($EVino);
+                // MAX
                 if($_REQUEST['da']=='inserisci'){
                     $FVino=new FVino();
                     $vini=$FVino->getVini($username);
                     $view->impostaDati('vini',$vini);
                     $view->setLayout('menu_vino');
                     $view->processaTemplateParziale();             
-                }else{
+               }else{
                     $CRegistrazione=USingleton::getInstance('CRegistrazione');
                     $CRegistrazione->gestisciProfilo();
                 }
