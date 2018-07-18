@@ -403,10 +403,12 @@ class CRicerca {
                 $EVino=$FVino->load($nome_vino);
                 $view=Usingleton::getInstance('VRicerca');
                 $view->impostaDati('nome_vino',$nome_vino);
-                $view->impostaDati('tipo',$EVino->tipo);
-                $view->impostaDati('num_posti',$EVino->num_posti);
-                $view->impostaDati('carburante',$EVino->carburante);
-                $view->impostaDati('consumo_medio',$EVino->consumo_medio);
+                $view->impostaDati('produttore',$EVino->produttore);
+                $view->impostaDati('denominazione',$EVino->denominazione);
+                $view->impostaDati('vitigno',$EVino->vitigno);
+                $view->impostaDati('anno',$EVino->anno);
+                $view->impostaDati('descrizione',$EVino->descrizione);
+                $view->impostaDati('immagine_vino',$EVino->immagine_vino);
                 $view->setLayout('riepilogo_vino');
                 $view->processaTemplateParziale();
             }
