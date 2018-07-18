@@ -114,6 +114,16 @@ class VRicerca extends View {
         } else
             return 0;
     }
+    /**
+     * restituisce il nome del vino
+     * @return mixed
+     */
+    public function getNomeVino() {
+        if (isset($_REQUEST['nome_vino'])) {
+            return $_REQUEST['nome_vino'];
+        } else
+            return 0;
+    }
    /**
      * restituisce il produttore del vino
      * @return mixed
