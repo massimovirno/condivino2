@@ -11,7 +11,7 @@
             <p><label class="left">Detonazione:</label><label class="left">&nbsp<b>{$denominazione}</b><br></label><br></p>
             <p><label class="left">Vitigno:</label><label class="left">&nbsp<b>{$vitigno}</b></label><br></p>
             <p><label class="left">Anno:</label><label class="left">&nbsp<b>{$anno}</b></label></p>
-            <p><label for="descrizione" class="left">Descrizione:</label>
+            <p><label for="descrizione" class="mini">Descrizione:</label>
             <textarea readonly name="descrizione" maxlength="300" id="descrizione" cols="45" rows="7" >{$descrizione}</textarea></p>
             
             <p><label class="left">Etichetta:</label><label class="left">&nbsp<b>{$immagine_vino}</b></label></p>       

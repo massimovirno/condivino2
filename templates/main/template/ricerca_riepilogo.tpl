@@ -58,10 +58,9 @@
             <p><label class="left">Denominazione:</label><label class="left">&nbsp<b>{$denominazione}</b><br></label><br></p>
             <p><label class="left">Vitigno:</label><label class="left">&nbsp<b>{$vitigno}</b></label><br></p>
             <p><label class="left">Anno:</label><label class="left">&nbsp<b>{$anno}</b></label><br></p>
-            <p><label class="left">Descrizione:</label><label class="left">&nbsp<b>{$descrizione}</b></label><br></p>
-            <br>
+            <p><label class="left">Descrizione:</label><label class="mini">&nbsp<b>{$descrizione}</b></label><br></p>
+            
             <p><label class="left">Etichetta:</label><label class="left">&nbsp<b>{$immagine_vino}</b></label><br></p>
-        <br>
         </div>
     <h1 class="block">Partecipanti</h1>
         <div class="contactform">
