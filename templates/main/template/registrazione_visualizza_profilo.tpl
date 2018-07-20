@@ -23,7 +23,7 @@
         <p>Città di nascita:<b>&nbsp{$citta_nascita}</b></p><br><br><br><br>
     </div>
 </div>
-	<h1 class="block">Feedback ricevuti da {$username} per i eventi organizzati</h1>
+	<h1 class="block">Feedback ricevuti da {$username} per gli eventi organizzati</h1>
 <div class="column1-unit">
 	<div class="contactform">
 		{if $array_commenti_oste}
