@@ -286,11 +286,11 @@ class CRicerca {
             $view->setLayout('elenco');
             $nome_evento=$view->getNomeEvento();
             $vino_evento=$view->getVinoEvento();
-            $data_partenza=$view->getDataEvento();
+            $data_evento=$view->getDataEvento();
             $eventi=NULL;
-            if ($nome_evento OR $vino_evento OR $data_partenza) {
+            if ($nome_evento OR $vino_evento OR $data_evento) {
                 $FEvento=new FEvento();
-                $eventi=$FEvento->cercaEvento($citta_partenza,$citta_arrivo,$data_partenza);
+                $eventi=$FEvento->cercaEvento($nome_evento,$vino_evento,$data_evento);
             }
             $view->mostraListaEventi($eventi);
     }

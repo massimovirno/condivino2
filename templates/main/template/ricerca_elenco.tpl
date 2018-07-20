@@ -16,10 +16,10 @@
                             <div>Data  </div>
 			</th>
 			<th class="top">
-                            <div>Partenza da  </div>
+                            <div>Nome  </div>
                         </th>
 			<th class="top">
-                            <div>Arrivo a  </div>
+                            <div>Vino  </div>
 			</th>
 			<th class="mini">
                             <div>Costo  </div>
@@ -31,13 +31,13 @@
                             <div>{$eventi[nr].num_evento}</div>
 			</td>
 			<td>
-                            <div><b>{$eventi[nr].data_partenza}</b></div>
+                            <div><b>{$eventi[nr].data_evento}</b></div>
 			</td>
                         <td>
-                            <div><b>{$eventi[nr].citta_partenza}</b></div>
+                            <div><b>{$eventi[nr].nome_evento}</b></div>
 			</td>
                         <td>
-                            <div><b>{$eventi[nr].citta_arrivo}</b></div>
+                            <div><b>{$eventi[nr].vino_evento}</b></div>
 			</td>
 			<td>
                             <div>{$eventi[nr].costo}&nbsp €</div>
