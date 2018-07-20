@@ -79,7 +79,7 @@
           <ul>
             <li><a href="index.php?controller=&task=" >Home</a></li>
             <li><a id="cerca" class="pulsante">Cerca un evento</a></li>
-            <li><a id="offri" class="pulsante">Crea un evento</a></li>
+            <li><a id="offri" class="pulsante">Organizza un evento</a></li>
             <li id="prova">{if (!$registrato)}
                 <a href="?controller=registrazione&task=registra">Registrati</a></li>
                 {else}

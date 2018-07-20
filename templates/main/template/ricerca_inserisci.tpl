@@ -1,7 +1,7 @@
 <!-- INSERIMENTO EVENTO -->
 <script src="js/inserisci_evento.js"></script>
 <br>
-<h1 class="pagetitle">Crea un Evento</h1>
+<h1 class="pagetitle">Organizza un Evento</h1>
 <!-- Content unit - One column -->
 <div>
 <h1 class="block">Dati dell'evento</h1>
