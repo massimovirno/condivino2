@@ -35,10 +35,11 @@ $evento = new FEvento;
 $test=$evento->getEventi('nome_evento');
 var_dump($test);
 
-*/
-
 $vino = new FVino();
 $test=$vino->getVino('');
 var_dump($test);
-
+*/
+$vino = new FVino();
+$verifica=$vino->verificaNomeVino('');
+var_dump($verifica);
 ?>
