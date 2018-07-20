@@ -16,10 +16,10 @@
                             <div>Data  </div>
 			</th>
 			<th class="mini">
-                            <div>Partenza da  </div>
+                            <div>Nome  </div>
 			</th>
 			<th class="mini">
-                            <div>Arrivo a  </div>
+                            <div>Vino  </div>
 			</th>
                     </tr>
 			</table>
@@ -32,13 +32,13 @@
                                 <div>{$array_eventi[nr].num_evento}</div>
                             </td>
                             <td width="108">
-                                <div><b>{$array_eventi[nr].data_partenza}</b></div>
+                                <div><b>{$array_eventi[nr].data_evento}</b></div>
                             </td>
                              <td width="108">
-                                <div><b>{$array_eventi[nr].citta_partenza}</b></div>
+                                <div><b>{$array_eventi[nr].nome_evento}</b></div>
                             </td>
                             <td width="108">
-                                <div><b>{$array_eventi[nr].citta_arrivo}</b></div>
+                                <div><b>{$array_eventi[nr].vino_evento}</b></div>
                             </td>
 			</tr>
                     {/section}
@@ -68,10 +68,10 @@
                             <div>Data  </div>
 			</th>
 			<th class="top">
-                            <div>Partenza da  </div>
+                            <div>Nome  </div>
 			</th>
 			<th class="top">
-                            <div>Arrivo a  </div>
+                            <div>Vino  </div>
 			</th>
 			<th class="mini">
                             <div>Costo  </div>
@@ -87,13 +87,13 @@
                                 <div>{$array_partecipante[nr].num_evento}</div>
                             </td>
                             <td width="87">
-                                <div><b>{$array_partecipante[nr].data_partenza}</b></div>
+                                <div><b>{$array_partecipante[nr].data_evento}</b></div>
                             </td>
                             <td>
-                                <div><b>{$array_partecipante[nr].citta_partenza}</b></div>
+                                <div><b>{$array_partecipante[nr].nome_evento}</b></div>
                             </td>
                             <td>
-                                <div><b>{$array_partecipante[nr].citta_arrivo}</b></div>
+                                <div><b>{$array_partecipante[nr].vino_evento}</b></div>
                             </td>
                             <td width="87">
                                 <div>{$array_partecipante[nr].costo}&nbsp €</div>
