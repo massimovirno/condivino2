@@ -26,6 +26,7 @@ class CRicerca {
         $username=$session->leggi_valore('username');
         if ($username!=false) {
             $view=Usingleton::getInstance('VRicerca');
+            // MAX
             //$FVino= new FVino();
             //$nome_vino=$view->getNomeVino();
             //$posti= $FVino->getPostiVino($nome_vino_presa);
