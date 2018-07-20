@@ -21,9 +21,9 @@ class FEvento    extends FDatabase{
     
     /**
      * Metodo per effettuare la ricerca di un evento
-     * @param string $citta_partenza
-     * @param string $citta_arrivo
-     * @param date $data_partenza
+     * @param string $$nome_evento
+     * @param string $vino_evento
+     * @param date $data_evento
      * @return array 
      */
     public function cercaEvento($nome_evento,$vino_evento,$data_evento){

@@ -28,7 +28,7 @@
 			<table width:650px>
 				
                     {section name=nr loop=$eventi}
-                        <tr  class="riepilogo_eventi pulsante" value="{$eventi[nr].num_evento}"> 
+                        <tr  class="riepilogo_evento pulsante" value="{$eventi[nr].num_evento}"> 
                             <td width="87">
                                 <div>{$eventi[nr].num_evento}</div>
                             </td>
@@ -51,7 +51,7 @@
                 </table>
             </div>
         {else}
-            <p class="center"><label class="center-title"> Non ci sono eventiii!</label></p>  
+            <p class="center"><label class="center-title"> Non ci sono eventi!</label></p>  
         {/if}    
     </div>         
 </div>

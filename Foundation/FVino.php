@@ -67,10 +67,10 @@ class FVino extends FDatabase{
  
  /**
  * Metodo per verificare se una nome_vino è già utilizzata o meno
- * @param string $email
+ * @param string $nome_vino
  * @return array $trovato
  */
-public function verificaTarga($nome_vino){
+public function verificaNomeVino($nome_vino){
     $query="SELECT `nome_vino` FROM `vino` WHERE `nome_vino`='$nome_vino'";
     $this->query($query);
     $trovato=$this->getResult();

@@ -7,7 +7,7 @@
         <div class="column1-unit">
           <div class="contactform" >
             
-            {if $array_eventi}
+                {if $array_eventi}
                <table width:650px;>
 			<th class="mini">
                             <div>ID  </div>
