@@ -1,5 +1,5 @@
 /****************************************************************/
-/*   Design:   Multiflex-3.12 / Layout-2                        */
+/*   Design:   Multiflex-3.12 / Layout-3                        */
 /*   File:     Global layout structure                          */
 /*--------------------------------------------------------------*/
 /*   Design:   www.1234.info                                    */
@@ -18,8 +18,8 @@
 *{padding:0; margin:0;}
  body {font-size:62.5%; background-color:rgb(255,255,255); font-family:verdana,arial,sans-serif;} /*Font-size: 1.0em = 10px when browser default size is 16px*/
 .page-container {width:900px; margin:0px auto; margin-top:10px; margin-bottom:10px; border:solid 1px rgb(150,150,150); font-size:1.0em;}
-.main {clear:both; width:900px; padding-bottom:30px; background:transparent url(../img/bg_main_withnav.jpg) top left repeat-y;}
-.main-navigation {display:inline /*Fix IE floating margin bug*/; float:left; width:200px; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
+.main {clear:both; width:900px; padding-bottom:30px; background:transparent url(../img/bg_main_withnav_reverse.jpg) top left repeat-y;}
+.main-navigation {display:inline /*Fix IE floating margin bug*/; float:right; width:200px; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
 .main-content {display:inline; /*Fix IE floating margin bug*/; float:left; width:640px; margin:0 0 0 30px; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
 .footer {clear:both; width:900px; padding:1.0em 0 1.0em 0; background:rgb(225,225,225) url(../img/bg_foot.jpg) no-repeat; font-size:1.0em; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
 
@@ -27,8 +27,8 @@
 
 /* HEADER */
 .header {width:900px; font-family:"trebuchet ms",arial,sans-serif;}
-.header-top {width:900px; height:80px; background:rgb(240,240,240) url(../img/bg_head_top.jpg); overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
-.header-middle {width:900px; height:150px; background:rgb(230,230,230) url(../img/bg_head_middle.jpg); overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
+.header-top {width:900px; height:17px; background:rgb(240,240,240) url(../img/bg_head_top.jpg); overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
+.header-middle {width:900px; height:180px; background:rgb(230,230,230) url(../img/bg_head_middle.jpg); overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
 .header-bottom {width:900px;}
 .header-breadcrumbs {clear:both; width:900px; padding:1.0em 0 1.5em 0; background:rgb(255,255,255) url(../img/bg_head_breadcrumbs.jpg) repeat-y;}
 
@@ -36,13 +36,13 @@
 /*  HEADER SECTION  */
 /********************/
 .sitelogo {width:60px; height:40px; position:absolute; z-index:1; margin:22px 0 0 20px; background:url(../img/bg_head_top_logo.jpg); }
-.sitename {width:300px; height:45px; position:absolute; z-index:1; margin:20px 0 0 90px; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
-.sitename h1 {font-size:240%;}
+.sitename {width:300px; height:45px; position:absolute; z-index:1; margin:22px 0 0 40px; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
+.sitename h1 {color:rgb(110,110,110); font-size:700%; text-shadow: -2px -2px 0 #0099ff, 2px -2px 0 #0099ff, -2px 2px 0 #0099ff, 2px 2px 0 #0099ff;}
 .sitename h2 {margin:-4px 0 0 0; color:rgb(125,125,125); font-size:120%;}
 .sitename a {text-decoration:none; color:rgb(125,125,125);}
 .sitename a:hover {text-decoration:none; color:rgb(50,50,50);}
 
-.nav0 {width:350px; position:absolute; z-index:2; margin:25px 0 0 0; margin-left:550px !important /*Firefox*/; margin-left:553px /*IE6*/;}
+.nav0 {width:350px; position:absolute; z-index:2; margin:25px 0 0 0; margin-left:550px !important /*Non-IE6*/; margin-left:553px /*IE6*/;}
 .nav0 ul {float:right; padding:0 20px 0 0;}
 .nav0 li {display:inline; list-style:none;}
 .nav0 li a {padding:0 0 0 3px;}
@@ -101,15 +101,15 @@
 /******************/
 
 /* MAIN NAVIGATION */
-.main-navigation .round-border-topright {width:10px; height:10px; position:absolute; z-index:10; margin:0 0 0 190px; background:url(../img/bg_corner_topright.gif) no-repeat;}
+.main-navigation .round-border-topleft {width:10px; height:10px; position:absolute; z-index:100; margin:0; background:url(../img/bg_corner_topleft.gif) no-repeat;}
 
 /* MAIN CONTENT */
-.column1-unit {width:640px; margin-bottom:10px !important /*Non-IE6*/; margin-bottom:5px /*IE6*/;}
+.column1-unit {width:630px;  margin-bottom:10px !important /*Non-IE6*/; margin-bottom:5px /*IE6*/;}
 .column2-unit-left {float:left; width:300px; margin-bottom:10px !important /*Non-IE6*/; margin-bottom:5px /*IE6*/;}
 .column2-unit-right {float:right; width:300px; margin-bottom:10px !important /*Non-IE6*/; margin-bottom:5px /*IE6*/;}
-.column3-unit-left {float:left; width:186px; margin-bottom:10px !important /*Non-IE6*/; margin-bottom:5px /*IE6*/}
+.column3-unit-left {float:left; width:186px; margin-bottom:10px !important /*Non-IE6*/; margin-bottom:5px /*IE6*/;}
 .column3-unit-middle {float:left; width:186px; margin-bottom:10px !important /*Non-IE6*/; margin-bottom:5px /*IE6*/; margin-left:40px;}
-.column3-unit-right {float:right; width:186px; margin-bottom:10px !important /*Non-IE6*/; margin-bottom:5px /*IE6*/;}
+.column3-unit-right {float:right; width:186px;  margin-bottom:10px !important /*Non-IE6*/; margin-bottom:5px /*IE6*/;}
 
 /********************/
 /*  FOOTER SECTION  */
@@ -127,7 +127,7 @@
 .column1-unit:after, .column2-unit-left:after, .column2-unit-right:after, .column3-unit-left:after, .column3-unit-middle:after, .column3-unit-right:after {content:"."; display:block; height:0; clear:both; visibility:hidden;}
  p:after {content:"."; display:block; height:0; /*clear:both*/; visibility:hidden;}
 .footer:after {content:"."; display:block; height:0; clear:both; visibility:hidden;}
-.clear-contentunit {clear:both; width:640px; height:0.1em; border:none; background:rgb(210,210,210); color:rgb(210,210,210);}
+.clear-contentunit {clear:both; width:640px; height:0.2em; border:none; background:rgb(210,210,210); color:rgb(210,210,210);}
 
 /********************************/
 /*  PRINTING and MISCELLANEOUS  */
@@ -138,3 +138,47 @@
 @media print {.main {clear:both; width:900px; padding-bottom:30px; background:transparent;}}
 @media print {.main-navigation {display:inline /*Fix IE floating margin bug*/; float:left; width:199px; border-right:solid 1px rgb(200,200,200); border-bottom:solid 1px rgb(200,200,200); background-color:rgb(240,240,240); overflow:visible !important /*Firefox*/; overflow:hidden /*IE*/;}}
 @media print {.footer {clear:both; width:900px; height:3.7em; padding:1.1em 0 0; background:rgb(240,240,240); font-size:1.0em; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}}
+
+/*jqxRating*/
+.jqx-rating
+{
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    overflow: hidden;
+}
+.jqx-rating-image
+{
+    border-width: 0px;
+}
+.jqx-rating-image-default
+{
+    margin: 0px;
+    padding: 0px;
+    outline: none;    
+	border:0px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-image: url(img/star1.png);
+    overflow: hidden;
+}
+/*applied to the rating when it is hovered.*/
+.jqx-rating-image-hover
+{
+    padding: 0px;
+    background-repeat: no-repeat;
+	border:0px;
+    cursor: pointer;
+    background-image: url(img/star_yellow.png);
+    overflow: hidden;
+}
+/*applied to the rating when it is disabled.*/
+.jqx-rating-image-backward
+{
+    padding: 0px;
+	border:0px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-image: url(img/star.png);
+    overflow: hidden;
+}
