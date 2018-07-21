@@ -13,7 +13,7 @@
         <p>Valutazione oste:
 		{section name=i loop=$media_feedback_oste} 
 		 <img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
-		{/section}({$num_eventi_guid} eventi)</p>
+		{/section}({$num_eventi_oste} eventi)</p>
         <p>Valutazione partecipante: {section name=i loop=$media_feedback_partecipante} 
 		 <img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
 		{/section}({$num_voti_pass} voti)</p>

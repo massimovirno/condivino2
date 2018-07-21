@@ -3,13 +3,13 @@ $(document).ready(function(){
 $("#jqxRating").jqxRating({ width: 350, height: 35, theme: 'classic'});
 $("#jqxRating").on('change', function (event) {
     $("#rate").find('span').remove();
-    $("#rate").append('<span class="val_guid" name='+ event.value +'>' + event.value + '</span');
+    $("#rate").append('<span class="val_oste" name='+ event.value +'>' + event.value + '</span');
 });
 
 $('.valuta_pass').on("click",function(){
     var username=$(this).attr('name1');
     var evento=$(this).attr('name2');
-    var rating=$('.val_guid').attr('name');
+    var rating=$('.val_oste').attr('name');
         $.ajax({
             url:'index.php',
             dataType:'html',
@@ -21,7 +21,7 @@ $('.valuta_pass').on("click",function(){
 
 $('#valuta').on("click",function(){
     var evento=$(this).attr('name');
-    var rating=$('.val_guid').attr('name');
+    var rating=$('.val_oste').attr('name');
         $.ajax({
             url:'index.php',
             dataType:'html',
