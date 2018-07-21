@@ -214,7 +214,7 @@ class VRegistrazione extends View {
             return 0;
     }
     /*
-    * Restituisce la data di partenza di ricerca
+    * Restituisce la data dell'evento di ricerca
     *
     * @return mixed
     */

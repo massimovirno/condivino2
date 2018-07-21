@@ -15,7 +15,7 @@ class VRicerca extends View {
      */
     private $_layout='default';
     /**
-     * restituisce la citta di partenza passata per GET o POST
+     * restituisce nome evento
      * @return mixed
      */
     public function getNomeEvento() {

@@ -15,7 +15,7 @@
                         <th class="top">
                             <div name="vino_evento">Vino  </div>
                         <th class="mini">    
-                            <div name="data-partenza">Data evento  </div>
+                            <div name="data_evento">Data  </div>
                         </th>
                      </tr>   
                 {section name=nr loop=$eventi}
