@@ -230,7 +230,7 @@ class CRegistrazione {
 	    $num_voti_partecipante= $FUtente->getNumVotiPartecipante($username);
 	    $view->impostaDati('num_voti_pass', $num_voti_partecipante);
             $view->impostaDati('media_feedback_oste',ceil($dati_oste[0]));
-            $view->impostaDati('num_eventi_guid',$dati_oste[1]);
+            $view->impostaDati('num_eventi_oste',$dati_oste[1]);
             $view->impostaDati('media_feedback_partecipante',ceil($dati_partecipante));
 	    $commenti_oste=$FUtente->getArrayFeedbackOste($username);
             $commenti_partecipante=$FUtente->getArrayFeedbackPartecipante($username);
@@ -265,7 +265,7 @@ class CRegistrazione {
         $dati_oste= $FUtente->getMediaOste($username);
         $dati_partecipante= $FUtente->getMediaPartecipante($username);
         $view->impostaDati('media_feedback_oste',ceil($dati_oste[0]));
-        $view->impostaDati('num_eventi_guid',$dati_oste[1]);
+        $view->impostaDati('num_eventi_oste',$dati_oste[1]);
 	$num_voti_partecipante= $FUtente->getNumVotiPartecipante($username);
 	$view->impostaDati('num_voti_pass', $num_voti_partecipante);
         $view->impostaDati('media_feedback_partecipante',ceil($dati_partecipante));
