@@ -6,6 +6,9 @@
     <h1 class="block">Riepilogo del evento &nbsp{$num_evento}</h1>
     <div class="column1-unit">
         <div class="contactform">
+            
+            <p class="center"><img src={$immagine_evento} alt="Image description" height="468" width="614"/></p>
+            
             {if ($isPartecipante || $isOste)}
                 <p class="center"><label class="center-title">Partecipi a questo evento!</p>
             {/if}
