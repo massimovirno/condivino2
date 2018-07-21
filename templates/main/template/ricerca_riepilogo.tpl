@@ -53,14 +53,15 @@
 			</div>
     <h1 class="block">Informazioni vino</h1>
         <div class="contactform">
+            <p><label class="mini"><img src={$immagine_vino} alt="Image description" height="220" width="115"/></label></p>
             <p><label class="left">Nome vino:</label><label class="left">&nbsp<b>{$nome_vino}</label></b><br></p>
             <p><label class="left">Produttore:</label><label class="left">&nbsp<b>{$produttore}</b></label><br></p>
             <p><label class="left">Denominazione:</label><label class="left">&nbsp<b>{$denominazione}</b><br></label><br></p>
             <p><label class="left">Vitigno:</label><label class="left">&nbsp<b>{$vitigno}</b></label><br></p>
             <p><label class="left">Anno:</label><label class="left">&nbsp<b>{$anno}</b></label><br></p>
-            <p><label class="left">Descrizione:</label><label class="mini">&nbsp<b>{$descrizione}</b></label><br></p>
-            
-            <p><label class="left">Etichetta:</label><label class="left">&nbsp<b>{$immagine_vino}</b></label><br></p>
+            <p><label class="left">Descrizione:</label>
+                <label class="mini">&nbsp<b>{$descrizione}</b></label><br></p>
+                
         </div>
     <h1 class="block">Partecipanti</h1>
         <div class="contactform">
