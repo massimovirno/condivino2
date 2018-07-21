@@ -315,9 +315,9 @@ class CRicerca {
                     $view=USingleton::getInstance('VRicerca');
                     $view->impostaDati('num_evento',$num_evento);
                     $view->impostaDati('username_oste',$EOste['username_oste']);
-                    $view->impostaDati('citta_partenza',$EEvento->citta_partenza);
-                    $view->impostaDati('citta_arrivo',$EEvento->citta_arrivo);
-                    $view->impostaDati('data_partenza',$EEvento->data_partenza);
+                    $view->impostaDati('nome_evento',$EEvento->nome_evento);
+                    $view->impostaDati('vino_evento',$EEvento->vino_evento);
+                    $view->impostaDati('data_evento',$EEvento->data_evento);
                     $view->setLayout('feedback_partecipante');
                     $view->processaTemplateParziale();
                 }
@@ -325,9 +325,9 @@ class CRicerca {
                     $view=USingleton::getInstance('VRicerca');
                     $view->impostaDati('username_partecipante',$view->getUsernamePartecipante());
                     $view->impostaDati('num_evento',$num_evento);
-                    $view->impostaDati('citta_partenza',$EEvento->citta_partenza);
-                    $view->impostaDati('citta_arrivo',$EEvento->citta_arrivo);
-                    $view->impostaDati('data_partenza',$EEvento->data_partenza);
+                    $view->impostaDati('nome_evento',$EEvento->nome_evento);
+                    $view->impostaDati('vino_evento',$EEvento->vino_evento);
+                    $view->impostaDati('data_evento',$EEvento->data_evento);
                     $view->setLayout('feedback_oste');
                     $view->processaTemplateParziale();
                 }
@@ -528,9 +528,9 @@ class CRicerca {
 
 /**
  * Ricerca eventi da amministrazione secondo vari criteri
- * @param $citta_partenza_ricerca string
- * @param $citta_arrivo_ricerca string
- * @param $data_partenza_ricerca string
+ * @param $nome_evento_ricerca string
+ * @param $nome_vino_ricerca string
+ * @param $data_evento_ricerca string
  * @return mixed
  */
     public function ricercaEventi($nome_evento_ricerca,$nome_vino_ricerca,$data_evento_ricerca){
