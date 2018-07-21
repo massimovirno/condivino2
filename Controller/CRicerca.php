@@ -533,14 +533,14 @@ class CRicerca {
  * @param $data_partenza_ricerca string
  * @return mixed
  */
-    public function ricercaEventi($citta_partenza_ricerca,$citta_arrivo_ricerca,$data_partenza_ricerca){
+    public function ricercaEventi($nome_evento_ricerca,$nome_vino_ricerca,$data_evento_ricerca){
         $session=USingleton::getInstance('USession');
         $username=$session->leggi_valore('username');
         $amministratore=$session->leggi_valore('amministratore');
         if ($username!=false && $amministratore) {
             $view=USingleton::getInstance('VRicerca');
             $FEvento=new FEvento();
-            $eventi=$FEvento->ricercaEventi($citta_partenza_ricerca, $citta_arrivo_ricerca, $data_partenza_ricerca);
+            $eventi=$FEvento->ricercaEventi($nome_evento_ricerca, $nome_vino_ricerca, $data_evento_ricerca);
             $view->mostraListaCompletaEventi($eventi);
             $view->setLayout('amministra_eventi_lista');
             return $view->processaTemplateParziale();

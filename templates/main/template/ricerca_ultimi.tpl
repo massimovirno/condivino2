@@ -1,7 +1,7 @@
 <br>
 <script src="js/index.js"></script>
 <h1 class="pagetitle">Home page</h1>
-<div><h1 class="block">Ultimi eventi inseriti dagli utenti</h1></div>
+<div><h1 class="block">Eventi recenti</h1></div>
 <div class="column1-unit">	
     <div class="contactform" >
         {if $eventi}

@@ -29,6 +29,20 @@ class FEvento    extends FDatabase{
     public function cercaEvento($nome_evento,$vino_evento,$data_evento){
 		$nome_evento1=mysql_real_escape_string($nome_evento);
 		$vino_evento1=mysql_real_escape_string($vino_evento);
+        
+        $query="SELECT * FROM `evento` WHERE";
+        if ($nome_evento OR $data_evento)
+            {
+            if ($nome_evento)
+            $query.=" `nome_evento`='$nome_evento1'";
+            if ($data_evento) {
+                if ($nome_evento)
+                    $query.=" AND";
+            $query.=" `data_evento`>CURRENT_DATE()"; // Per estrarre solo eventi con data successiva ad oggi
+            }     
+        }
+        // MAX
+        /*
         $query="SELECT * FROM `evento` WHERE";
         if ($nome_evento)
             $query.=" `nome_evento`='$nome_evento1'";
@@ -45,6 +59,8 @@ class FEvento    extends FDatabase{
         $query.=" AND `data_evento`>CURRENT_DATE()"; // Per estrarre solo eventi con data successiva ad oggi
         // MAX
         // print($query);
+         */
+        
         $this->query($query);
         $array=$this->getResultAssoc();
         return $array;
@@ -111,28 +127,24 @@ class FEvento    extends FDatabase{
     
     /**
      * Metodo per effettuare la ricerca di un evento
-     * @param string $citta_partenza
-     * @param string $citta_arrivo
-     * @param date $data_partenza
+     * @param string $nome_evento
+     * @param string $vino_evento
+     * @param date $data_evento
      * @return array 
      */
-    public function ricercaEventi($citta_partenza, $citta_arrivo, $data_partenza){
-	$citta_partenza1=mysql_real_escape_string($citta_partenza);
-	$citta_arrivo1=mysql_real_escape_string($citta_arrivo);
+    public function ricercaEventi($nome_evento, $vino_evento, $data_evento){
+	$nome_evento1=mysql_real_escape_string($nome_evento);
+	$vino_evento1=mysql_real_escape_string($vino_evento);
+
     $query="SELECT * FROM `evento` WHERE";
-    if ($citta_partenza OR $citta_arrivo OR $data_partenza)
+    if ($nome_evento OR $data_evento)
     {
-        if ($citta_partenza)
-            $query.=" `citta_partenza`='$citta_partenza1'";
-        if ($citta_arrivo) {
-            if ($citta_partenza)
+        if ($nome_evento)
+            $query.=" `nome_evento`='$nome_evento1'";
+        if ($data_evento) {
+            if ($nome_evento)
                 $query.=" AND";
-            $query.=" `citta_arrivo`='$citta_arrivo1'";
-        }
-        if ($data_partenza) {
-            if ($citta_partenza OR $citta_arrivo)
-                $query.=" AND";
-            $query.=" `data_partenza`='$data_partenza'";
+            $query.=" `data_evento`='$data_evento'";
         }
     }
     $this->query($query);

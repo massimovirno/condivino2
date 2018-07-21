@@ -13,10 +13,8 @@
           <div class="contactform">
              <form>
               <fieldset>
-                <p><label for="nome_evento" class="left">Nome evento:</label>
+                <p><label for="nome_evento" class="left">Nome:</label>
                    <input type="text" name="nome_evento" id="nome_evento_ricerca" class="field" value="" tabindex="1"  /></p>
-                <p><label for="vino_evento" class="left">Vino evento:</label>
-                   <input type="text" name="vino_evento" id="vino_evento_ricerca" class="field" value="" tabindex="2" /></p>
                 <p><label for="data_evento" class="left">Data evento:</label>
                    <input type="text" name="data_evento" id="data_evento_ricerca" class="field" value="" tabindex="3" /></p>
                 <p><input type="button" id="submit_ricerca_eventi" class="button" value="Cerca" tabindex="4" /></p>
