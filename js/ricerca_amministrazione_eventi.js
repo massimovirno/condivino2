@@ -7,9 +7,9 @@ $("#data_evento_ricerca").datepicker({
         buttonImageOnly: true,
         changeMonth: true,
         changeYear: true,
-        yearRange: "2000:2020",
+        yearRange: "2018:2020",
         dateFormat: "yy/mm/dd",
-        defaultDate: "2000/01/01"
+        defaultDate: "2018/01/01"
     });
 
 $('.mostra_avanzata').on("click",function(){
