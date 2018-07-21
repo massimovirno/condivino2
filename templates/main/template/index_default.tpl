@@ -52,6 +52,7 @@
         <!-- Sitelogo and sitename -->
         <div class="sitename">
           <h1>CondiVino</h1>
+          <h2>Eventi conviviali</h2>
         </div>
     
        

@@ -37,8 +37,8 @@
 /********************/
 .sitelogo {width:60px; height:40px; position:absolute; z-index:1; margin:22px 0 0 20px; background:url(../img/bg_head_top_logo.jpg); }
 .sitename {width:300px; height:45px; position:absolute; z-index:1; margin:22px 0 0 40px; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
-.sitename h1 {color:rgb(110,110,110); font-size:700%; text-shadow: -2px -2px 0 #0099ff, 2px -2px 0 #0099ff, -2px 2px 0 #0099ff, 2px 2px 0 #0099ff;}
-.sitename h2 {margin:-4px 0 0 0; color:rgb(125,125,125); font-size:120%;}
+.sitename h1 {color:rgb(255,255,255); font-size:700%; text-shadow: -2px -2px 0 #b31329, 2px -2px 0 #b31329, -2px 2px 0 #b31329, 2px 2px 0 #b31329;}
+.sitename h2 {color:rgb(255,255,255); font-size:300%; text-shadow: -2px -2px 0 #b31329, 2px -2px 0 #b31329, -2px 2px 0 #b31329, 2px 2px 0 #b31329;}
 .sitename a {text-decoration:none; color:rgb(125,125,125);}
 .sitename a:hover {text-decoration:none; color:rgb(50,50,50);}
 
