@@ -1,0 +1,114 @@
+<?php /* Smarty version 2.6.26, created on 2018-07-21 00:54:00
+         compiled from ricerca_amministra_eventi.tpl */ ?>
+<br>
+<h1 class="pagetitle">Elenco Eventi</h1><br>
+<script src="js/ricerca_amministrazione_eventi.js"></script>
+<!-- Content unit - One column -->
+<div class="column1-unit">
+    <h1 class="block">Ricerca eventi</h1>
+<h2>
+        <div class="pulsante nascondi_avanzata" name="nascondi">► ricerca avanzata</div>
+        <div class="pulsante mostra_avanzata" name="mostra">◄ nascondi</div>
+</h2>
+<div class="mostra_ricerca">
+        <div class="column1-unit">
+          <div class="contactform">
+             <form>
+              <fieldset>
+                <p><label for="nome_evento" class="left">Nome evento:</label>
+                   <input type="text" name="nome_evento" id="nome_evento_ricerta" class="field" value="" tabindex="1"  /></p>
+                <p><label for="vino_evento" class="left">Vino evento:</label>
+                   <input type="text" name="vino_evento" id="vino_evento_ricerca" class="field" value="" tabindex="2" /></p>
+                <p><label for="data_partenza" class="left">Data di partenza:</label>
+                   <input type="text" name="data_evento" id="data_evento_ricerca" class="field" value="" tabindex="3" /></p>
+                
+                <p><input type="button" id="submit_ricerca_eventi" class="button" value="Cerca" tabindex="4" /></p>
+              </fieldset>
+            </form>
+         </div>
+        </div>
+</div>
+</div>    
+<div class="column1-unit">
+    <div id="risultati_eventi" >
+        <div class="column1-unit">
+    <div> 
+        <?php if ($this->_tpl_vars['eventi']): ?>
+            <h1> Lista eventi cercati </h1>
+            <div style="width:650px;height:800px;overflow-y: scroll; border:1px solid white;">
+            <table width:650px;>
+                <tr>
+                    <th class="top">
+                        <div class="ordina_eventi pulsante" name="num_evento">Numero Evento ▼</div>
+                    </th>
+                    <th class="top">
+                        <div class="ordina_eventi pulsante" name="citta_partenza">Citta Partenza ▼</div>
+                    </th>
+                    <th class="top">
+                        <div class="ordina_eventi pulsante" name="citta_arrivo">Citta Arrivo ▼</div>
+                    </th>
+                    <th class="top">
+                        <div class="ordina_eventi pulsante" name="data_partenza">Data Partenza ▼</div>
+                    </th>
+                </tr>       
+            <?php unset($this->_sections['nr']);
+$this->_sections['nr']['name'] = 'nr';
+$this->_sections['nr']['loop'] = is_array($_loop=$this->_tpl_vars['eventi']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['nr']['show'] = true;
+$this->_sections['nr']['max'] = $this->_sections['nr']['loop'];
+$this->_sections['nr']['step'] = 1;
+$this->_sections['nr']['start'] = $this->_sections['nr']['step'] > 0 ? 0 : $this->_sections['nr']['loop']-1;
+if ($this->_sections['nr']['show']) {
+    $this->_sections['nr']['total'] = $this->_sections['nr']['loop'];
+    if ($this->_sections['nr']['total'] == 0)
+        $this->_sections['nr']['show'] = false;
+} else
+    $this->_sections['nr']['total'] = 0;
+if ($this->_sections['nr']['show']):
+
+            for ($this->_sections['nr']['index'] = $this->_sections['nr']['start'], $this->_sections['nr']['iteration'] = 1;
+                 $this->_sections['nr']['iteration'] <= $this->_sections['nr']['total'];
+                 $this->_sections['nr']['index'] += $this->_sections['nr']['step'], $this->_sections['nr']['iteration']++):
+$this->_sections['nr']['rownum'] = $this->_sections['nr']['iteration'];
+$this->_sections['nr']['index_prev'] = $this->_sections['nr']['index'] - $this->_sections['nr']['step'];
+$this->_sections['nr']['index_next'] = $this->_sections['nr']['index'] + $this->_sections['nr']['step'];
+$this->_sections['nr']['first']      = ($this->_sections['nr']['iteration'] == 1);
+$this->_sections['nr']['last']       = ($this->_sections['nr']['iteration'] == $this->_sections['nr']['total']);
+?>
+           <tr class="riepilogo_evento pulsante" value="<?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['num_evento']; ?>
+">
+             <div>
+                <td>
+                    <div><?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['num_evento']; ?>
+</div>
+                </td>
+                <td>
+                    <div><?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['citta_partenza']; ?>
+</div>
+                </td>
+                <td>
+                    <div><?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['citta_arrivo']; ?>
+</div>
+                </td>
+                <td>
+                    <div><?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['data_partenza']; ?>
+</div>
+                </td>    
+                    </div> 
+              </div>
+            </tr>    
+            <?php endfor; endif; ?>
+            </table>
+            </div>
+        <?php else: ?>
+            <div class="contactform">
+                <p class="center"><label class="center-title"> Nessun evento trovato!</label></p>  
+            </div>     
+        <?php endif; ?>
+    </div>
+         </div>
+    </div>
+</div> 
+    </div>
+        <div id="risultati_ricerca_eventi"></div>
+    </div>

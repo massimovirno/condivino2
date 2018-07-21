@@ -1,0 +1,8 @@
+<?php /* Smarty version 2.6.26, created on 2018-07-20 01:04:58
+         compiled from registrazione_problemi.tpl */ ?>
+<script src="js/index.js"></script>
+<div class="content-1col-nobox">
+    <h1 class="noicon">Problemi Registrazione</h1>
+    <h2 class="noicon" id="error"><?php echo $this->_tpl_vars['errore']; ?>
+</h2>
+</div>

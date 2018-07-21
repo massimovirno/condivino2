@@ -1,0 +1,151 @@
+<?php /* Smarty version 2.6.26, created on 2018-07-20 19:45:49
+         compiled from ricerca_riepilogo.tpl */ ?>
+<br>
+<script src="js/riepilogo.js"></script>
+<h1 class="pagetitle">Dati evento</h1>
+<div>
+<!-- Content unit - One column -->
+    <h1 class="block">Riepilogo del evento &nbsp<?php echo $this->_tpl_vars['num_evento']; ?>
+</h1>
+    <div class="column1-unit">
+        <div class="contactform">
+            <?php if (( $this->_tpl_vars['isPartecipante'] || $this->_tpl_vars['isOste'] )): ?>
+                <p class="center"><label class="center-title">Partecipi a questo evento!</p>
+            <?php endif; ?>
+			 <?php if ($this->_tpl_vars['posti_disponibili'] < 1 && ! $this->_tpl_vars['isPartecipante']): ?>
+                <p class="center"><label class="center-title">Non ci sono più posti disponibili!</label></p>
+             <?php endif; ?>
+            <p class="center"><b>organizzato da:</b>&nbsp<label class="center pulsante"><a class="visualizza_utente"  name="<?php echo $this->_tpl_vars['partecipa']; ?>
+" value="<?php echo $this->_tpl_vars['username_oste']; ?>
+"><?php echo $this->_tpl_vars['username_oste']; ?>
+</a></label><?php if (( $this->_tpl_vars['isPartecipante'] && ! $this->_tpl_vars['votato'] )): ?><input type="button" id="feedback" class="button_center" name="<?php echo $this->_tpl_vars['num_evento']; ?>
+" value="Feedback" tabindex="1" /><?php endif; ?></p>
+           <table>
+		   <tr class="normale">
+			<th class="top">Nome evento:</th>
+			<td colspan="2"><h2><?php echo $this->_tpl_vars['nome_evento']; ?>
+</h2></td>
+			</tr>
+			<tr class="normale">
+			<th class="top">Data evento:</th>
+			<td colspan="2"><h2><?php echo $this->_tpl_vars['data_evento']; ?>
+</h2></td>
+			</tr>
+			<tr class="normale">
+			<th class="top">Vino:</th>
+			<td colspan="2"><h2><?php echo $this->_tpl_vars['vino_evento']; ?>
+</h2></td>
+                        </tr>
+
+			<tr class="normale">
+			<th class="top">Costo a persona:</th>
+			<td width="220"><h2><?php echo $this->_tpl_vars['costo']; ?>
+&nbsp€</h2></td>
+			<th class="top">Posti disponibili:</th>
+			<td width="220"><h2><?php echo $this->_tpl_vars['posti_disponibili']; ?>
+</h2></td>
+			</tr>
+			<tr class="normale">
+			<th class="top">Note:</th>
+			<td  colspan="3"><p><h3><b><?php echo $this->_tpl_vars['note']; ?>
+</b></h3></p></td>
+			</tr>
+		   </table>
+		   
+			<?php if (( $this->_tpl_vars['loggato'] && ! $this->_tpl_vars['isPartecipante'] && ! $this->_tpl_vars['isOste'] && $this->_tpl_vars['posti_disponibili'] > 0 )): ?>
+			
+                <p class="center"><input type="button" id="partecipa" class="button_center" name="<?php echo $this->_tpl_vars['num_evento']; ?>
+" value="Partecipa" tabindex="1" /></p>
+                
+            <?php endif; ?>
+            <?php if ($this->_tpl_vars['isPartecipante']): ?>
+                <p class="center"><input type="button" id="cancellami" class="button_center" name1="<?php echo $this->_tpl_vars['num_evento']; ?>
+" name2="<?php echo $this->_tpl_vars['username_partecipante']; ?>
+" value="Cancellami" tabindex="1" /></p>
+			
+			<?php endif; ?>
+			
+            </div>
+			</div>
+    <h1 class="block">Informazioni vino</h1>
+        <div class="contactform">
+            <p><label class="left">Nome vino:</label><label class="left">&nbsp<b><?php echo $this->_tpl_vars['nome_vino']; ?>
+</label></b><br></p>
+            <p><label class="left">Produttore:</label><label class="left">&nbsp<b><?php echo $this->_tpl_vars['produttore']; ?>
+</b></label><br></p>
+            <p><label class="left">Denominazione:</label><label class="left">&nbsp<b><?php echo $this->_tpl_vars['denominazione']; ?>
+</b><br></label><br></p>
+            <p><label class="left">Vitigno:</label><label class="left">&nbsp<b><?php echo $this->_tpl_vars['vitigno']; ?>
+</b></label><br></p>
+            <p><label class="left">Anno:</label><label class="left">&nbsp<b><?php echo $this->_tpl_vars['anno']; ?>
+</b></label><br></p>
+            <p><label class="left">Descrizione:</label><label class="mini">&nbsp<b><?php echo $this->_tpl_vars['descrizione']; ?>
+</b></label><br></p>
+            
+            <p><label class="left">Etichetta:</label><label class="left">&nbsp<b><?php echo $this->_tpl_vars['immagine_vino']; ?>
+</b></label><br></p>
+        </div>
+    <h1 class="block">Partecipanti</h1>
+        <div class="contactform">
+            <?php if ($this->_tpl_vars['array_partecipanti']): ?>
+                <hr><br>
+                <?php unset($this->_sections['nr']);
+$this->_sections['nr']['name'] = 'nr';
+$this->_sections['nr']['loop'] = is_array($_loop=$this->_tpl_vars['array_partecipanti']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['nr']['show'] = true;
+$this->_sections['nr']['max'] = $this->_sections['nr']['loop'];
+$this->_sections['nr']['step'] = 1;
+$this->_sections['nr']['start'] = $this->_sections['nr']['step'] > 0 ? 0 : $this->_sections['nr']['loop']-1;
+if ($this->_sections['nr']['show']) {
+    $this->_sections['nr']['total'] = $this->_sections['nr']['loop'];
+    if ($this->_sections['nr']['total'] == 0)
+        $this->_sections['nr']['show'] = false;
+} else
+    $this->_sections['nr']['total'] = 0;
+if ($this->_sections['nr']['show']):
+
+            for ($this->_sections['nr']['index'] = $this->_sections['nr']['start'], $this->_sections['nr']['iteration'] = 1;
+                 $this->_sections['nr']['iteration'] <= $this->_sections['nr']['total'];
+                 $this->_sections['nr']['index'] += $this->_sections['nr']['step'], $this->_sections['nr']['iteration']++):
+$this->_sections['nr']['rownum'] = $this->_sections['nr']['iteration'];
+$this->_sections['nr']['index_prev'] = $this->_sections['nr']['index'] - $this->_sections['nr']['step'];
+$this->_sections['nr']['index_next'] = $this->_sections['nr']['index'] + $this->_sections['nr']['step'];
+$this->_sections['nr']['first']      = ($this->_sections['nr']['iteration'] == 1);
+$this->_sections['nr']['last']       = ($this->_sections['nr']['iteration'] == $this->_sections['nr']['total']);
+?>
+                    <div>
+                        <br>
+			<p><a class="visualizza_utente"  name="<?php echo $this->_tpl_vars['partecipa']; ?>
+" value="<?php echo $this->_tpl_vars['array_partecipanti'][$this->_sections['nr']['index']]['username_partecipante']; ?>
+"><label class="left pulsante"><?php echo $this->_tpl_vars['array_partecipanti'][$this->_sections['nr']['index']]['username_partecipante']; ?>
+ </label></a> <?php if (( $this->_tpl_vars['array_partecipanti'][$this->_sections['nr']['index']]['feedback_oste'] == 0 ) && $this->_tpl_vars['isOste']): ?><input type="button"  class="feedback_partecipante button_left" name1="<?php echo $this->_tpl_vars['array_partecipanti'][$this->_sections['nr']['index']]['username_partecipante']; ?>
+" name2="<?php echo $this->_tpl_vars['num_evento']; ?>
+" value="Feedback" tabindex="1" /><?php if ($this->_tpl_vars['passato'] == false): ?><input type="button"  class="elimina_partecipante button_left" name1="<?php echo $this->_tpl_vars['array_partecipanti'][$this->_sections['nr']['index']]['username_partecipante']; ?>
+" name2="<?php echo $this->_tpl_vars['num_evento']; ?>
+" value="Elimina" tabindex="2" /><?php endif; ?><br><?php else: ?><br><?php endif; ?></p>
+                    </div>  
+                <hr>
+                <br>
+                <?php endfor; endif; ?>
+            <?php else: ?>
+                <br>
+                <h3> Non ci sono ancora partecipanti</h3>    
+            <?php endif; ?>
+        </div>
+        <?php if ($this->_tpl_vars['isOste'] || $this->_tpl_vars['isAmministratore']): ?>
+            <div class="contactform">
+                <h1 class="block"> Modifica evento </h1>
+                <?php if ($this->_tpl_vars['passato'] == false): ?>
+                <div>
+                    <p class="center"><input type="button" class="elimina_evento button_center" name="<?php echo $this->_tpl_vars['num_evento']; ?>
+" value="Elimina evento" tabindex="8" /></p>
+                </div>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
+            <div class="contactform">
+                <?php if ($this->_tpl_vars['indietro']): ?>
+                    <p class="center"><input type="button" class="indietro button_left" value="Indietro" tabindex="8" /></p><br><br>
+            </div>
+                <?php endif; ?>
+</div>

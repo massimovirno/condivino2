@@ -1,0 +1,299 @@
+<?php /* Smarty version 2.6.26, created on 2018-07-21 00:31:49
+         compiled from registrazione_visualizza_profilo_utente.tpl */ ?>
+<br>
+<script src="js/amministrazione_utenti.js"></script>
+<h1 class="pagetitle">Dati profilo</h1>
+<div>
+    <h1 class="block">&nbsp<?php echo $this->_tpl_vars['username']; ?>
+&nbsp</h1>
+</div>
+<div class="column1-unit">
+    <div class="contactform">
+        <h1><b><?php echo $this->_tpl_vars['nome']; ?>
+&nbsp<?php echo $this->_tpl_vars['cognome']; ?>
+</b></h1>
+        <h3><?php echo $this->_tpl_vars['citta_residenza']; ?>
+</h3>                    
+        <p><img src=<?php echo $this->_tpl_vars['immagine_profilo']; ?>
+ alt="Image description" width="200" height="200"/></p>
+        <p>Valutazione oste: <?php unset($this->_sections['i']);
+$this->_sections['i']['name'] = 'i';
+$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['media_feedback_oste']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['i']['show'] = true;
+$this->_sections['i']['max'] = $this->_sections['i']['loop'];
+$this->_sections['i']['step'] = 1;
+$this->_sections['i']['start'] = $this->_sections['i']['step'] > 0 ? 0 : $this->_sections['i']['loop']-1;
+if ($this->_sections['i']['show']) {
+    $this->_sections['i']['total'] = $this->_sections['i']['loop'];
+    if ($this->_sections['i']['total'] == 0)
+        $this->_sections['i']['show'] = false;
+} else
+    $this->_sections['i']['total'] = 0;
+if ($this->_sections['i']['show']):
+
+            for ($this->_sections['i']['index'] = $this->_sections['i']['start'], $this->_sections['i']['iteration'] = 1;
+                 $this->_sections['i']['iteration'] <= $this->_sections['i']['total'];
+                 $this->_sections['i']['index'] += $this->_sections['i']['step'], $this->_sections['i']['iteration']++):
+$this->_sections['i']['rownum'] = $this->_sections['i']['iteration'];
+$this->_sections['i']['index_prev'] = $this->_sections['i']['index'] - $this->_sections['i']['step'];
+$this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_sections['i']['step'];
+$this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
+$this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
+?> 
+		 <img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
+		<?php endfor; endif; ?>(<?php echo $this->_tpl_vars['num_eventi_guid']; ?>
+ voti)</p>
+        <p>Valutazione partecipante:<?php unset($this->_sections['i']);
+$this->_sections['i']['name'] = 'i';
+$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['media_feedback_partecipante']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['i']['show'] = true;
+$this->_sections['i']['max'] = $this->_sections['i']['loop'];
+$this->_sections['i']['step'] = 1;
+$this->_sections['i']['start'] = $this->_sections['i']['step'] > 0 ? 0 : $this->_sections['i']['loop']-1;
+if ($this->_sections['i']['show']) {
+    $this->_sections['i']['total'] = $this->_sections['i']['loop'];
+    if ($this->_sections['i']['total'] == 0)
+        $this->_sections['i']['show'] = false;
+} else
+    $this->_sections['i']['total'] = 0;
+if ($this->_sections['i']['show']):
+
+            for ($this->_sections['i']['index'] = $this->_sections['i']['start'], $this->_sections['i']['iteration'] = 1;
+                 $this->_sections['i']['iteration'] <= $this->_sections['i']['total'];
+                 $this->_sections['i']['index'] += $this->_sections['i']['step'], $this->_sections['i']['iteration']++):
+$this->_sections['i']['rownum'] = $this->_sections['i']['iteration'];
+$this->_sections['i']['index_prev'] = $this->_sections['i']['index'] - $this->_sections['i']['step'];
+$this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_sections['i']['step'];
+$this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
+$this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
+?> 
+		 <img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
+		<?php endfor; endif; ?>(<?php echo $this->_tpl_vars['num_voti_pass']; ?>
+ voti)</p>
+		<p>Email:<b>&nbsp<?php echo $this->_tpl_vars['email']; ?>
+</b></p>
+        <?php if ($this->_tpl_vars['partecipa'] || $this->_tpl_vars['loggato_amministratore']): ?>
+            <p>Numero di telefono:<b>&nbsp<?php echo $this->_tpl_vars['num_telefono']; ?>
+</b></p>
+        <?php endif; ?>
+        <p>Data di nascita:<b>&nbsp<?php echo $this->_tpl_vars['data_nascita']; ?>
+</b></p>
+        <p>Città di nascita:<b>&nbsp<?php echo $this->_tpl_vars['citta_nascita']; ?>
+</b></p><br><br>
+	<p><hr></p>
+        <?php if (( $this->_tpl_vars['loggato_amministratore'] )): ?>
+            <div id="mostra_amministrazione" name="<?php echo $this->_tpl_vars['username']; ?>
+"><p><input type="button" class="button_center" value="► Opzioni"></p></div>
+            <div id="nascondi_amministrazione"><p><input type="button" class="button_center" value="◄ Opzioni"></p></div>
+            <div id="amministrazione"></div>
+        <?php endif; ?>
+    </div>
+</div>
+<h1 class="block">Feedback ricevuti da <?php echo $this->_tpl_vars['username']; ?>
+ per gli eventi organizzati</h1>
+<div class="column1-unit">
+	<div class="contactform">
+		<?php if ($this->_tpl_vars['array_commenti_oste']): ?>
+		   <table>
+			<th class="top">
+                            <div>Commento dei passeggeri</div>
+			</th>
+			<th class="mini">
+                            <div>Media voto </div>
+			</th>
+			<th class="mini">
+                            <div>ID </div>
+			</th>
+                    </tr>
+			</table>
+			<div class="contenitore">
+			<table>
+				
+                    <?php unset($this->_sections['nr']);
+$this->_sections['nr']['name'] = 'nr';
+$this->_sections['nr']['loop'] = is_array($_loop=$this->_tpl_vars['array_commenti_oste']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['nr']['show'] = true;
+$this->_sections['nr']['max'] = $this->_sections['nr']['loop'];
+$this->_sections['nr']['step'] = 1;
+$this->_sections['nr']['start'] = $this->_sections['nr']['step'] > 0 ? 0 : $this->_sections['nr']['loop']-1;
+if ($this->_sections['nr']['show']) {
+    $this->_sections['nr']['total'] = $this->_sections['nr']['loop'];
+    if ($this->_sections['nr']['total'] == 0)
+        $this->_sections['nr']['show'] = false;
+} else
+    $this->_sections['nr']['total'] = 0;
+if ($this->_sections['nr']['show']):
+
+            for ($this->_sections['nr']['index'] = $this->_sections['nr']['start'], $this->_sections['nr']['iteration'] = 1;
+                 $this->_sections['nr']['iteration'] <= $this->_sections['nr']['total'];
+                 $this->_sections['nr']['index'] += $this->_sections['nr']['step'], $this->_sections['nr']['iteration']++):
+$this->_sections['nr']['rownum'] = $this->_sections['nr']['iteration'];
+$this->_sections['nr']['index_prev'] = $this->_sections['nr']['index'] - $this->_sections['nr']['step'];
+$this->_sections['nr']['index_next'] = $this->_sections['nr']['index'] + $this->_sections['nr']['step'];
+$this->_sections['nr']['first']      = ($this->_sections['nr']['iteration'] == 1);
+$this->_sections['nr']['last']       = ($this->_sections['nr']['iteration'] == $this->_sections['nr']['total']);
+?>
+                        <tr class="riepilogo_evento pulsante" value="<?php echo $this->_tpl_vars['array_commenti_oste'][$this->_sections['nr']['index']]['num_evento']; ?>
+"> 
+                            <td width="35%">
+								<div>
+								<?php if ($this->_tpl_vars['array_commenti_oste'][$this->_sections['nr']['index']]['num_voti'] > 0): ?>
+									<?php echo $this->_tpl_vars['array_commenti_oste'][$this->_sections['nr']['index']]['commento']; ?>
+
+								<?php else: ?>
+									[Nessun commento]
+								<?php endif; ?>
+                            </td>
+                            <td width="25%">
+                                <div>
+								<?php if ($this->_tpl_vars['array_commenti_oste'][$this->_sections['nr']['index']]['num_voti'] > 0): ?>
+									<?php unset($this->_sections['i']);
+$this->_sections['i']['name'] = 'i';
+$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['array_commenti_oste'][$this->_sections['nr']['index']]['voto_totale']/$this->_tpl_vars['array_commenti_oste'][$this->_sections['nr']['index']]['num_voti']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['i']['show'] = true;
+$this->_sections['i']['max'] = $this->_sections['i']['loop'];
+$this->_sections['i']['step'] = 1;
+$this->_sections['i']['start'] = $this->_sections['i']['step'] > 0 ? 0 : $this->_sections['i']['loop']-1;
+if ($this->_sections['i']['show']) {
+    $this->_sections['i']['total'] = $this->_sections['i']['loop'];
+    if ($this->_sections['i']['total'] == 0)
+        $this->_sections['i']['show'] = false;
+} else
+    $this->_sections['i']['total'] = 0;
+if ($this->_sections['i']['show']):
+
+            for ($this->_sections['i']['index'] = $this->_sections['i']['start'], $this->_sections['i']['iteration'] = 1;
+                 $this->_sections['i']['iteration'] <= $this->_sections['i']['total'];
+                 $this->_sections['i']['index'] += $this->_sections['i']['step'], $this->_sections['i']['iteration']++):
+$this->_sections['i']['rownum'] = $this->_sections['i']['iteration'];
+$this->_sections['i']['index_prev'] = $this->_sections['i']['index'] - $this->_sections['i']['step'];
+$this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_sections['i']['step'];
+$this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
+$this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
+?> 
+										<img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
+									<?php endfor; endif; ?>
+								<?php else: ?>
+									[Nessun voto]
+								<?php endif; ?>
+								</div>
+                            </td>
+                             <td width="25%">
+                                <div>
+									<?php echo $this->_tpl_vars['array_commenti_oste'][$this->_sections['nr']['index']]['num_evento']; ?>
+
+								</div>
+								
+                            </td>
+			</tr>
+                    <?php endfor; endif; ?>
+			</table>
+		<?php else: ?>
+		<p class="center"><label class="center-title"> Nessun evento presente!</label></p>
+		<?php endif; ?>
+	</div>
+	</div>
+	</div>
+	<h1 class="block">Feedback ricevuti da <?php echo $this->_tpl_vars['username']; ?>
+ come partecipante </h1>
+	<div class="column1-unit">
+	<div class="contactform">
+		<?php if ($this->_tpl_vars['array_commenti_partecipante']): ?>
+		   <table>
+			<th class="top">
+                            <div>Commento </div>
+			</th>
+			<th class="mini">
+                            <div>Voto</div>
+			</th>
+			<th class="mini">
+                            <div>ID</div>
+			</th>
+                    </tr>
+			</table>
+			<div class="contenitore">
+			<table>
+				
+                    <?php unset($this->_sections['nr']);
+$this->_sections['nr']['name'] = 'nr';
+$this->_sections['nr']['loop'] = is_array($_loop=$this->_tpl_vars['array_commenti_partecipante']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['nr']['show'] = true;
+$this->_sections['nr']['max'] = $this->_sections['nr']['loop'];
+$this->_sections['nr']['step'] = 1;
+$this->_sections['nr']['start'] = $this->_sections['nr']['step'] > 0 ? 0 : $this->_sections['nr']['loop']-1;
+if ($this->_sections['nr']['show']) {
+    $this->_sections['nr']['total'] = $this->_sections['nr']['loop'];
+    if ($this->_sections['nr']['total'] == 0)
+        $this->_sections['nr']['show'] = false;
+} else
+    $this->_sections['nr']['total'] = 0;
+if ($this->_sections['nr']['show']):
+
+            for ($this->_sections['nr']['index'] = $this->_sections['nr']['start'], $this->_sections['nr']['iteration'] = 1;
+                 $this->_sections['nr']['iteration'] <= $this->_sections['nr']['total'];
+                 $this->_sections['nr']['index'] += $this->_sections['nr']['step'], $this->_sections['nr']['iteration']++):
+$this->_sections['nr']['rownum'] = $this->_sections['nr']['iteration'];
+$this->_sections['nr']['index_prev'] = $this->_sections['nr']['index'] - $this->_sections['nr']['step'];
+$this->_sections['nr']['index_next'] = $this->_sections['nr']['index'] + $this->_sections['nr']['step'];
+$this->_sections['nr']['first']      = ($this->_sections['nr']['iteration'] == 1);
+$this->_sections['nr']['last']       = ($this->_sections['nr']['iteration'] == $this->_sections['nr']['total']);
+?>
+                        <tr class="riepilogo_evento pulsante" value="<?php echo $this->_tpl_vars['array_commenti_partecipante'][$this->_sections['nr']['index']]['num_evento']; ?>
+"> 
+                            <td width="35%">
+								<div>
+								<?php if ($this->_tpl_vars['array_commenti_partecipante'][$this->_sections['nr']['index']]['feedback_oste'] != 0): ?>
+									<?php echo $this->_tpl_vars['array_commenti_partecipante'][$this->_sections['nr']['index']]['commento_oste']; ?>
+
+								<?php else: ?>
+									[Nessun commento]
+								<?php endif; ?>
+                            </td>
+                            <td width="25%">
+                                <div>
+								<?php if ($this->_tpl_vars['array_commenti_partecipante'][$this->_sections['nr']['index']]['feedback_oste'] != 0): ?>
+									<?php unset($this->_sections['i']);
+$this->_sections['i']['name'] = 'i';
+$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['array_commenti_partecipante'][$this->_sections['nr']['index']]['feedback_oste']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['i']['show'] = true;
+$this->_sections['i']['max'] = $this->_sections['i']['loop'];
+$this->_sections['i']['step'] = 1;
+$this->_sections['i']['start'] = $this->_sections['i']['step'] > 0 ? 0 : $this->_sections['i']['loop']-1;
+if ($this->_sections['i']['show']) {
+    $this->_sections['i']['total'] = $this->_sections['i']['loop'];
+    if ($this->_sections['i']['total'] == 0)
+        $this->_sections['i']['show'] = false;
+} else
+    $this->_sections['i']['total'] = 0;
+if ($this->_sections['i']['show']):
+
+            for ($this->_sections['i']['index'] = $this->_sections['i']['start'], $this->_sections['i']['iteration'] = 1;
+                 $this->_sections['i']['iteration'] <= $this->_sections['i']['total'];
+                 $this->_sections['i']['index'] += $this->_sections['i']['step'], $this->_sections['i']['iteration']++):
+$this->_sections['i']['rownum'] = $this->_sections['i']['iteration'];
+$this->_sections['i']['index_prev'] = $this->_sections['i']['index'] - $this->_sections['i']['step'];
+$this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_sections['i']['step'];
+$this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
+$this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
+?> 
+										<img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
+									<?php endfor; endif; ?>
+								<?php else: ?>
+									[Nessun voto]
+								<?php endif; ?>
+								</div>
+                            </td>
+                             <td width="25%">
+                                <div>
+									<?php echo $this->_tpl_vars['array_commenti_partecipante'][$this->_sections['nr']['index']]['num_evento']; ?>
+
+								</div>
+								
+                            </td>
+			</tr>
+                    <?php endfor; endif; ?>
+		<?php else: ?>
+		<p class="center"><label class="center-title"> Nessun evento presente!</label></p>
+		<?php endif; ?>
+	</div>
+	</div>
