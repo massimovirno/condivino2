@@ -15,7 +15,7 @@ $('#submit_aggiungi_da_inserisci').on("click",function(){
             success:vino_aggiunto
         });    
     });
-
+// MAX Verificare se serve agguiungi da profilo
 $('#submit_aggiungi_da_profilo').on("click",function(){
         $.ajax({
             url:'index.php',

@@ -113,7 +113,7 @@ p.caption {clear:both; margin:0.5em 0 2.0em 20px; text-align:left; color:rgb(80,
 .contactform div.contenitore {width:650px;height:300px;overflow-y:scroll; border:1px;}
 #errore_email{display:none;}
 #errore_username{display:none;}
-#errore_targa{display:none;}
+#errore_nome_vino{display:none;}
 .contactform input.mini {width:55px; padding:2px; border:solid 1px rgb(200,200,200); font-family:verdana,arial,sans-serif; font-size:110%;}
 .contactform textarea {width:230px; padding:2px; border:solid 1px rgb(200,200,200); font-family:verdana,arial,sans-serif; font-size:110%; resize:none;}
 .contactform input.button {float:left; width:9.0em;margin-top:20px;margin-bottom:20px;margin-left:210px; padding:2px !important /*Non-IE6*/; padding:1 /*IE6*/; background:rgb(220,220,220); border:solid 1px rgb(80,80,80); text-align:center; font-family:verdana,arial,sans-serif; color:rgb(80,80,80); font-size:110%;}
