@@ -14,12 +14,11 @@
              <form>
               <fieldset>
                 <p><label for="nome_evento" class="left">Nome evento:</label>
-                   <input type="text" name="nome_evento" id="nome_evento_ricerta" class="field" value="" tabindex="1"  /></p>
+                   <input type="text" name="nome_evento" id="nome_evento_ricerca" class="field" value="" tabindex="1"  /></p>
                 <p><label for="vino_evento" class="left">Vino evento:</label>
                    <input type="text" name="vino_evento" id="vino_evento_ricerca" class="field" value="" tabindex="2" /></p>
-                <p><label for="data_partenza" class="left">Data di partenza:</label>
+                <p><label for="data_evento" class="left">Data evento:</label>
                    <input type="text" name="data_evento" id="data_evento_ricerca" class="field" value="" tabindex="3" /></p>
-                
                 <p><input type="button" id="submit_ricerca_eventi" class="button" value="Cerca" tabindex="4" /></p>
               </fieldset>
             </form>
@@ -37,16 +36,16 @@
             <table width:650px;>
                 <tr>
                     <th class="top">
-                        <div class="ordina_eventi pulsante" name="num_evento">Numero Evento ▼</div>
+                        <div class="ordina_eventi pulsante" name="num_evento">Numero ▼</div>
                     </th>
                     <th class="top">
-                        <div class="ordina_eventi pulsante" name="citta_partenza">Citta Partenza ▼</div>
+                        <div class="ordina_eventi pulsante" name="nome_evento">Nome ▼</div>
                     </th>
                     <th class="top">
-                        <div class="ordina_eventi pulsante" name="citta_arrivo">Citta Arrivo ▼</div>
+                        <div class="ordina_eventi pulsante" name="data_evento">Data ▼</div>
                     </th>
                     <th class="top">
-                        <div class="ordina_eventi pulsante" name="data_partenza">Data Partenza ▼</div>
+                        <div class="ordina_eventi pulsante" name="vino_evento">Vino ▼</div>
                     </th>
                 </tr>       
             {section name=nr loop=$eventi}
@@ -56,13 +55,13 @@
                     <div>{$eventi[nr].num_evento}</div>
                 </td>
                 <td>
-                    <div>{$eventi[nr].citta_partenza}</div>
+                    <div>{$eventi[nr].nome_evento}</div>
                 </td>
                 <td>
-                    <div>{$eventi[nr].citta_arrivo}</div>
+                    <div>{$eventi[nr].data_evento}</div>
                 </td>
                 <td>
-                    <div>{$eventi[nr].data_partenza}</div>
+                    <div>{$eventi[nr].vino_evento}</div>
                 </td>    
                     </div> 
               </div>
