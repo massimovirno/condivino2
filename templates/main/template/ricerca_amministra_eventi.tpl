@@ -13,12 +13,12 @@
           <div class="contactform">
              <form>
               <fieldset>
-                <p><label for="citta_partenza" class="left">Citta di partenza:</label>
-                   <input type="text" name="citta_partenza" id="citta_partenza_ricerca" class="field" value="" tabindex="1"  /></p>
-                <p><label for="citta_arrivo" class="left">Citta di arrivo:</label>
-                   <input type="text" name="citta_arrivo" id="citta_arrivo_ricerca" class="field" value="" tabindex="2" /></p>
+                <p><label for="nome_evento" class="left">Nome evento:</label>
+                   <input type="text" name="nome_evento" id="nome_evento_ricerta" class="field" value="" tabindex="1"  /></p>
+                <p><label for="vino_evento" class="left">Vino evento:</label>
+                   <input type="text" name="vino_evento" id="vino_evento_ricerca" class="field" value="" tabindex="2" /></p>
                 <p><label for="data_partenza" class="left">Data di partenza:</label>
-                   <input type="text" name="data_partenza" id="data_partenza_ricerca" class="field" value="" tabindex="3" /></p>
+                   <input type="text" name="data_evento" id="data_evento_ricerca" class="field" value="" tabindex="3" /></p>
                 
                 <p><input type="button" id="submit_ricerca_eventi" class="button" value="Cerca" tabindex="4" /></p>
               </fieldset>

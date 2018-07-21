@@ -10,12 +10,12 @@
                             <div name="num_evento">ID ▼</div>
                         </th>
                         <th class="top">
-                            <div name="citta_partenza">Citta Partenza  </div>
+                            <div name="nome_evento">Nome  </div>
                         </th>
                         <th class="top">
-                            <div name="citta_arrivo">Citta Arrivo  </div>
+                            <div name="vino_evento">Vino  </div>
                         <th class="mini">    
-                            <div name="data-partenza">Data Partenza  </div>
+                            <div name="data-partenza">Data evento  </div>
                         </th>
                      </tr>   
                 {section name=nr loop=$eventi}
@@ -25,13 +25,13 @@
                                 <div>{$eventi[nr].num_evento}</div>
                            </td>
                            <td>
-                                <div>{$eventi[nr].citta_partenza}</div>
+                                <div>{$eventi[nr].nome_evento}</div>
                            </td>
                            <td>
-                                <div>{$eventi[nr].citta_arrivo}</div>
+                                <div>{$eventi[nr].vino_evento}</div>
                            </td>
                            <td>
-                                <div>{$eventi[nr].data_partenza}</div>
+                                <div>{$eventi[nr].data_evento}</div>
                            </td>     
                          </div> 
                     </tr>

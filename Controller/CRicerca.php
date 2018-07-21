@@ -609,7 +609,7 @@ class CRicerca {
             case 'ricerca_utenti':
                 return $this->ricercaUtenti($view->getUsernameRicerca(),$view->getCognomeRicerca(),$view->getCittaRicerca());
             case 'ricerca_eventi':
-                return $this->ricercaEventi($view->getDataEventoRicerca(),$view->getVinoEventoRicerca(),$view->getDataEventoRicerca());
+                return $this->ricercaEventi($view->getNomeEventoRicerca(),$view->getVinoEventoRicerca(),$view->getDataEventoRicerca());
             case 'verifica_nome_vino':
                 return $this->verificaNomeVino($view->getNomeVino());
         }

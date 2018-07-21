@@ -218,7 +218,7 @@ class VRegistrazione extends View {
     *
     * @return mixed
     */
-    public function getDataEvento() {
+    public function getDataEventoRicerca() {
         if (isset($_REQUEST['data_evento_ricerca'])) {
             return $_REQUEST['data_evento_ricerca'];
         } else
