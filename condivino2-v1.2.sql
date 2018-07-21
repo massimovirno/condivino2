@@ -21,7 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `condivino2`
 --
-CREATE DATABASE IF NOT EXISTS `condivino2` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+DROP DATABASE IF EXISTS `condivino2`;
+CREATE DATABASE `condivino2` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `condivino2`;
 
 -- --------------------------------------------------------
