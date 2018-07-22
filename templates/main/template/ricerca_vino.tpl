@@ -32,7 +32,7 @@
                 <p><label for="descrizione" class="left">Descrizione:</label>
                    <textarea name="descrizione" maxlength="300" id="descrizione" cols="45" rows="" tabindex="6"></textarea></p>
                 <p><label for="immagine_vino" class="left">Immagine etichetta:</label>
-                   <input type="text" name="immagine_vino" id="immagine_vino" class="field" value="img/" tabindex="7" maxlength="100" /></p>
+                   <input type="text" name="immagine_vino" id="immagine_vino" class="field" value="img/vino.jpg" tabindex="7" maxlength="100" /></p>
                 
                 {if ($da=='inserisci')}
                     <div class="nascosto"><br>

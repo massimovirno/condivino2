@@ -31,7 +31,7 @@
                 <p><label for="note" class="left">Note evento:</label>
                    <textarea name="note" maxlength="300" id="note" cols="45" rows="7" tabindex="7"></textarea></p>
                 <p><label for="immagine_evento" class="left">Foto evento:</label>
-                   <input type="text" name="immagine_evento" id="immagine_evento" class="field" value=" img/" tabindex="8" /></p>
+                   <input type="text" name="immagine_evento" id="immagine_evento" class="field" value="img/evento.jpg" tabindex="8" /></p>
                 <div class="nascosto"><br>
                     <p><input type="button" id="submit_offri" class="button" disabled value="Inserisci evento" tabindex="9" /></p><br><br>
                 </div>
