@@ -10,6 +10,10 @@ $(document).ready(function(){
             },
             costo: {
                 required:true
+            },
+            posti_disponibili: {
+                required: true, 
+                range: [1, 100]
             }
         }
     });
