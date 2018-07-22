@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Lug 18, 2018 alle 23:11
+-- Creato il: Lug 22, 2018 alle 14:15
 -- Versione del server: 10.1.32-MariaDB
 -- Versione PHP: 5.6.36
 
@@ -21,8 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `condivino2`
 --
-DROP DATABASE IF EXISTS `condivino2`;
-CREATE DATABASE `condivino2` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+CREATE DATABASE IF NOT EXISTS `condivino2` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `condivino2`;
 
 -- --------------------------------------------------------
@@ -31,6 +30,7 @@ USE `condivino2`;
 -- Struttura della tabella `evento`
 --
 
+DROP TABLE IF EXISTS `evento`;
 CREATE TABLE `evento` (
   `num_evento` int(11) NOT NULL,
   `nome_evento` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
@@ -47,8 +47,9 @@ CREATE TABLE `evento` (
 --
 
 INSERT INTO `evento` (`num_evento`, `nome_evento`, `data_evento`, `vino_evento`, `costo`, `posti_disponibili`, `note`, `immagine_evento`) VALUES
-(1, 'cena', '2018-08-15', 'Sursur', 40, 10, 'Il menu prevede un cous cous con melanzane e zucchine. Cortorno di peperoni', 'img/foto01.jpg'),
-(2, 'BBQ in giardino', '2018-10-14', 'Tignanello', 50, 4, 'Brace nel giardino con carni e bruschette', 'img/foto02.jpg');
+(1, 'cena', '2018-07-24', 'Sursur', 40, 10, 'Il menu prevede un cous cous con melanzane e zucchine. Cortorno di peperoni', 'img/foto01.jpg'),
+(2, 'bbq', '2018-09-14', 'Tignanello', 50, 2, 'Brace nel giardino con carni e bruschette', 'img/foto02.jpg'),
+(3, 'apericena', '2018-08-01', 'Chardonnay', 100, 29, 'Aperitivo in Silicon Valley', ' img/foto03.jpg');
 
 -- --------------------------------------------------------
 
@@ -56,6 +57,7 @@ INSERT INTO `evento` (`num_evento`, `nome_evento`, `data_evento`, `vino_evento`,
 -- Struttura della tabella `oste`
 --
 
+DROP TABLE IF EXISTS `oste`;
 CREATE TABLE `oste` (
   `num_evento` int(11) NOT NULL,
   `username_oste` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
@@ -69,8 +71,9 @@ CREATE TABLE `oste` (
 --
 
 INSERT INTO `oste` (`num_evento`, `username_oste`, `voto_totale`, `num_voti`, `commento`) VALUES
-(1, 'massimovirno', 0, 0, ''),
-(2, 'antoniomartone', 0, 0, '');
+(1, 'massimovirno', 4, 1, '<b>antoniomartone</b>: Superlativo<br>'),
+(2, 'antoniomartone', 0, 0, ''),
+(3, 'steve', 3, 1, '<b>massimovirno</b>: Padrone un pò scontroso!<br>');
 
 -- --------------------------------------------------------
 
@@ -78,6 +81,7 @@ INSERT INTO `oste` (`num_evento`, `username_oste`, `voto_totale`, `num_voti`, `c
 -- Struttura della tabella `partecipante`
 --
 
+DROP TABLE IF EXISTS `partecipante`;
 CREATE TABLE `partecipante` (
   `username_partecipante` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `num_evento` int(11) NOT NULL,
@@ -91,9 +95,9 @@ CREATE TABLE `partecipante` (
 --
 
 INSERT INTO `partecipante` (`username_partecipante`, `num_evento`, `feedback_oste`, `commento_oste`, `votato`) VALUES
-('ade91', 1, 0, '', 0),
-('lucagiardini', 2, 0, '', 0),
-('vaan46', 2, 0, '', 1);
+('massimovirno', 2, 0, '', 0),
+('massimovirno', 3, 0, '', 1),
+('steve', 2, 0, '', 0);
 
 -- --------------------------------------------------------
 
@@ -101,6 +105,7 @@ INSERT INTO `partecipante` (`username_partecipante`, `num_evento`, `feedback_ost
 -- Struttura della tabella `utente`
 --
 
+DROP TABLE IF EXISTS `utente`;
 CREATE TABLE `utente` (
   `username` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
@@ -124,14 +129,11 @@ CREATE TABLE `utente` (
 --
 
 INSERT INTO `utente` (`username`, `password`, `nome`, `cognome`, `data_nascita`, `citta_nascita`, `citta_residenza`, `sesso`, `cod_fiscale`, `email`, `num_telefono`, `stato_attivazione`, `codice_attivazione`, `amministratore`, `immagine_profilo`) VALUES
-('ade91', '0000', 'antonio', 'de fabritiis', '1991-03-14', 'penne', 'penne', 'm', 'fbrdfb91a14a456t', 'adefabritiis@hotmail.it', '3485212365', 1, '', 0, 'img/m_imgprofilo.jpg'),
-('antoniomartone', '0000', 'antonio', 'martone', '1991-03-14', 'penne', 'penne', 'm', 'fbrdfb91a14a456t', 'adefabritiis@hotmail.it', '3434212365', 1, '', 0, 'img/m_imgprofilo.jpg'),
-('isaacnewton', '0000', 'isaac', 'newton', '1991-03-14', 'penne', 'penne', 'm', 'fbrdfb91a14a456t', 'adefabritiis@hotmail.it', '3485212344', 1, '', 0, 'img/m_imgprofilo.jpg'),
-('lucagiardini', 'password01', 'Luca', 'Giardini', '2000-01-01', 'Roma', 'Roma', 'm', 'qwerty12t45zdf1', 'lg@vino.net', '3330003332', 1, '', 0, 'img/m_imgprofilo.jpg'),
-('mariecurie', '0000', 'marie', 'curie', '1991-03-14', 'penne', 'penne', 'f', 'fbrdfb91a14a456t', 'adefabritiis@hotmail.it', '3485212355', 1, '', 0, 'img/m_imgprofilo.jpg'),
-('massimovirno', '0000', 'massimo', 'virno', '1980-01-01', 'penne', 'penne', 'm', 'fbrdfb91a14a456t', 'io@massimovirno.it', '3485212365', 1, '', 1, 'img/m_imgprofilo.jpg'),
-('nikolatesla', '0000', 'nikola', 'tesla', '1991-03-14', 'penne', 'penne', 'm', 'fbrdfb91a14a456t', 'adefabritiis@hotmail.it', '3485212365', 1, '', 0, 'img/m_imgprofilo.jpg'),
-('vaan46', '1234', 'daniele', 'ciambrone', '1991-08-17', 'laquila', 'laquila', 'm', 'cmbdnl91m17a345d', 'vaan46@hotmail.it', '3473135445', 1, '', 1, 'img/m_imgprofilo.jpg');
+('admin', '0000', 'Admin', 'Stratore', '2000-01-01', 'Roma', 'Roma', 'm', 'admadm90r11q123w', 'admin@gmail.com', '3331234567', 1, '', 1, 'img/admin.jpg'),
+('antoniomartone', '0000', 'Antonio', 'Martone', '1965-03-14', 'Napoli', 'Orvieto', 'm', 'mrtntn65a14a456t', 'antonio.martone@gmail.com', '3434212365', 1, '', 0, 'img/m_imgprofilo.jpg'),
+('massimovirno', '0000', 'Massimo', 'Vrno', '1980-01-01', 'Francia', 'Roma', 'm', 'fbrdfb91a14a456t', 'io@massimovirno.it', '3485212365', 1, '', 0, 'img/m_imgprofilo.jpg'),
+('nikolatesla', '0000', 'Nikola', 'Tesla', '1991-03-14', 'Smiljan', 'New York', 'm', 'fbrdfb91a14a456t', 'nik@tesla.com', '3485212365', 1, '', 0, 'img/nikola.jpg'),
+('steve', '0000', 'Steve', 'Jobs', '1955-02-24', 'San Francisco', 'San Francisco', 'm', 'jbsstv55b24q123s', 'steve@apple.com', '8903567403', 1, '', 0, 'img/steve.jpg');
 
 -- --------------------------------------------------------
 
@@ -139,6 +141,7 @@ INSERT INTO `utente` (`username`, `password`, `nome`, `cognome`, `data_nascita`,
 -- Struttura della tabella `vino`
 --
 
+DROP TABLE IF EXISTS `vino`;
 CREATE TABLE `vino` (
   `nome_vino` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `produttore` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
@@ -156,9 +159,10 @@ CREATE TABLE `vino` (
 
 INSERT INTO `vino` (`nome_vino`, `produttore`, `denominazione`, `vitigno`, `anno`, `descrizione`, `immagine_vino`, `attuale`) VALUES
 ('Amarone', 'Speri Fratelli', 'Amarone della Valpolicella DOC', 'corvina', 2012, 'Vino dai profumi ampissimi e dalla complessità indiscussa questo Amarone sfida il tempo prestandosi ad un invecchiamento anche lungo in bottiglia', 'img/amarone.jpg', 1),
-('Palummo', 'Casa D\'Ambra', 'Ischia Doc', 'perepalummo', 2017, 'Questo vino nasce da uve ai più sconosciute, tipiche della zona di Ischia e del Golfo di Napoli. Con i suoi profumi delicati e vinosi e a sua anima vivace e intrigante esprime tutto il calore e l\'energia della terra dove nasce!', 'img/perepalummo.jpg', 1),
-('Sursur', 'Donnafugata', 'Sicilia doc', 'Grillo', 2016, 'Il nome sur sur significa grillo deriva dalla lingua araba classica un tempo parlata anche in Sicilia. Dalle uve dell\'omonimo vitigno nasce questo vino che ha tutta la poesia del canto dei gril', 'img/sursur.jpg', 1),
-('Tignanello', 'Antinori', 'Toscana IGT', 'sangiovese', 2014, 'Tignanello, in origine \"Chianti Classico Riserva vigneto Tignanello\" e dal 1971 Toscana IGT con il nome di Tignanello. Dal 1982 la composizione è rimasta la stessa di quella attuale. Tignanello viene prodotto soltanto nelle annate migliori. Il meglio dell\'esperienza Antinori in un vino senza eguali ', 'img/tignanello.jpg', 1);
+('Chardonnay', 'Beringer', ' California', ' Chardonnay', 2016, 'Fruttato e armonioso all’olfatto, caratterizzato da sentori di pera e mela, piacevoli sfumature agrumate e di frutta tropicale.', 'img/chardonnay.jpg', 1),
+('Palummo', 'Casa D\'Ambra', 'Ischia Doc', 'perepalummo', 2017, 'Questo vino nasce da uve ai più sconosciute, tipiche della zona di Ischia e del Golfo di Napoli.', 'img/perepalummo.jpg', 1),
+('Sursur', 'Donnafugata', 'Sicilia doc', 'grillo', 2016, 'Il nome sur sur significa grillo deriva dalla lingua araba classica un tempo parlata anche in Sicilia.', 'img/sursur.jpg', 1),
+('Tignanello', 'Antinori', 'Toscana IGT', 'sangiovese', 2014, 'Tignanello, in origine \"Chianti Classico Riserva vigneto Tignanello\" e dal 1971 Toscana IGT con il nome di Tignanello.', 'img/tignanello.jpg', 1);
 
 --
 -- Indici per le tabelle scaricate
@@ -206,7 +210,7 @@ ALTER TABLE `vino`
 -- AUTO_INCREMENT per la tabella `evento`
 --
 ALTER TABLE `evento`
-  MODIFY `num_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `num_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Limiti per le tabelle scaricate
