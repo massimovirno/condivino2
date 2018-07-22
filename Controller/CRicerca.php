@@ -420,6 +420,8 @@ class CRicerca {
             $session=USingleton::getInstance('USession');
             $username=$session->leggi_valore('username');
             if ($username!=false) {
+                $FOste=new FOste();
+                $FOste->eliminaOste($num_evento);
                 $FEvento=new FEvento();
                 $FEvento->eliminaEvento($num_evento);
                 $view=Usingleton::getInstance('VRicerca');
