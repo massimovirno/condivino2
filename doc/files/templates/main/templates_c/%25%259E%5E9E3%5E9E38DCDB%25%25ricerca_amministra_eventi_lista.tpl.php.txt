@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-07-21 01:04:13
+<?php /* Smarty version 2.6.26, created on 2018-07-22 00:06:01
          compiled from ricerca_amministra_eventi_lista.tpl */ ?>
 <script src="js/ricerca_amministrazione_eventi.js"></script>
 <div class="column1-unit">
@@ -12,12 +12,12 @@
                             <div name="num_evento">ID ▼</div>
                         </th>
                         <th class="top">
-                            <div name="citta_partenza">Citta Partenza  </div>
+                            <div name="nome_evento">Nome  </div>
                         </th>
                         <th class="top">
-                            <div name="citta_arrivo">Citta Arrivo  </div>
+                            <div name="vino_evento">Vino  </div>
                         <th class="mini">    
-                            <div name="data-partenza">Data Partenza  </div>
+                            <div name="data_evento">Data  </div>
                         </th>
                      </tr>   
                 <?php unset($this->_sections['nr']);
@@ -52,15 +52,15 @@ $this->_sections['nr']['last']       = ($this->_sections['nr']['iteration'] == $
 </div>
                            </td>
                            <td>
-                                <div><?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['citta_partenza']; ?>
+                                <div><?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['nome_evento']; ?>
 </div>
                            </td>
                            <td>
-                                <div><?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['citta_arrivo']; ?>
+                                <div><?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['vino_evento']; ?>
 </div>
                            </td>
                            <td>
-                                <div><?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['data_partenza']; ?>
+                                <div><?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['data_evento']; ?>
 </div>
                            </td>     
                          </div> 

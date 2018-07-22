@@ -8,7 +8,7 @@ require_once 'includes/config.inc.php';
 if (file_exists("installer.class.php"))
     header("location: installer.class.php");
 
-// Se non è presente l'installer instanziamo un oggetto della classe CHome
+// Se non ï¿½ presente l'installer instanziamo un oggetto della classe CHome
 $CHome=USingleton::getInstance('CHome');
 $CHome->impostaPagina();
 

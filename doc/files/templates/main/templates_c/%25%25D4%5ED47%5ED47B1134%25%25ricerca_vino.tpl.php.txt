@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-07-20 23:56:21
+<?php /* Smarty version 2.6.26, created on 2018-07-21 13:38:40
          compiled from ricerca_vino.tpl */ ?>
 <script src="js/vino.js"></script>
 <br>
@@ -32,7 +32,7 @@
 				   </select>
 				   </p>
                 <p><label for="descrizione" class="left">Descrizione:</label>
-                   <textarea name="descrizione" maxlength="300" id="note" cols="45" rows="" tabindex="6"></textarea></p>
+                   <textarea name="descrizione" maxlength="300" id="descrizione" cols="45" rows="" tabindex="6"></textarea></p>
                 <p><label for="immagine_vino" class="left">Immagine etichetta:</label>
                    <input type="text" name="immagine_vino" id="immagine_vino" class="field" value="img/" tabindex="7" maxlength="100" /></p>
                 

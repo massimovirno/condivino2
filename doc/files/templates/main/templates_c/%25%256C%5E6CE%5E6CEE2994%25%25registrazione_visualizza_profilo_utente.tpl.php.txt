@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-07-21 00:31:49
+<?php /* Smarty version 2.6.26, created on 2018-07-21 18:24:50
          compiled from registrazione_visualizza_profilo_utente.tpl */ ?>
 <br>
 <script src="js/amministrazione_utenti.js"></script>
@@ -41,7 +41,7 @@ $this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
 $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
 ?> 
 		 <img class="star" src="templates/main/template/img/star1.png" alt="imgstar" width="20" heigth="20"/>
-		<?php endfor; endif; ?>(<?php echo $this->_tpl_vars['num_eventi_guid']; ?>
+		<?php endfor; endif; ?>(<?php echo $this->_tpl_vars['num_eventi_oste']; ?>
  voti)</p>
         <p>Valutazione partecipante:<?php unset($this->_sections['i']);
 $this->_sections['i']['name'] = 'i';

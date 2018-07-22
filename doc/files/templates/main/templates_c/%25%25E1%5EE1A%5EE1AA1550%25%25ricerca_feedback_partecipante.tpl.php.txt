@@ -1,0 +1,43 @@
+<?php /* Smarty version 2.6.26, created on 2018-07-21 19:59:05
+         compiled from ricerca_feedback_partecipante.tpl */ ?>
+<script src="js/valutazione.js"></script>
+<br>
+<h1 class="pagetitle">Rilascia un feedback a <?php echo $this->_tpl_vars['username_oste']; ?>
+</h1>
+<!-- Content unit - One column -->
+<div> 
+    <h1 class="block">Evento: &nbsp<?php echo $this->_tpl_vars['num_evento']; ?>
+ da: <?php echo $this->_tpl_vars['citta_partenza']; ?>
+ a: <?php echo $this->_tpl_vars['citta_arrivo']; ?>
+ del <?php echo $this->_tpl_vars['data_partenza']; ?>
+</h1>
+    <div class="column1-unit">
+        <div class="contactform">
+           <table>
+				<th class="mini">
+				<div id='rate' >Voto:&nbsp</div> 
+				</th>
+				<th class="top">
+				Commento: (facoltativo)
+				</th>
+				<tr class="normale">
+					<td>
+						<div id="jqxWidget">
+							<div id="jqxRating"></div>
+						</div>
+					</td>
+					<td>
+						<textarea name="commento" class="commento" cols="70" rows="5" tabindex="1" maxlength="100"></textarea></p>
+					</td>
+				</tr>
+			</table>
+			 
+        
+
+            <p class="center"><input type="button" id="valuta" class="button_center" name="<?php echo $this->_tpl_vars['num_evento']; ?>
+" value="Valuta" tabindex="3" /></p>
+            <br>           
+            <br>
+        </div>              
+    </div>
+</div>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-07-20 19:45:49
+<?php /* Smarty version 2.6.26, created on 2018-07-22 00:56:05
          compiled from ricerca_riepilogo.tpl */ ?>
 <br>
 <script src="js/riepilogo.js"></script>
@@ -9,6 +9,10 @@
 </h1>
     <div class="column1-unit">
         <div class="contactform">
+            
+            <p class="center"><img src=<?php echo $this->_tpl_vars['immagine_evento']; ?>
+ alt="Image description" height="468" width="614"/></p>
+            
             <?php if (( $this->_tpl_vars['isPartecipante'] || $this->_tpl_vars['isOste'] )): ?>
                 <p class="center"><label class="center-title">Partecipi a questo evento!</p>
             <?php endif; ?>
@@ -69,6 +73,8 @@
 			</div>
     <h1 class="block">Informazioni vino</h1>
         <div class="contactform">
+            <p><label class="mini"><img src=<?php echo $this->_tpl_vars['immagine_vino']; ?>
+ alt="Image description" height="220" width="115"/></label></p>
             <p><label class="left">Nome vino:</label><label class="left">&nbsp<b><?php echo $this->_tpl_vars['nome_vino']; ?>
 </label></b><br></p>
             <p><label class="left">Produttore:</label><label class="left">&nbsp<b><?php echo $this->_tpl_vars['produttore']; ?>
@@ -79,11 +85,10 @@
 </b></label><br></p>
             <p><label class="left">Anno:</label><label class="left">&nbsp<b><?php echo $this->_tpl_vars['anno']; ?>
 </b></label><br></p>
-            <p><label class="left">Descrizione:</label><label class="mini">&nbsp<b><?php echo $this->_tpl_vars['descrizione']; ?>
+            <p><label class="left">Descrizione:</label>
+                <label class="mini">&nbsp<b><?php echo $this->_tpl_vars['descrizione']; ?>
 </b></label><br></p>
-            
-            <p><label class="left">Etichetta:</label><label class="left">&nbsp<b><?php echo $this->_tpl_vars['immagine_vino']; ?>
-</b></label><br></p>
+                
         </div>
     <h1 class="block">Partecipanti</h1>
         <div class="contactform">

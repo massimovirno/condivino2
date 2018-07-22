@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-07-21 00:54:00
+<?php /* Smarty version 2.6.26, created on 2018-07-21 19:28:06
          compiled from ricerca_amministra_eventi.tpl */ ?>
 <br>
 <h1 class="pagetitle">Elenco Eventi</h1><br>
@@ -15,13 +15,10 @@
           <div class="contactform">
              <form>
               <fieldset>
-                <p><label for="nome_evento" class="left">Nome evento:</label>
-                   <input type="text" name="nome_evento" id="nome_evento_ricerta" class="field" value="" tabindex="1"  /></p>
-                <p><label for="vino_evento" class="left">Vino evento:</label>
-                   <input type="text" name="vino_evento" id="vino_evento_ricerca" class="field" value="" tabindex="2" /></p>
-                <p><label for="data_partenza" class="left">Data di partenza:</label>
+                <p><label for="nome_evento" class="left">Nome:</label>
+                   <input type="text" name="nome_evento" id="nome_evento_ricerca" class="field" value="" tabindex="1"  /></p>
+                <p><label for="data_evento" class="left">Data evento:</label>
                    <input type="text" name="data_evento" id="data_evento_ricerca" class="field" value="" tabindex="3" /></p>
-                
                 <p><input type="button" id="submit_ricerca_eventi" class="button" value="Cerca" tabindex="4" /></p>
               </fieldset>
             </form>
@@ -39,16 +36,16 @@
             <table width:650px;>
                 <tr>
                     <th class="top">
-                        <div class="ordina_eventi pulsante" name="num_evento">Numero Evento ▼</div>
+                        <div class="ordina_eventi pulsante" name="num_evento">Numero ▼</div>
                     </th>
                     <th class="top">
-                        <div class="ordina_eventi pulsante" name="citta_partenza">Citta Partenza ▼</div>
+                        <div class="ordina_eventi pulsante" name="nome_evento">Nome ▼</div>
                     </th>
                     <th class="top">
-                        <div class="ordina_eventi pulsante" name="citta_arrivo">Citta Arrivo ▼</div>
+                        <div class="ordina_eventi pulsante" name="data_evento">Data ▼</div>
                     </th>
                     <th class="top">
-                        <div class="ordina_eventi pulsante" name="data_partenza">Data Partenza ▼</div>
+                        <div class="ordina_eventi pulsante" name="vino_evento">Vino ▼</div>
                     </th>
                 </tr>       
             <?php unset($this->_sections['nr']);
@@ -83,15 +80,15 @@ $this->_sections['nr']['last']       = ($this->_sections['nr']['iteration'] == $
 </div>
                 </td>
                 <td>
-                    <div><?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['citta_partenza']; ?>
+                    <div><?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['nome_evento']; ?>
 </div>
                 </td>
                 <td>
-                    <div><?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['citta_arrivo']; ?>
+                    <div><?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['data_evento']; ?>
 </div>
                 </td>
                 <td>
-                    <div><?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['data_partenza']; ?>
+                    <div><?php echo $this->_tpl_vars['eventi'][$this->_sections['nr']['index']]['vino_evento']; ?>
 </div>
                 </td>    
                     </div> 
