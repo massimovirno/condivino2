@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-07-22 00:56:05
+<?php /* Smarty version 2.6.26, created on 2018-07-22 14:01:23
          compiled from ricerca_riepilogo.tpl */ ?>
 <br>
 <script src="js/riepilogo.js"></script>

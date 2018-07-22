@@ -41,26 +41,7 @@ class FEvento    extends FDatabase{
             $query.=" `data_evento`>CURRENT_DATE()"; // Per estrarre solo eventi con data successiva ad oggi
             }     
         }
-        // MAX
-        /*
-        $query="SELECT * FROM `evento` WHERE";
-        if ($nome_evento)
-            $query.=" `nome_evento`='$nome_evento1'";
-        if ($vino_evento) {
-            if ($nome_evento)
-                $query.=" AND";
-            $query.=" `vino_evento`='$vino_evento1'";
-        }
-        if ($data_evento) {
-            if ($nome_evento OR $vino_evento)
-                $query.=" AND";
-            $query.=" `nome_evento`='$nome_evento'";
-        }
-        $query.=" AND `data_evento`>CURRENT_DATE()"; // Per estrarre solo eventi con data successiva ad oggi
-        // MAX
-        // print($query);
-         */
-        
+ 
         $this->query($query);
         $array=$this->getResultAssoc();
         return $array;

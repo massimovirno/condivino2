@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-07-21 19:59:05
+<?php /* Smarty version 2.6.26, created on 2018-07-22 13:45:54
          compiled from ricerca_feedback_partecipante.tpl */ ?>
 <script src="js/valutazione.js"></script>
 <br>
@@ -7,9 +7,9 @@
 <!-- Content unit - One column -->
 <div> 
     <h1 class="block">Evento: &nbsp<?php echo $this->_tpl_vars['num_evento']; ?>
- da: <?php echo $this->_tpl_vars['citta_partenza']; ?>
- a: <?php echo $this->_tpl_vars['citta_arrivo']; ?>
- del <?php echo $this->_tpl_vars['data_partenza']; ?>
+ nome: <?php echo $this->_tpl_vars['nome_evento']; ?>
+ del <?php echo $this->_tpl_vars['data_evento']; ?>
+ vino: <?php echo $this->_tpl_vars['vino_evento']; ?>
 </h1>
     <div class="column1-unit">
         <div class="contactform">

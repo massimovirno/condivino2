@@ -6,20 +6,6 @@ class FVino extends FDatabase{
         $this->_return_class='EVino';
         USingleton::getInstance('FDatabase');
     }
-
-    /**
-   // MAX verificare ma non serve più!
-   * * Metodo che restituisce le caratteristiche di un Vino associato a un determinato evento
-   * @param int $num_evento
-   * @return array 
-   
- public function getVino($num_evento){
-     $query="SELECT * FROM `vino` WHERE `num_evento`='$num_evento'";
-     $this->query($query);
-     $array=$this->getResultAssoc();
-     return $array;
- }
-    */
     
  /**
    * Metodo che restituisce i dettagli di un vino
