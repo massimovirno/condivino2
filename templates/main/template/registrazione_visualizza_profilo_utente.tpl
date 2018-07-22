@@ -35,7 +35,7 @@
 		{if $array_commenti_oste}
 		   <table>
 			<th class="top">
-                            <div>Commento dei passeggeri</div>
+                            <div>Commento dei partecipanti</div>
 			</th>
 			<th class="mini">
                             <div>Media voto </div>
