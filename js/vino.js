@@ -15,7 +15,7 @@ $('#submit_aggiungi_da_inserisci').on("click",function(){
             success:vino_aggiunto
         });    
     });
-// MAX Verificare se serve agguiungi da profilo
+
 $('#submit_aggiungi_da_profilo').on("click",function(){
         $.ajax({
             url:'index.php',
@@ -23,10 +23,12 @@ $('#submit_aggiungi_da_profilo').on("click",function(){
             type:'GET',
             data:{controller:'ricerca', task:'aggiungi_vino', da:'profilo', 
             nome_vino:$('#nome_vino').val(), 
-            tipo:$('#tipo').val(), 
-            num_posti:$('#num_posti').val(), 
-            carburante:$('#carburante').val(), 
-            consumo_medio:$('#consumo_medio').val()}, 
+            produttore:$('#produttore').val(), 
+            denominazione:$('#denominazione').val(), 
+            vitigno:$('#vitigno').val(), 
+            anno:$('#anno').val(), 
+            descrizione:$('#descrizione').val(), 
+            immagine_vino:$('#immagine_vino').val()},
             success:smista
         });    
     });

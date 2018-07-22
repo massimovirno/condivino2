@@ -26,10 +26,6 @@ class CRicerca {
         $username=$session->leggi_valore('username');
         if ($username!=false) {
             $view=Usingleton::getInstance('VRicerca');
-            // MAX
-            //$FVino= new FVino();
-            //$nome_vino=$view->getNomeVino();
-            //$posti= $FVino->getPostiVino($nome_vino_presa);
             $EEvento=new EEvento();
             $EEvento->nome_evento=$view->getNomeEvento();
             $EEvento->data_evento=$view->getDataEvento();
@@ -69,11 +65,10 @@ class CRicerca {
                 $EVino->vitigno=$view->getVitigno();
                 $EVino->anno=$view->getAnno();
                 $EVino->descrizione=$view->getDescrizione();
-                $EVino->immagine_vino=$view->getImmagineVino(); // MAX modificare per mostrare etichetta
+                $EVino->immagine_vino=$view->getImmagineVino();
 
                 $FVino=new FVino();
                 $FVino->store($EVino);
-                // MAX
                 if($_REQUEST['da']=='inserisci'){
                     $FVino=new FVino();
                     $vini=$FVino->getVini($username);
